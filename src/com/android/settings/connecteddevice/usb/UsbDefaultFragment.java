@@ -97,7 +97,7 @@ public class UsbDefaultFragment extends RadioButtonPickerFragment implements
     public void onAttach(Context context) {
         super.onAttach(context);
         mUsbBackend = new UsbBackend(context);
-        mTetheringManager = context.getSystemService(TetheringManager.class);
+        mTetheringManager = context.getApplicationContext().getSystemService(TetheringManager.class);
         mUsbReceiver = new UsbConnectionBroadcastReceiver(context, mUsbConnectionListener,
                 mUsbBackend);
         mHandler = new Handler(context.getMainLooper());

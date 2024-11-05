@@ -79,7 +79,8 @@ public class UsbBackend {
         mIsAdminUser = userManager.isAdminUser();
 
         mMidiSupported = context.getPackageManager().hasSystemFeature(PackageManager.FEATURE_MIDI);
-        final TetheringManager tm = context.getSystemService(TetheringManager.class);
+        final TetheringManager tm = context.getApplicationContext()
+                .getSystemService(TetheringManager.class);
         mTetheringSupported = tm.isTetheringSupported();
         updatePorts();
     }

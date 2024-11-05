@@ -67,7 +67,7 @@ public class UsbDetailsFunctionsController extends UsbDetailsController
     public UsbDetailsFunctionsController(Context context, UsbDetailsFragment fragment,
             UsbBackend backend) {
         super(context, fragment, backend);
-        mTetheringManager = context.getSystemService(TetheringManager.class);
+        mTetheringManager = context.getApplicationContext().getSystemService(TetheringManager.class);
         mOnStartTetheringCallback = new OnStartTetheringCallback();
         mPreviousFunction = mUsbBackend.getCurrentFunctions();
         mHandler = new Handler(context.getMainLooper());

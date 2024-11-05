@@ -42,7 +42,8 @@ class TetherPreferenceController(context: Context, key: String) :
     BasePreferenceController(context, key) {
 
     private val tetheredRepository = TetheredRepository(context)
-    private val tetheringManager = mContext.getSystemService(TetheringManager::class.java)!!
+    private val tetheringManager = mContext.applicationContext.
+        getSystemService(TetheringManager::class.java)!!
 
     private var preference: Preference? = null
 
