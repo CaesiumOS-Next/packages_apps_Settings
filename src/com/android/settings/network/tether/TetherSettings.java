@@ -631,7 +631,7 @@ public class TetherSettings extends RestrictedSettingsFragment
                 public List<String> getNonIndexableKeys(Context context) {
                     final List<String> keys = super.getNonIndexableKeys(context);
                     final TetheringManager tm =
-                            context.getSystemService(TetheringManager.class);
+                            context.getApplicationContext().getSystemService(TetheringManager.class);
 
                     if (!TetherUtil.isTetherAvailable(context)) {
                         keys.add(KEY_TETHER_PREFS_SCREEN);

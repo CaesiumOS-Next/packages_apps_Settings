@@ -40,7 +40,8 @@ import kotlinx.coroutines.flow.merge
 import kotlinx.coroutines.launch
 
 class TetheredRepository(private val context: Context) {
-    private val tetheringManager = context.getSystemService(TetheringManager::class.java)!!
+    private val tetheringManager = context.applicationContext.
+            getSystemService(TetheringManager::class.java)!!
 
     private val adapter = context.getSystemService(BluetoothManager::class.java)!!.adapter
 
