@@ -280,7 +280,8 @@ public class WifiUtils extends com.android.settingslib.wifi.WifiUtils {
             return false;
         }
 
-        TetheringManager tetheringManager = context.getSystemService(TetheringManager.class);
+        TetheringManager tetheringManager = context.getApplicationContext()
+                .getSystemService(TetheringManager.class);
         if (tetheringManager == null) {
             Log.e(TAG, "TetheringManager is null");
             return false;
