@@ -25,6 +25,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
+import com.android.settings.Settings;
 import com.android.settings.Settings.NightDisplaySuggestionActivity;
 import com.android.settings.biometrics.fingerprint.FingerprintEnrollSuggestionActivity;
 import com.android.settings.biometrics.fingerprint.FingerprintSuggestionActivity;
@@ -74,6 +75,8 @@ public class SuggestionFeatureProviderImpl implements SuggestionFeatureProvider 
             return NightDisplayPreferenceController.isSuggestionComplete(context);
         } else if (className.equals(ZenSuggestionActivity.class.getName())) {
             return ZenOnboardingActivity.isSuggestionComplete(context);
+        } else if (className.equals(Settings.AdaptiveBrightnessActivity.class.getName())) {
+            return Settings.AdaptiveBrightnessActivity.isSuggestionComplete(context);
         }
         return false;
     }

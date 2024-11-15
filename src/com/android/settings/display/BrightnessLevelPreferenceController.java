@@ -192,4 +192,8 @@ public class BrightnessLevelPreferenceController extends BasePreferenceControlle
         }
         return (value - min) / (max - min);
     }
+
+    public boolean isMaxBrightness() {
+        return getCurrentBrightness() > 0.95;
+    }
 }

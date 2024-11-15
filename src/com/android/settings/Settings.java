@@ -32,6 +32,7 @@ import androidx.annotation.Nullable;
 import com.android.internal.annotations.VisibleForTesting;
 import com.android.settings.biometrics.face.FaceSettings;
 import com.android.settings.communal.CommunalPreferenceController;
+import com.android.settings.display.AdaptiveBrightnessSuggestionActivity;
 import com.android.settings.enterprise.EnterprisePrivacySettings;
 import com.android.settings.network.MobileNetworkIntentConverter;
 import com.android.settings.overlay.FeatureFactory;
@@ -499,7 +500,7 @@ public class Settings extends SettingsActivity {
      */
     public static class AppDashboardActivity extends SettingsActivity {}
 
-    public static class AdaptiveBrightnessActivity extends SettingsActivity { /* empty */ }
+    public static class AdaptiveBrightnessActivity extends AdaptiveBrightnessSuggestionActivity { /* empty */ }
 
     /**
      * Activity for OneHandedSettings
