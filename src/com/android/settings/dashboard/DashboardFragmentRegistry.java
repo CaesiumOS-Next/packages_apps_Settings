@@ -39,6 +39,7 @@ import com.android.settings.fuelgauge.batteryusage.PowerUsageSummary;
 import com.android.settings.gestures.GestureSettings;
 import com.android.settings.homepage.TopLevelSettings;
 import com.android.settings.network.NetworkDashboardFragment;
+import com.android.settings.network.telephony.MobileNetworkSettings;
 import com.android.settings.notification.ConfigureNotificationSettings;
 import com.android.settings.notification.SoundSettings;
 import com.android.settings.notification.zen.ZenModeSettings;
@@ -132,6 +133,8 @@ public class DashboardFragmentRegistry {
                 CategoryKey.CATEGORY_SPECIAL_APP_ACCESS);
         PARENT_TO_CATEGORY_KEY_MAP.put(MoreSecurityPrivacyFragment.class.getName(),
                 CategoryKey.CATEGORY_MORE_SECURITY_PRIVACY_SETTINGS);
+        PARENT_TO_CATEGORY_KEY_MAP.put(MobileNetworkSettings.class.getName(),
+                CategoryKey.CATEGORY_MOBILE_NETWORK_SETTINGS);
 
         CATEGORY_KEY_TO_PARENT_MAP = new ArrayMap<>(PARENT_TO_CATEGORY_KEY_MAP.size());
 
