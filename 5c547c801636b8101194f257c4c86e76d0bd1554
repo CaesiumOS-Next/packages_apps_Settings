@@ -56,6 +56,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "b1d818d4_7f2b3249",
+        "filename": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-11-27T17:37:19Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "264ba1b8_6394a804",
+      "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "0a98941e_92a14bcd",
@@ -87,6 +105,24 @@
           ]
         }
       ],
+      "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6d9328b3_274c4e90",
+        "filename": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-11-27T17:37:19Z",
+      "side": 1,
+      "message": "Perhaps I misunderstand, since the code in this method returns a Long (to handle the DevicePolicyManager API setting) there needs to be a conversion somewhere, either here or in Math.min where you need to send in two types that are the same?\n\nOr do you prefer to have the config as a String that is parsed as a Long?",
+      "parentUuid": "0a98941e_92a14bcd",
       "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
