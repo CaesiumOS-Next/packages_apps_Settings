@@ -51,6 +51,24 @@
       "parentUuid": "aa29a8bd_d085c8ba",
       "revId": "63dcb07ea94e50e8318f00ad39abc18ac4bd35ca",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7049a6a3_6a4801a2",
+        "filename": "src/com/android/settings/TestingSettingsBroadcastReceiver.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 46,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-11-27T13:54:37Z",
+      "side": 1,
+      "message": "Sorry but since Build.IS_USER is static final this causes the main automatic test to fail. There is probably some smart thing to do in order to solve this but the easiest would be to keep the old code?\n\ncom.android.settings.TestingSettingsBroadcastReceiverTest (6 Tests)\n[1/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_notDisabledForUserBuildType_shouldStartActivity: PASSED (6.290s)\n[2/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_nullIntent_shouldNotCrash: PASSED (104ms)\n[3/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_disabledForUserBuild_BuildType_Userdebug_shouldStartActivity: PASSED (73ms)\n[4/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_disabledForUserBuild_BuildType_User_shouldNotStartActivity: FAILED (139ms)\n\nSTACKTRACE:\nexpected: null\nbut was : Intent { act\u003dandroid.intent.action.MAIN flg\u003d0x10000000 cmp\u003dcom.android.settings/.Settings$TestingSettingsActivity }\n\tat com.android.settings.TestingSettingsBroadcastReceiverTest.onReceive_disabledForUserBuild_BuildType_User_shouldNotStartActivity(TestingSettingsBroadcastReceiverTest.java:102)\n\n[5/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_correctIntent_shouldStartActivity: PASSED (73ms)\n[6/6] com.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_wrongIntent_shouldNotStartActivity: PASSED (51ms)\n\nSummary (Test executed with 1 devices.)\n-------\nx86_64 SettingsRoboTests: Passed: 5, Failed: 1, Ignored: 0, Assumption Failed: 0  \n\n1 test failed\n-------------\ncom.android.settings.TestingSettingsBroadcastReceiverTest#onReceive_disabledForUserBuild_BuildType_User_shouldNotStartActivity",
+      "parentUuid": "f2923687_cd835b7f",
+      "revId": "63dcb07ea94e50e8318f00ad39abc18ac4bd35ca",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
