@@ -842,4 +842,9 @@
 
     <!-- Package name for Linux terminal app -->
     <string name="config_linux_terminal_app_package_name" translatable="false">com.android.virtualization.terminal</string>
+
+    <!-- Configurable maximum screen timeout value shown in Screen timeout settings. Any timeout
+         values in R.arrays.screen_timeout_values that exceed this maximum will be hidden.
+         Leave empty to disable configuration and keep the default behavior. -->
+    <integer name="config_max_screen_timeout"></integer>
 </resources>
