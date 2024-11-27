@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "48884cb3_b1aace34",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1455782
+      },
+      "writtenOn": "2024-11-27T22:14:33Z",
+      "side": 1,
+      "message": "+1 since per http://b/335443194#comment25 VA 6.3 with 16KB support is now on builds.",
+      "revId": "5c83fbc73bc6130a2731c2af90fe6216ee1e2fa4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
