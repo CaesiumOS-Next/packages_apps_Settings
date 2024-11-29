@@ -16,6 +16,23 @@
       "message": "verified.\n\ncom.android.settings.display.ScreenTimeoutSettingsTest (17 Tests)\n[1/17] com.android.settings.display.ScreenTimeoutSettingsTest#getCandidates_enforcedAdmin_timeoutIsLimited: PASSED (6.643s)\n[2/17] com.android.settings.display.ScreenTimeoutSettingsTest#updateCandidates_screenAttentionNotAvailable_doNotShowAdaptiveSleepPreference: PASSED (482ms)\n[3/17] com.android.settings.display.ScreenTimeoutSettingsTest#getCandidates_configuredMaxTimeout_65000_timeoutIsLimited: PASSED (213ms)\n[4/17] com.android.settings.display.ScreenTimeoutSettingsTest#updateCandidates_enforcedAdmin_showDisabledByAdminPreference: PASSED (84ms)\n[5/17] com.android.settings.display.ScreenTimeoutSettingsTest#updateCandidates_AttentionServiceNotInstalled_doNoShowAdaptiveSleepPreference: PASSED (83ms)\n[6/17] com.android.settings.display.ScreenTimeoutSettingsTest#getCandidates_configuredMaxTimeout_300000_timeoutIsNotLimited: PASSED (48ms)\n[7/17] com.android.settings.display.ScreenTimeoutSettingsTest#onClick_whenButtonAlreadyChecked_noAuthNeeded: PASSED (148ms)\n[8/17] com.android.settings.display.ScreenTimeoutSettingsTest#updateCandidates_screenAttentionAvailable_showAdaptiveSleepPreference: PASSED (48ms)\n[9/17] com.android.settings.display.ScreenTimeoutSettingsTest#onClick_whenIncreasingTimeout_authNeeded: PASSED (38ms)\n[10/17] com.android.settings.display.ScreenTimeoutSettingsTest#onClick_whenUserAlreadyAuthenticated_buttonChecked: PASSED (34ms)\n[11/17] com.android.settings.display.ScreenTimeoutSettingsTest#searchIndexProvider_shouldIndexResource: PASSED (48ms)\n[12/17] com.android.settings.display.ScreenTimeoutSettingsTest#getCandidates_configuredAndAdminEnforcedMaxTimeout_lowestTimeoutIsApplied: PASSED (38ms)\n[13/17] com.android.settings.display.ScreenTimeoutSettingsTest#getCandidates_configuredMaxTimeout_notSet_timeoutIsNotLimited: PASSED (32ms)\n[14/17] com.android.settings.display.ScreenTimeoutSettingsTest#getDefaultKey_returnCurrentTimeout: PASSED (62ms)\n[15/17] com.android.settings.display.ScreenTimeoutSettingsTest#updateCandidates_withoutAdmin_showPowerConsumptionPreference: PASSED (51ms)\n[16/17] com.android.settings.display.ScreenTimeoutSettingsTest#setDefaultKey_controlCurrentScreenTimeout: PASSED (38ms)\n[17/17] com.android.settings.display.ScreenTimeoutSettingsTest#onClick_whenReducingTimeout_noAuthNeeded: PASSED (36ms)\n \nSummary (Test executed with 1 devices.)\n-------\nx86_64 SettingsRoboTests: Passed: 17, Failed: 0, Ignored: 0, Assumption Failed: 0",
       "revId": "559b0a9ae33ce7c03be30198228939f6b2bfbac1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6a293b1d_370c91ed",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-11-29T12:25:20Z",
+      "side": 1,
+      "message": "please have a look",
+      "revId": "559b0a9ae33ce7c03be30198228939f6b2bfbac1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
