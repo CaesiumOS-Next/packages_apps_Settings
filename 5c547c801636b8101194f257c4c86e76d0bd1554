@@ -125,6 +125,24 @@
       "parentUuid": "0a98941e_92a14bcd",
       "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e97de41_0449b63e",
+        "filename": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1986461
+      },
+      "writtenOn": "2024-12-02T18:51:39Z",
+      "side": 1,
+      "message": "AdminMaxTimeout is a Long, so that could be a number the converts to \u003e25 days. ConfigMaxTimeout is an Int casted to a Long, so the largest number it could represent is 25 days. If we wanted, by config, to support more than 25 days as a timeout, it would need to be stored as a Long instead of an Int. To achieve this, it would have to be stored in XML as a String, that in this java code would need to be parsed as a Long (`Long.parseLong`). I can\u0027t say whether we _need_ to support a longer max timeout, but calling out that this is a limitation imposed currently by using an Integer",
+      "parentUuid": "6d9328b3_274c4e90",
+      "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
