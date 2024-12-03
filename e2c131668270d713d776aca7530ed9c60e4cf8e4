@@ -16,6 +16,23 @@
       "message": "spdonghao@google.com The issue is introduced by your new change. Please help to review it.\n\ncommit c9aaa73b5108b7329d7ff4f8a24784505ba2e2da\nAuthor: Hao Dong \u003cspdonghao@google.com\u003e\nDate:   Thu Feb 1 02:00:14 2024 +0000\n\n    Show split screen dialog on the introduction and enrolling page.\n\n    Revert ag/22361082 and ag/22460413, show the split screen dialog on\n    the introduction and enrolling page, instead of relying on the callers\n    to show the dialog.\n\n    Test: atest BiometricsSplitScreenDialogTest\n    Test: atest FaceEnrollIntroductionTest\n    Test: atest SetupFingerprintEnrollIntroductionTest\n    Bug: 299573056\n\n    Change-Id: Ieb106a4a623ad5ca0e6eb1633413df75767bef52",
       "revId": "e2c131668270d713d776aca7530ed9c60e4cf8e4",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "72fa9974_e985422f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-03T07:47:18Z",
+      "side": 1,
+      "message": "Why stack overflow occurs ?  Below is its call flow\n\nstartEnrollment()@onCreate@ FaceEnrollEnrolling.java  --\u003e startEnrollment()@BiometricsEnrollEnrolling.java  --\u003e startEnrollmentInternal()@FaceEnrollEnrolling.java --\u003e  startEnrollment()@BiometricsEnrollEnrolling.java --\u003e .........",
+      "revId": "e2c131668270d713d776aca7530ed9c60e4cf8e4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
