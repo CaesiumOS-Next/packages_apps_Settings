@@ -143,6 +143,24 @@
       "parentUuid": "6d9328b3_274c4e90",
       "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "abc02f12_75beb7d8",
+        "filename": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+        "patchSetId": 3
+      },
+      "lineNbr": 345,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-12-03T10:59:41Z",
+      "side": 1,
+      "message": "I understand, I would be surprised if we need a screen timeout longer than 25 days.",
+      "parentUuid": "4e97de41_0449b63e",
+      "revId": "5c547c801636b8101194f257c4c86e76d0bd1554",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
