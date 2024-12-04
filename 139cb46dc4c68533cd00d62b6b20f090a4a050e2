@@ -56,6 +56,30 @@
       },
       "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "83e4040f_3ff853e6",
+        "filename": "res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-12-04T11:16:20Z",
+      "side": 1,
+      "message": "Sorry but is this important? You cannot bypass that Lint error @cechkahn@google.com ? The turnaround time for a change to be ready to be submitted is quite long, if I update this there will be at least one full run from Treehugger, Chris need to find and approve this again etc.",
+      "parentUuid": "4bfb94d3_eb610d96",
+      "range": {
+        "startLine": 846,
+        "startChar": 58,
+        "endLine": 846,
+        "endChar": 63
+      },
+      "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
