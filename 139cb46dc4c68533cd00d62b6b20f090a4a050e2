@@ -16,6 +16,23 @@
       "message": "I suggest to keep the old version, see comment in patch set #5. What do you say @cantol@google.com ?",
       "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "eb17019e_fee30ee8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-12-04T09:45:41Z",
+      "side": 1,
+      "message": "thanks @cantol@google.com, another approver is needed right?",
+      "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
