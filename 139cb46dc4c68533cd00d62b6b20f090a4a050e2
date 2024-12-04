@@ -104,6 +104,30 @@
       },
       "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5d1f549a_c92ea5c6",
+        "filename": "res/values/config.xml",
+        "patchSetId": 6
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2024-12-04T11:32:57Z",
+      "side": 1,
+      "message": "Ahh I missed the commit message bypass, thanks a lot @cechkahn@google.com 😊",
+      "parentUuid": "c84ffa54_efdc38ab",
+      "range": {
+        "startLine": 846,
+        "startChar": 58,
+        "endLine": 846,
+        "endChar": 63
+      },
+      "revId": "139cb46dc4c68533cd00d62b6b20f090a4a050e2",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
