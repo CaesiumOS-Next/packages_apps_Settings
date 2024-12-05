@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c1e336ce_9c4fd40d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1933051
+      },
+      "writtenOn": "2024-12-05T02:01:55Z",
+      "side": 1,
+      "message": "Informed the people who are all impacted. Ready to go.",
+      "revId": "a25868453cdfe66de2e0830e1e8aa6c65dd58d45",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
