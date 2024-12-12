@@ -67,6 +67,24 @@
       "message": "@cantol@google.com, I guess we need to help to submit this internally right?",
       "revId": "559b0a9ae33ce7c03be30198228939f6b2bfbac1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9c7d3673_62fa5663",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1407552
+      },
+      "writtenOn": "2024-12-12T06:43:09Z",
+      "side": 1,
+      "message": "I check the current AOSP code base. it is not up-to-date compared with the internal main branch.",
+      "parentUuid": "c2f95006_f3b9d5c8",
+      "revId": "559b0a9ae33ce7c03be30198228939f6b2bfbac1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
