@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7cb670c1_6624d0ab",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1432429
+      },
+      "writtenOn": "2024-12-12T07:40:30Z",
+      "side": 1,
+      "message": "Hi SongFerng,\n\nPlease help to review this CL also.\n\nThanks a lot.",
+      "revId": "9fb7c07c68b1b928dfb26cfeb0dc3559583c0bc5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
