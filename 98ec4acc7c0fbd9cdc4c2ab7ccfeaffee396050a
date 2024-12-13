@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbb735a2_03b08002",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1594463
+      },
+      "writtenOn": "2024-12-13T19:31:58Z",
+      "side": 1,
+      "message": "@Remi,do you know whether there could be any unintended side effects of using application context here?",
+      "revId": "98ec4acc7c0fbd9cdc4c2ab7ccfeaffee396050a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
