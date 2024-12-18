@@ -16,6 +16,23 @@
       "message": "CP to AOSP.\n\nhttps://gitlab.com/CalyxOS/calyxos/-/issues/2881\n\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: FATAL EXCEPTION: main\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: Process: com.android.settings, PID: 7067\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: java.lang.RuntimeException: Unable to start receiver com.android.settings.fuelgauge.batteryusage.BatteryUsageBroadcastReceiver: java.lang.NullPointerException: Attempt to invoke virtual method \u0027int android.content.Intent.getIntExtra(java.lang.String, int)\u0027 on a null object reference",
       "revId": "7ea9d158532cfe204d913c9738feb87f8827b477",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e42b42d5_93e11bdb",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2024-12-18T22:31:23Z",
+      "side": 1,
+      "message": "btw. I can\u0027t figure out how this is in 24Q4-release, wasn\u0027t apparently cherrypicked anywhere AFAICT, and yet DID NOT end up in aosp after it merged 24Q4.\n\nInternal change:\nhttps://googleplex-android-review.git.corp.google.com/c/platform/packages/apps/Settings/+/29736827\nOctober 8th on goog/main\n(internal sha1 291e92d6493b9640bc87bc787b58daa0936bae8e)\n\nLooking at the history of aosp/main, we have\n413f38d Merge 24Q4 into AOSP main by Xin Li · 5 days ago\n\nTechnically 25Q1 became next on September 24th, so before the above fix,\nyet:\nhttps://android-build.corp.google.com/where-is-my-cl/search/291e92d6493b9640bc87bc787b58daa0936bae8e\nclaims builds on git_24Q4-release include this as of build 12478319 \t\n\nhttps://android-build.corp.google.com/build_explorer/branch_dashboard/git_24Q4-release/build_id/12478319/",
+      "revId": "7ea9d158532cfe204d913c9738feb87f8827b477",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
