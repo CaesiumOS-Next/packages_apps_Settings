@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2a0b6c36_4c6d47fa",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1003247
+      },
+      "writtenOn": "2024-12-18T21:37:52Z",
+      "side": 1,
+      "message": "CP to AOSP.\n\nhttps://gitlab.com/CalyxOS/calyxos/-/issues/2881\n\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: FATAL EXCEPTION: main\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: Process: com.android.settings, PID: 7067\n12-16 14:45:04.203  1000  7067  7067 E AndroidRuntime: java.lang.RuntimeException: Unable to start receiver com.android.settings.fuelgauge.batteryusage.BatteryUsageBroadcastReceiver: java.lang.NullPointerException: Attempt to invoke virtual method \u0027int android.content.Intent.getIntExtra(java.lang.String, int)\u0027 on a null object reference",
+      "revId": "7ea9d158532cfe204d913c9738feb87f8827b477",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
