@@ -18,6 +18,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4123ee58_93029aea",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T07:22:20Z",
+      "side": 1,
+      "message": "PS C:\\Users\\hoffc\u003e adb install \\\\hoffc3-gv\\workspace2\\LA.QSSI.16.0\\out\\target\\product\\qssi_64\\testcases\\SettingsUnitTests\\arm64\\SettingsUnitTests.apk\nPerforming Streamed Install\nSuccess\nPS C:\\Users\\hoffc\u003e adb shell am instrument -w -e class com.android.settings.deviceinfo.simstatus.SimStatusDialogControllerTest com.android.settings.tests.unit/androidx.test.runner.AndroidJUnitRunner\n\ncom.android.settings.deviceinfo.simstatus.SimStatusDialogControllerTest:............\n\nTime: 0.272\n\nOK (12 tests)",
+      "parentUuid": "0f83f586_5c45f109",
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ddd1c06_d092a3c3",
