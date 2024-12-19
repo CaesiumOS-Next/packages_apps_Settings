@@ -41,6 +41,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0b48ca9a_19b1f644",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "If the new sub id is invalid, not need to unregister the telephony callback.",
+      "parentUuid": "9ddd1c06_d092a3c3",
+      "range": {
+        "startLine": 110,
+        "startChar": 57,
+        "endLine": 111,
+        "endChar": 41
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "aecdfa00_3a8e61b7",
@@ -64,6 +88,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "5cda2d5f_93732cca",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "This is required to handle the case. When user switches to one new SIM card for the same slot.",
+      "parentUuid": "aecdfa00_3a8e61b7",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "085be8c0_bd9a6bdc",
@@ -77,6 +125,30 @@
       "writtenOn": "2024-12-19T04:03:17Z",
       "side": 1,
       "message": "not related to your change but here it doesn\u0027t look right as subId is not used. If we just want a default telephony manager it should be a different member instead of the same one used later for specific sub id.",
+      "range": {
+        "startLine": 206,
+        "startChar": 8,
+        "endLine": 206,
+        "endChar": 78
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4b1a37a8_b305b530",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "Yes, I agree with you. Do you want me to remove it in this CL?",
+      "parentUuid": "085be8c0_bd9a6bdc",
       "range": {
         "startLine": 206,
         "startChar": 8,
@@ -133,6 +205,54 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "473afcb7_a66b9ad9",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "I will remove the para and directly use the member variable mSubscriptionInfo",
+      "parentUuid": "edb2b880_f93d53b1",
+      "range": {
+        "startLine": 226,
+        "startChar": 51,
+        "endLine": 226,
+        "endChar": 58
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "8d3365c1_2b238499",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "Will do it",
+      "parentUuid": "24dec47a_a5f1b417",
+      "range": {
+        "startLine": 226,
+        "startChar": 4,
+        "endLine": 226,
+        "endChar": 11
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "ce265ab8_c353164a",
@@ -156,6 +276,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "659c36d5_37da7974",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "Will do it.",
+      "parentUuid": "ce265ab8_c353164a",
+      "range": {
+        "startLine": 227,
+        "startChar": 8,
+        "endLine": 227,
+        "endChar": 56
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "5228d98f_89e98232",
@@ -169,6 +313,30 @@
       "writtenOn": "2024-12-19T04:03:17Z",
       "side": 1,
       "message": "this could be final?",
+      "range": {
+        "startLine": 231,
+        "startChar": 16,
+        "endLine": 231,
+        "endChar": 34
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ec427766_5c02de43",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "I think yes.",
+      "parentUuid": "5228d98f_89e98232",
       "range": {
         "startLine": 231,
         "startChar": 16,
@@ -204,6 +372,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7d5b2bea_090fff28",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "It can re-use the value initializing in initialize fun. I will remove it",
+      "parentUuid": "b4c6485e_9222d15b",
+      "range": {
+        "startLine": 237,
+        "startChar": 12,
+        "endLine": 239,
+        "endChar": 96
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "a08dca20_32026305",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -215,6 +407,30 @@
       "writtenOn": "2024-12-19T04:03:17Z",
       "side": 1,
       "message": "this method uses mTelephonyManager but this change removes init logic for it",
+      "range": {
+        "startLine": 268,
+        "startChar": 8,
+        "endLine": 268,
+        "endChar": 32
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "856ac684_7a433a56",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "I condidered that this update can be triggered through register telephony callback. In fact, this update is useless, but it is valid for unit test cases.",
+      "parentUuid": "a08dca20_32026305",
       "range": {
         "startLine": 268,
         "startChar": 8,
@@ -238,6 +454,30 @@
       "writtenOn": "2024-12-19T04:03:17Z",
       "side": 1,
       "message": "why no longer during onPause? to have callback for mOnSubscriptionsChangedListener? Could be fixed with getPhoneSubscriptionInfo in registerListener?",
+      "range": {
+        "startLine": 289,
+        "startChar": 9,
+        "endLine": 289,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b4b09c28_b1bbb022",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-19T05:57:42Z",
+      "side": 1,
+      "message": "In onPause, it will be triggered register and un-register multi times, So move it to deinitilize. What is your idea? Need to keep it in onPause ?",
+      "parentUuid": "f3cf2e92_05ca5afc",
       "range": {
         "startLine": 289,
         "startChar": 9,
