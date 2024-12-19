@@ -1,0 +1,251 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0f83f586_5c45f109",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "please add tests",
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9ddd1c06_d092a3c3",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "even not valid, mCurrentSubId needs to be updated and mTelephonyCallback needs to be unregistered?",
+      "range": {
+        "startLine": 110,
+        "startChar": 57,
+        "endLine": 111,
+        "endChar": 41
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aecdfa00_3a8e61b7",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "do we need this new field? can we use mSubscriptionInfo?",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "085be8c0_bd9a6bdc",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "not related to your change but here it doesn\u0027t look right as subId is not used. If we just want a default telephony manager it should be a different member instead of the same one used later for specific sub id.",
+      "range": {
+        "startLine": 206,
+        "startChar": 8,
+        "endLine": 206,
+        "endChar": 78
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "edb2b880_f93d53b1",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "is this param needed? it\u0027s always mSubscriptionInfo",
+      "range": {
+        "startLine": 226,
+        "startChar": 51,
+        "endLine": 226,
+        "endChar": 58
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24dec47a_a5f1b417",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 226,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "put private methods after all public methods",
+      "range": {
+        "startLine": 226,
+        "startChar": 4,
+        "endLine": 226,
+        "endChar": 11
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ce265ab8_c353164a",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 227,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "early return, instead of wrapping all code in if",
+      "range": {
+        "startLine": 227,
+        "startChar": 8,
+        "endLine": 227,
+        "endChar": 56
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5228d98f_89e98232",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 231,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "this could be final?",
+      "range": {
+        "startLine": 231,
+        "startChar": 16,
+        "endLine": 231,
+        "endChar": 34
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b4c6485e_9222d15b",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 239,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "why caculating mShowLatestAreaInfo? this is another bug?",
+      "range": {
+        "startLine": 237,
+        "startChar": 12,
+        "endLine": 239,
+        "endChar": 96
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "a08dca20_32026305",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "this method uses mTelephonyManager but this change removes init logic for it",
+      "range": {
+        "startLine": 268,
+        "startChar": 8,
+        "endLine": 268,
+        "endChar": 32
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3cf2e92_05ca5afc",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-19T04:03:17Z",
+      "side": 1,
+      "message": "why no longer during onPause? to have callback for mOnSubscriptionsChangedListener? Could be fixed with getPhoneSubscriptionInfo in registerListener?",
+      "range": {
+        "startLine": 289,
+        "startChar": 9,
+        "endLine": 289,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
