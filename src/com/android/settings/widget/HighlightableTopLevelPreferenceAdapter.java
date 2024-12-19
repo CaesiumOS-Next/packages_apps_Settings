@@ -149,7 +149,10 @@ public class HighlightableTopLevelPreferenceAdapter extends RoundCornerPreferenc
             Log.d(TAG, "Highlight needed change: " + highlightNeeded);
             mHighlightNeeded = highlightNeeded;
             mHighlightPosition = position;
-            notifyItemChanged(position);
+            if (mRecyclerView.getScrollState() == RecyclerView.SCROLL_STATE_IDLE
+                && !mRecyclerView.isComputingLayout()) {
+                notifyItemChanged(position);
+            }
             if (!highlightNeeded) {
                 // De-highlight to prevent a flicker
                 removeHighlightAt(previousPosition);
