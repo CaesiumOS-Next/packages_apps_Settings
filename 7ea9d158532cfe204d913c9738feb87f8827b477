@@ -51,6 +51,24 @@
       "parentUuid": "e42b42d5_93e11bdb",
       "revId": "7ea9d158532cfe204d913c9738feb87f8827b477",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "73a35026_81da48c3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1086523
+      },
+      "writtenOn": "2024-12-19T00:35:19Z",
+      "side": 1,
+      "message": "The merge was done  by performing a merge against ab/12406339 (`main` as of September 23 when the final \"snap\" happens from git_main to 24Q4-release, then a sequence of follow up merges up to AP4A.241205.013 .\n\nThe problem here is that although ab/12478319 contained the change, but the build itself wasn\u0027t intentional and was later obliterated by a branch reset (see b/372566340 for more details).  The reset appear to have confused where-is-my-cl.",
+      "parentUuid": "ea295bb1_606e8407",
+      "revId": "7ea9d158532cfe204d913c9738feb87f8827b477",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
