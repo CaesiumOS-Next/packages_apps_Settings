@@ -38,6 +38,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "55218473_607b1b6f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "please add new unit tests for the new logic added",
+      "parentUuid": "4123ee58_93029aea",
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9ddd1c06_d092a3c3",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -73,6 +91,30 @@
       "side": 1,
       "message": "If the new sub id is invalid, not need to unregister the telephony callback.",
       "parentUuid": "9ddd1c06_d092a3c3",
+      "range": {
+        "startLine": 110,
+        "startChar": 57,
+        "endLine": 111,
+        "endChar": 41
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "91e09d68_77b6a88c",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "then wouldn\u0027t the callback is still being registered for an already no longer used sub id?",
+      "parentUuid": "0b48ca9a_19b1f644",
       "range": {
         "startLine": 110,
         "startChar": 57,
@@ -132,6 +174,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f7e7653e_c05af730",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "we can check original and new mSubscriptionInfo",
+      "parentUuid": "5cda2d5f_93732cca",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "085be8c0_bd9a6bdc",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -167,6 +233,30 @@
       "side": 1,
       "message": "Yes, I agree with you. Do you want me to remove it in this CL?",
       "parentUuid": "085be8c0_bd9a6bdc",
+      "range": {
+        "startLine": 206,
+        "startChar": 8,
+        "endLine": 206,
+        "endChar": 78
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0987585c_38d62f09",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "please remove it, thanks",
+      "parentUuid": "4b1a37a8_b305b530",
       "range": {
         "startLine": 206,
         "startChar": 8,
@@ -485,6 +575,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7035e69f_966dc7ae",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "wouldn\u0027t onSubscriptionsChanged only be called when subscriptions actually change? Or it will also be called for first registration?\n\nAs this updates UI, we should not rely on a callback which may come later or never come to call it, or the UI may be with wrong content indefinitly. \n\nAlso if this is unneeded, it should be removed. Unit tests should test real logic.",
+      "parentUuid": "856ac684_7a433a56",
+      "range": {
+        "startLine": 268,
+        "startChar": 8,
+        "endLine": 268,
+        "endChar": 32
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "f3cf2e92_05ca5afc",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -520,6 +634,30 @@
       "side": 1,
       "message": "In onPause, it will be triggered register and un-register multi times, So move it to deinitilize. What is your idea? Need to keep it in onPause ?",
       "parentUuid": "f3cf2e92_05ca5afc",
+      "range": {
+        "startLine": 289,
+        "startChar": 9,
+        "endLine": 289,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "aac55f28_de554df7",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "register and deregister should pair to each other.\n\nIf we register in onResume, deregister should be in onPause, not in onDestroy (deinitialize).\n\n(it should be in onStart/onStop as it updates UI, but in this change keep it in onPause)\n\nBut note if it\u0027s in onPause, mSubscriptionInfo may already be outdated when the fragment is paused.",
+      "parentUuid": "b4b09c28_b1bbb022",
       "range": {
         "startLine": 289,
         "startChar": 9,

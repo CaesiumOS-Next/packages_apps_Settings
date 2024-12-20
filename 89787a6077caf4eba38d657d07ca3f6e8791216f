@@ -16,6 +16,98 @@
       "message": "zhibinliu@google.com Thanks for your comments. Please help to review it again",
       "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a22caea_489275b6",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "if initially sub is null, later even sub changes, we won\u0027t receive callback as here it stops registration for the callback",
+      "range": {
+        "startLine": 544,
+        "startChar": 37,
+        "endLine": 544,
+        "endChar": 54
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1ff71310_dc3f58e3",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "is mIsRegisteredListener needed if we pair registerListener/unregisterListener?",
+      "range": {
+        "startLine": 544,
+        "startChar": 12,
+        "endLine": 544,
+        "endChar": 33
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eaeb5648_63b62501",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "just use mTelephonyManager",
+      "range": {
+        "startLine": 553,
+        "startChar": 8,
+        "endLine": 553,
+        "endChar": 29
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3aefe8cb_e1d18217",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-20T14:55:21Z",
+      "side": 1,
+      "message": "same here, early return",
+      "range": {
+        "startLine": 567,
+        "startChar": 8,
+        "endLine": 567,
+        "endChar": 36
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
