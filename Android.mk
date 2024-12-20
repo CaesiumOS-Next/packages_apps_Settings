@@ -36,7 +36,7 @@ LOCAL_STATIC_ANDROID_LIBRARIES := \
 LOCAL_JAVA_LIBRARIES := \
     telephony-common \
     ims-common
-
+AAAAA
 LOCAL_STATIC_JAVA_LIBRARIES := \
     androidx.lifecycle_lifecycle-runtime \
     androidx.lifecycle_lifecycle-extensions \
