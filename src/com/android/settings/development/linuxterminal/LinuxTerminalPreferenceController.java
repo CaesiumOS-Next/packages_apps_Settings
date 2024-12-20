@@ -19,6 +19,7 @@ package com.android.settings.development.linuxterminal;
 import android.content.Context;
 import android.content.pm.PackageManager;
 import android.os.Process;
+import android.os.SystemProperties;
 import android.os.storage.StorageManager;
 import android.text.TextUtils;
 import android.util.DataUnit;
@@ -60,7 +61,8 @@ public class LinuxTerminalPreferenceController extends DeveloperOptionsPreferenc
                 Objects.requireNonNull(context.getSystemService(StorageManager.class));
         mIsDeviceCapable =
                 getTotalMemory() >= MEMORY_MIN_BYTES
-                        && storageManager.getPrimaryStorageSize() >= STORAGE_MIN_BYTES;
+                        && storageManager.getPrimaryStorageSize() >= STORAGE_MIN_BYTES
+                        && SystemProperties.getBoolean("ro.boot.hypervisor.vm.supported", false);
     }
 
     // Avoid lazy initialization because this may be called before displayPreference().
