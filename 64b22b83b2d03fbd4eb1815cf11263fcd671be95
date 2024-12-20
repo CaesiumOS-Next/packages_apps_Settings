@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3bd8125e_77d2277b",
+        "filename": "tests/robotests/src/com/android/settings/development/linuxterminal/LinuxTerminalPreferenceControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-12-20T04:07:20Z",
+      "side": 1,
+      "message": "You should use `VirtualMachineManager.getCapabilities()` to see if it returns CAPABILITY_NON_PROTECTED_VM",
+      "range": {
+        "startLine": 48,
+        "startChar": 48,
+        "endLine": 48,
+        "endChar": 79
+      },
+      "revId": "64b22b83b2d03fbd4eb1815cf11263fcd671be95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
