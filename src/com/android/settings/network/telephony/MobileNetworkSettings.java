@@ -112,6 +112,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
     private SubscriptionInfoEntity mSubscriptionInfoEntity;
     private MobileNetworkInfoEntity mMobileNetworkInfoEntity;
 
+    private boolean mIsUiRestricted;
     private BroadcastReceiver mBrocastReceiver = new BroadcastReceiver() {
         @Override
         public void onReceive(Context context, Intent intent) {
@@ -343,9 +344,9 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
                 setTelephonyAvailabilityStatus(getPreferenceControllersAsList());
 
         super.onCreate(icicle);
-        if (isUiRestricted()) {
-            Log.d(LOG_TAG, "Mobile network page is disallowed.");
-            finish();
+        setIfOnlyAvailableForAdmins(true);
+        mIsUiRestricted = isUiRestricted();
+        if (mIsUiRestricted) {
             return;
         }
         final Context context = getContext();
@@ -361,6 +362,9 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        if (mIsUiRestricted) {
+            return;
+        }
         collectAirplaneModeAndFinishIfOn(this);
 
         LifecycleOwner viewLifecycleOwner = getViewLifecycleOwner();
@@ -377,6 +381,10 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
     @Override
     public void onResume() {
         super.onResume();
+        if (mIsUiRestricted) {
+            restrictUi();
+            return;
+        }
         mMobileNetworkRepository.addRegister(this, this, mSubId);
         mMobileNetworkRepository.updateEntity();
         // TODO: remove log after fixing b/182326102
@@ -403,6 +411,10 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
 
     @Override
     public void onPause() {
+        if (mIsUiRestricted) {
+            super.onPause();
+            return;
+        }
         mMobileNetworkRepository.removeRegister(this);
         getContext().unregisterReceiver(mBrocastReceiver);
         super.onPause();
@@ -410,6 +422,9 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
 
     @VisibleForTesting
     void onRestoreInstance(Bundle icicle) {
+        if (mIsUiRestricted) {
+            return;
+        }
         if (icicle != null) {
             mClickedPrefKey = icicle.getString(KEY_CLICKED_PREF);
         }
@@ -428,6 +443,9 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
     @Override
     public void onSaveInstanceState(Bundle outState) {
         super.onSaveInstanceState(outState);
+        if (mIsUiRestricted) {
+            return;
+        }
         outState.putString(KEY_CLICKED_PREF, mClickedPrefKey);
     }
 
@@ -461,7 +479,7 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
 
     @Override
     public void onCreateOptionsMenu(Menu menu, MenuInflater inflater) {
-        if (mSubId != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
+        if (!mIsUiRestricted && mSubId != SubscriptionManager.INVALID_SUBSCRIPTION_ID) {
             final MenuItem item = menu.add(Menu.NONE, R.id.edit_sim_name, Menu.NONE,
                     R.string.mobile_network_sim_name);
             item.setIcon(com.android.internal.R.drawable.ic_mode_edit);
@@ -546,5 +564,12 @@ public class MobileNetworkSettings extends AbstractMobileNetworkSettings impleme
             }
         }
         onSubscriptionDetailChanged();
+    }
+
+    private void restrictUi() {
+        if (!isUiRestrictedByOnlyAdmin()) {
+            getEmptyTextView().setText(R.string.mobile_network_empty_list_user_restricted);
+        }
+        getPreferenceScreen().removeAll();
     }
 }

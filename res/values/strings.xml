@@ -13670,4 +13670,6 @@
 
     <!-- Text for Search bar of Settings home screen [CHAR LIMIT=34] -->
     <string name="homepage_search">Search Settings</string>
+    <!-- Mobile network settings. text displayed when user has restriction to do mobile network settings [CHAR LIMIT=NONE]-->
+    <string name="mobile_network_empty_list_user_restricted">You don\u2019t have permission to change mobile network settings.</string>
 </resources>
