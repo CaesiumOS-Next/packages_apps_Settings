@@ -46,6 +46,30 @@
       },
       "revId": "64b22b83b2d03fbd4eb1815cf11263fcd671be95",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "cbcee797_71283623",
+        "filename": "tests/robotests/src/com/android/settings/development/linuxterminal/LinuxTerminalPreferenceControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1132673
+      },
+      "writtenOn": "2024-12-20T07:05:14Z",
+      "side": 1,
+      "message": "It\u0027s a system api so settings app should be able to use it without having to link against the impl lib.",
+      "parentUuid": "18eed858_e615e422",
+      "range": {
+        "startLine": 48,
+        "startChar": 48,
+        "endLine": 48,
+        "endChar": 79
+      },
+      "revId": "64b22b83b2d03fbd4eb1815cf11263fcd671be95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
