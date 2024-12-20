@@ -39,28 +39,31 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.robolectric.RobolectricTestRunner;
+import org.robolectric.shadows.ShadowSystemProperties;
 
 /** Tests {@link LinuxTerminalPreferenceController} */
 @RunWith(RobolectricTestRunner.class)
 public class LinuxTerminalPreferenceControllerTest {
+    private static final String TERMINAL_PACKAGE_NAME = "com.android.virtualization.terminal";
+    private static final String VM_PROP_NAME = "ro.boot.hypervisor.vm.supported";
 
     @Mock private Context mContext;
     @Mock private PackageManager mPackageManager;
     @Mock private StorageManager mStorageManager;
     @Mock private PackageInfo mPackageInfo;
 
-    private String mTerminalPackageName = "com.android.virtualization.terminal";
     private LinuxTerminalPreferenceController mController;
 
     @Before
     public void setup() throws Exception {
         MockitoAnnotations.initMocks(this);
-        doReturn(mTerminalPackageName).when(mContext).getString(TERMINAL_PACKAGE_NAME_RESID);
+        doReturn(TERMINAL_PACKAGE_NAME).when(mContext).getString(TERMINAL_PACKAGE_NAME_RESID);
+        ShadowSystemProperties.override(VM_PROP_NAME, "1");
 
         doReturn(mPackageManager).when(mContext).getPackageManager();
         doReturn(mPackageInfo)
                 .when(mPackageManager)
-                .getPackageInfo(eq(mTerminalPackageName), anyInt());
+                .getPackageInfo(eq(TERMINAL_PACKAGE_NAME), anyInt());
 
         doReturn(mStorageManager).when(mContext).getSystemService(StorageManager.class);
         doReturn(STORAGE_MIN_BYTES).when(mStorageManager).getPrimaryStorageSize();
@@ -78,6 +81,15 @@ public class LinuxTerminalPreferenceControllerTest {
         doReturn(STORAGE_MIN_BYTES / 2).when(mStorageManager).getPrimaryStorageSize();
 
         mController = createController(mContext);
+
+        assertThat(mController.isAvailable()).isFalse();
+    }
+
+    @Test
+    public void isAvailable_whenVmNotSupported_returnFalse() {
+        ShadowSystemProperties.override(VM_PROP_NAME, "0");
+
+        mController = createController(mContext, MEMORY_MIN_BYTES);
 
         assertThat(mController.isAvailable()).isFalse();
     }
@@ -102,7 +114,7 @@ public class LinuxTerminalPreferenceControllerTest {
     public void isAvailable_whenAppDoesNotExist_returnsFalse() throws Exception {
         doThrow(new NameNotFoundException())
                 .when(mPackageManager)
-                .getPackageInfo(eq(mTerminalPackageName), anyInt());
+                .getPackageInfo(eq(TERMINAL_PACKAGE_NAME), anyInt());
 
         mController = createController(mContext);
 
