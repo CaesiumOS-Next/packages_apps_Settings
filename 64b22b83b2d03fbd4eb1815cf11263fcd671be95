@@ -70,6 +70,30 @@
       },
       "revId": "64b22b83b2d03fbd4eb1815cf11263fcd671be95",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6614f67_394cf74f",
+        "filename": "tests/robotests/src/com/android/settings/development/linuxterminal/LinuxTerminalPreferenceControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 48,
+      "author": {
+        "id": 1019013
+      },
+      "writtenOn": "2024-12-20T15:32:32Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "cbcee797_71283623",
+      "range": {
+        "startLine": 48,
+        "startChar": 48,
+        "endLine": 48,
+        "endChar": 79
+      },
+      "revId": "64b22b83b2d03fbd4eb1815cf11263fcd671be95",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
