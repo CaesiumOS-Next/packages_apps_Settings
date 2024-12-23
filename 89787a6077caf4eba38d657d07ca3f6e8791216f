@@ -64,6 +64,54 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "03be3212_a8a276db",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Current impl depends on mIsRegisteredListener to ensure pairing as my above comment. Thanks.",
+      "parentUuid": "1ff71310_dc3f58e3",
+      "range": {
+        "startLine": 544,
+        "startChar": 12,
+        "endLine": 544,
+        "endChar": 33
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3f9653c2_e78082b6",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Yes. I agree with it. But the initial sub is not null, which is ensured by its caller MydeviceInfoFragment.",
+      "parentUuid": "6a22caea_489275b6",
+      "range": {
+        "startLine": 544,
+        "startChar": 37,
+        "endLine": 544,
+        "endChar": 54
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "eaeb5648_63b62501",
@@ -87,6 +135,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "bf8b9549_ac5822db",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 553,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "eaeb5648_63b62501",
+      "range": {
+        "startLine": 553,
+        "startChar": 8,
+        "endLine": 553,
+        "endChar": 29
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "3aefe8cb_e1d18217",
@@ -100,6 +172,30 @@
       "writtenOn": "2024-12-20T14:55:21Z",
       "side": 1,
       "message": "same here, early return",
+      "range": {
+        "startLine": 567,
+        "startChar": 8,
+        "endLine": 567,
+        "endChar": 36
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2faf5f36_c7b6f5be",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 567,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "3aefe8cb_e1d18217",
       "range": {
         "startLine": 567,
         "startChar": 8,

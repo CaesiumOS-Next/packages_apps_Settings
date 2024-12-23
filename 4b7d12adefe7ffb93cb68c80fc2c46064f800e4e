@@ -54,6 +54,24 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "1c1c3a46_007ac07a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Done\n\nPS C:\\Users\\hoffc\u003e adb install \\hoffc3-gv\\workspace2\\LA.QSSI.16.0\\out\\target\\product\\qssi_64\\testcases\\SettingsUnitTests\\arm64\\SettingsUnitTests.apk\nPerforming Streamed Install\nSuccess\nPS C:\\Users\\hoffc\u003e adb shell am instrument -w -e class com.android.settings.deviceinfo.simstatus.SimStatusDialogControllerTest com.android.settings.tests.unit/androidx.test.runner.AndroidJUnitRunner\n\ncom.android.settings.deviceinfo.simstatus.SimStatusDialogControllerTest:............\n\nTime: 0.271\n\nOK (12 tests)",
+      "parentUuid": "55218473_607b1b6f",
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "9ddd1c06_d092a3c3",
@@ -115,6 +133,30 @@
       "side": 1,
       "message": "then wouldn\u0027t the callback is still being registered for an already no longer used sub id?",
       "parentUuid": "0b48ca9a_19b1f644",
+      "range": {
+        "startLine": 110,
+        "startChar": 57,
+        "endLine": 111,
+        "endChar": 41
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00dd41fa_54d88cdf",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "It is not no longer used sub id. It may be used when the re-insert the sim card after removing it.",
+      "parentUuid": "91e09d68_77b6a88c",
       "range": {
         "startLine": 110,
         "startChar": 57,
@@ -196,6 +238,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "cb229746_643ad0f5",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "As my comment above. The previous mSubscriptionInfo may have become null. It cannot cover the fail case just comparing the null and new mSubscriptionInfo.",
+      "parentUuid": "f7e7653e_c05af730",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "085be8c0_bd9a6bdc",
@@ -257,6 +323,30 @@
       "side": 1,
       "message": "please remove it, thanks",
       "parentUuid": "4b1a37a8_b305b530",
+      "range": {
+        "startLine": 206,
+        "startChar": 8,
+        "endLine": 206,
+        "endChar": 78
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fbf0d9a1_54d0a5fd",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 206,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "It has been done. Please check the latest patch. Thanks.",
+      "parentUuid": "0987585c_38d62f09",
       "range": {
         "startLine": 206,
         "startChar": 8,
@@ -597,6 +687,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6695c845_c83569ed",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 268,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "Please check the latest patch. The mTelephonyManager have been re-instancialized in the Class funtion.",
+      "parentUuid": "7035e69f_966dc7ae",
+      "range": {
+        "startLine": 268,
+        "startChar": 8,
+        "endLine": 268,
+        "endChar": 32
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "f3cf2e92_05ca5afc",
@@ -658,6 +772,30 @@
       "side": 1,
       "message": "register and deregister should pair to each other.\n\nIf we register in onResume, deregister should be in onPause, not in onDestroy (deinitialize).\n\n(it should be in onStart/onStop as it updates UI, but in this change keep it in onPause)\n\nBut note if it\u0027s in onPause, mSubscriptionInfo may already be outdated when the fragment is paused.",
       "parentUuid": "b4b09c28_b1bbb022",
+      "range": {
+        "startLine": 289,
+        "startChar": 9,
+        "endLine": 289,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2e6b6e31_e3d70d40",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-23T01:52:53Z",
+      "side": 1,
+      "message": "I agree with you about the pair.But mSubscriptionInfo may become null. That is why need move the un-registration into onDestroy (deinitialize). \n\nAbout the registration in onResume, That is why I need add the flag to make sure its registration occurs only once to ensure pairing, Not just simply depends on fragment lifecycle to ensure pairing.",
+      "parentUuid": "aac55f28_de554df7",
       "range": {
         "startLine": 289,
         "startChar": 9,
