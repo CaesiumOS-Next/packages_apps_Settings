@@ -74,6 +74,24 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "ba0d0a68_4fb943d4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "please add NEW tests to packages/apps/Settings/tests/unit/src/com/android/settings/deviceinfo/simstatus/SimStatusDialogControllerTest.java, ensuring existing tests passing is not enough",
+      "parentUuid": "1c1c3a46_007ac07a",
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "9ddd1c06_d092a3c3",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -169,6 +187,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "1558f9ea_a7d8f37d",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 111,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "then we should register the callback when it is re-inserted, like a newly inserted SIM",
+      "parentUuid": "00dd41fa_54d88cdf",
+      "range": {
+        "startLine": 110,
+        "startChar": 57,
+        "endLine": 111,
+        "endChar": 41
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "aecdfa00_3a8e61b7",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 8
@@ -252,6 +294,30 @@
       "side": 1,
       "message": "As my comment above. The previous mSubscriptionInfo may have become null. It cannot cover the fail case just comparing the null and new mSubscriptionInfo.",
       "parentUuid": "f7e7653e_c05af730",
+      "range": {
+        "startLine": 133,
+        "startChar": 16,
+        "endLine": 133,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "efe20bf2_f39db7f2",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 133,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "if mSubscriptionInfo becomes null, the callback should be deregistered. Next existing mSubscriptionInfo should trigger a new callback registration.",
+      "parentUuid": "cb229746_643ad0f5",
       "range": {
         "startLine": 133,
         "startChar": 16,
@@ -796,6 +862,30 @@
       "side": 1,
       "message": "I agree with you about the pair.But mSubscriptionInfo may become null. That is why need move the un-registration into onDestroy (deinitialize). \n\nAbout the registration in onResume, That is why I need add the flag to make sure its registration occurs only once to ensure pairing, Not just simply depends on fragment lifecycle to ensure pairing.",
       "parentUuid": "aac55f28_de554df7",
+      "range": {
+        "startLine": 289,
+        "startChar": 9,
+        "endLine": 289,
+        "endChar": 29
+      },
+      "revId": "4b7d12adefe7ffb93cb68c80fc2c46064f800e4e",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "b91fd001_bf62597e",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 8
+      },
+      "lineNbr": 289,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "there should be 2 callbacks\n\n1. listening to SIM changes on the slot, not related to sub ID\n2. listening to sub ID changes\n\ninstead of mixing them with 1 callback",
+      "parentUuid": "2e6b6e31_e3d70d40",
       "range": {
         "startLine": 289,
         "startChar": 9,

@@ -16,6 +16,29 @@
       "message": "zhibinliu@google.com Thanks for your comments.Done. Please review.",
       "revId": "b51ea67b871c9a5a361a9fadf8bfb966abf96113",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "eff1d6d2_8ec51295",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 10
+      },
+      "lineNbr": 208,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "just leave it null",
+      "range": {
+        "startLine": 208,
+        "startChar": 12,
+        "endLine": 208,
+        "endChar": 82
+      },
+      "revId": "b51ea67b871c9a5a361a9fadf8bfb966abf96113",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }

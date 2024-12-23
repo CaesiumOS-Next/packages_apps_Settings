@@ -114,6 +114,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7fd0075c_3825f357",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 9
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2024-12-23T14:56:49Z",
+      "side": 1,
+      "message": "how this fragment could ensure it?\n\nWhat if when the fragment is showing to user and user inserts a new SIM?",
+      "parentUuid": "3f9653c2_e78082b6",
+      "range": {
+        "startLine": 544,
+        "startChar": 37,
+        "endLine": 544,
+        "endChar": 54
+      },
+      "revId": "89787a6077caf4eba38d657d07ca3f6e8791216f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "eaeb5648_63b62501",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 9
