@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1adf69cf_b4f33be8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019013
+      },
+      "writtenOn": "2024-12-24T07:33:14Z",
+      "side": 1,
+      "message": "Gentle reminder for Settings team\u0027s review.",
+      "revId": "614074e5c789025e5e0e934e025d2555f28461e1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
