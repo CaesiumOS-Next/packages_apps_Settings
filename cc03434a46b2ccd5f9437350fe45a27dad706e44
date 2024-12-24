@@ -1,0 +1,39 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "16c45c0d_ad890453",
+        "filename": "src/com/android/settings/network/telephony/MobileNetworkSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1432429
+      },
+      "writtenOn": "2024-12-24T04:00:14Z",
+      "side": 1,
+      "message": "This shall be enough to block guest user enter this page by adb",
+      "fixSuggestions": [
+        {
+          "fixId": "74378609_ba043c2c",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/network/telephony/MobileNetworkSettings.java",
+              "range": {
+                "startLine": 347,
+                "startChar": 0,
+                "endLine": 348,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "cc03434a46b2ccd5f9437350fe45a27dad706e44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
