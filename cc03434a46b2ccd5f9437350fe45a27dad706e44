@@ -34,6 +34,24 @@
       ],
       "revId": "cc03434a46b2ccd5f9437350fe45a27dad706e44",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "049fed5e_c79b2eec",
+        "filename": "src/com/android/settings/network/telephony/MobileNetworkSettings.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 347,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2024-12-24T05:29:55Z",
+      "side": 1,
+      "message": "Yes,we need block guest user to change mobile network settings by adb or launching from other apps.\n\n@Tom, what is your concern?",
+      "parentUuid": "16c45c0d_ad890453",
+      "revId": "cc03434a46b2ccd5f9437350fe45a27dad706e44",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
