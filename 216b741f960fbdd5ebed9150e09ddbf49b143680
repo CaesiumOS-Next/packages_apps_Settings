@@ -24,6 +24,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "0cfb57c3_46eab829",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2025-01-02T08:20:01Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "5e8b44bd_b4c59ca2",
+      "range": {
+        "startLine": 190,
+        "startChar": 8,
+        "endLine": 190,
+        "endChar": 61
+      },
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "95ccad32_b6f0ac89",
@@ -65,6 +89,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "a3b75cf5_4e20a0a5",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2025-01-02T08:20:01Z",
+      "side": 1,
+      "message": "add sub specific telephony manager",
+      "parentUuid": "95ccad32_b6f0ac89",
+      "range": {
+        "startLine": 214,
+        "startChar": 8,
+        "endLine": 214,
+        "endChar": 35
+      },
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d3de1ef8_0d6cf5fa",
@@ -78,6 +126,30 @@
       "writtenOn": "2025-01-02T07:37:53Z",
       "side": 1,
       "message": "this check stops detection of sub change when the fragment is RESUME if initially no sub",
+      "range": {
+        "startLine": 544,
+        "startChar": 42,
+        "endLine": 544,
+        "endChar": 59
+      },
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e061f3ca_f6a070b2",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2025-01-02T08:20:01Z",
+      "side": 1,
+      "message": "Yes. As we all know, telephony callback need to tightly bind to specific sub. If no sub, telephony callback cannot be registered. That is why need to re-register the telephony callback in onSubscriptionsChanged callback. It cannot just simply pair the register/unregister by onResume and onPause.",
+      "parentUuid": "d3de1ef8_0d6cf5fa",
       "range": {
         "startLine": 544,
         "startChar": 42,
