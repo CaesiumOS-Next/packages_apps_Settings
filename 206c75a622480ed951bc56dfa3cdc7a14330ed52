@@ -1,0 +1,182 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "baabe8aa_7904a520",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 5
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "add NEW unit tests, for the new logic added in this change",
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ca7f8955_b35d4f50",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "2 listeners\n\n1 for sub change, which needs to be live between initialize and deinitialize\n1 for sub specific changes, which can be live between onResume and onPause\n\nOr you will need to getPhoneSubscriptionInfo when onResume to get latest sub in case sub has changed out of RESUME state",
+      "range": {
+        "startLine": 103,
+        "startChar": 49,
+        "endLine": 103,
+        "endChar": 80
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d954e742_1b7481b3",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "these 2 should use different conditions",
+      "range": {
+        "startLine": 113,
+        "startChar": 24,
+        "endLine": 114,
+        "endChar": 52
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "ea4a85a1_6aac0324",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "rename it to mDefaultSubTelephonyManager",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 25
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d927f8b3_e1cc2130",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "registerTelephonyCallback always recreate it, doesn\u0027t need to be set here",
+      "range": {
+        "startLine": 194,
+        "startChar": 12,
+        "endLine": 194,
+        "endChar": 29
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "181143f9_b6583d1d",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 194,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "add a new member for it, call it mSubTelephonyManager",
+      "range": {
+        "startLine": 194,
+        "startChar": 12,
+        "endLine": 194,
+        "endChar": 29
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6340b8fe_db8f0288",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "why this check?",
+      "range": {
+        "startLine": 546,
+        "startChar": 12,
+        "endLine": 546,
+        "endChar": 38
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "24f52213_0fd7789c",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T04:57:35Z",
+      "side": 1,
+      "message": "final",
+      "range": {
+        "startLine": 550,
+        "startChar": 8,
+        "endLine": 550,
+        "endChar": 26
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
