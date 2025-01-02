@@ -67,6 +67,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8df7b8f4_904f97b7",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "this is not done",
+      "parentUuid": "92f1c9df_23c6725f",
+      "range": {
+        "startLine": 103,
+        "startChar": 49,
+        "endLine": 103,
+        "endChar": 80
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "d954e742_1b7481b3",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 5
@@ -114,6 +138,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "7cd024e9_8b685ae7",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "unregistration is only about the original sub.\n\nregistration is only about the new sub.\n\nif the sub doesn\u0027t change, both are not needed.",
+      "parentUuid": "8d674870_34a995e0",
+      "range": {
+        "startLine": 113,
+        "startChar": 24,
+        "endLine": 114,
+        "endChar": 52
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "ea4a85a1_6aac0324",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 5
@@ -149,6 +197,30 @@
       "side": 1,
       "message": "Why need to do the differentiation?",
       "parentUuid": "ea4a85a1_6aac0324",
+      "range": {
+        "startLine": 192,
+        "startChar": 8,
+        "endLine": 192,
+        "endChar": 25
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "f3cc3b82_e512a8aa",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 192,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "mContext.getSystemService(TelephonyManager.class) is meaningless in this class, remove it.",
+      "parentUuid": "14d07421_64cba8d4",
       "range": {
         "startLine": 192,
         "startChar": 8,
@@ -302,6 +374,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "f8465917_1ed1aae5",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 546,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "you are pairing onResume/onPause, why we need to check if it\u0027s registered or not?",
+      "parentUuid": "ee27f7fd_58ff3ce2",
+      "range": {
+        "startLine": 546,
+        "startChar": 12,
+        "endLine": 546,
+        "endChar": 38
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "24f52213_0fd7789c",
         "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
         "patchSetId": 5
@@ -337,6 +433,30 @@
       "side": 1,
       "message": "Can not be changed to final.",
       "parentUuid": "24f52213_0fd7789c",
+      "range": {
+        "startLine": 550,
+        "startChar": 8,
+        "endLine": 550,
+        "endChar": 26
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c2d55ec_1be29be3",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 550,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "reopen for the other comment",
+      "parentUuid": "f3bdc1ee_2082ef0f",
       "range": {
         "startLine": 550,
         "startChar": 8,

@@ -1,0 +1,91 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5e8b44bd_b4c59ca2",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 190,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "remove this",
+      "range": {
+        "startLine": 190,
+        "startChar": 8,
+        "endLine": 190,
+        "endChar": 61
+      },
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "95ccad32_b6f0ac89",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 214,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "don\u0027t call it, or make sure sub specific telephony manager exists",
+      "range": {
+        "startLine": 214,
+        "startChar": 8,
+        "endLine": 214,
+        "endChar": 35
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "f28f8741_ef8c71ea",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+              "range": {
+                "startLine": 214,
+                "startChar": 0,
+                "endLine": 215,
+                "endChar": 0
+              },
+              "replacement": ""
+            }
+          ]
+        }
+      ],
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d3de1ef8_0d6cf5fa",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 544,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-02T07:37:53Z",
+      "side": 1,
+      "message": "this check stops detection of sub change when the fragment is RESUME if initially no sub",
+      "range": {
+        "startLine": 544,
+        "startChar": 42,
+        "endLine": 544,
+        "endChar": 59
+      },
+      "revId": "216b741f960fbdd5ebed9150e09ddbf49b143680",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
