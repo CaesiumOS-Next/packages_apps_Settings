@@ -113,6 +113,30 @@
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "4f2c271e_62202f04",
+        "filename": "src/com/android/settings/deviceinfo/simstatus/SimStatusDialogController.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 103,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-04T11:21:41Z",
+      "side": 1,
+      "message": "saw getPhoneSubscriptionInfo in onResume, closing",
+      "parentUuid": "2db78720_cdf478f7",
+      "range": {
+        "startLine": 103,
+        "startChar": 49,
+        "endLine": 103,
+        "endChar": 80
+      },
+      "revId": "206c75a622480ed951bc56dfa3cdc7a14330ed52",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "d954e742_1b7481b3",
