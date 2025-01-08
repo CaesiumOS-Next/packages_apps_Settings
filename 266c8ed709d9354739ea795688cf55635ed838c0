@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": true,
+      "key": {
+        "uuid": "d0bc3b53_cba47824",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 9,
+      "author": {
+        "id": 1308560
+      },
+      "writtenOn": "2025-01-08T10:43:06Z",
+      "side": 1,
+      "message": "Please run three testcases and add `Test: \u003cwhat cases you test\u003e` here.\n1. tests/spa_unit/src/com/android/settings/network/telephony/NetworkSelectRepositoryTest.kt\n2. tests/unit/src/com/android/settings/network/telephony/NetworkSelectSettingsTest.java\n3. tests/spa_unit/src/com/android/settings/network/telephony/scan/NetworkScanRepositoryTest.kt",
+      "revId": "266c8ed709d9354739ea795688cf55635ed838c0",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": false,
       "key": {
         "uuid": "e1b72cef_c5422926",
