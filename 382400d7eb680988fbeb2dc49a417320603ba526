@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "4e78de47_55b2fe8e",
+        "filename": "tests/unit/src/com/android/settings/deviceinfo/simstatus/SimStatusDialogControllerTest.java",
+        "patchSetId": 12
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-01-08T02:27:20Z",
+      "side": 1,
+      "message": "use different TelephonyManager for different subs, then you can test the actual behavior",
+      "range": {
+        "startLine": 125,
+        "startChar": 17,
+        "endLine": 125,
+        "endChar": 40
+      },
+      "revId": "382400d7eb680988fbeb2dc49a417320603ba526",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
