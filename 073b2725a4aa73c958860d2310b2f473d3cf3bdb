@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "2cbb0aee_5793569d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2025-01-16T11:27:24Z",
+      "side": 1,
+      "message": "friendly ping, we need help with the presubmit here, guess there is some conflict internally?",
+      "revId": "073b2725a4aa73c958860d2310b2f473d3cf3bdb",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
