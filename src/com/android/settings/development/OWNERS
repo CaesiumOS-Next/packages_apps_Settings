@@ -12,6 +12,8 @@ per-file ShowRefreshRatePreferenceController.java=file:platform/frameworks/nativ
 
 # DesktopModePreferenceController
 per-file DesktopModePreferenceController.java=file:platform/frameworks/base:/libs/WindowManager/Shell/src/com/android/wm/shell/desktopmode/OWNERS
+# DesktopExperiencePreferenceController
+per-file DesktopExperiencePreferenceController.java=file:platform/frameworks/base:/libs/WindowManager/Shell/src/com/android/wm/shell/desktopmode/OWNERS
 
 # ADB
 per-file Adb*=set noparent
