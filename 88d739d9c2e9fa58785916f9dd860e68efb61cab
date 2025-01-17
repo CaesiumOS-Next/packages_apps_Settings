@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8188b428_af071276",
+        "filename": "src/com/android/settings/development/OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1986461
+      },
+      "writtenOn": "2025-01-17T18:39:22Z",
+      "side": 1,
+      "message": "With more than 1 file, consider creating a subfolder for these where you can add a dedicated OWNERS file; this is easier to manage and trace back owners when looking at a particular file",
+      "revId": "88d739d9c2e9fa58785916f9dd860e68efb61cab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
