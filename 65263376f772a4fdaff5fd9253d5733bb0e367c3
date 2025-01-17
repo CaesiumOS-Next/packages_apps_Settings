@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9a3dc841_2aab94c8",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1120458
+      },
+      "writtenOn": "2025-01-17T19:29:39Z",
+      "side": 1,
+      "message": "lgtm, but I\u0027m wondering if Settings team could shine a light on whether this is usual, or if there is some other bugs, since reporting party didn\u0027t seem 100% clear on what was happening either.",
+      "range": {
+        "startLine": 10,
+        "startChar": 60,
+        "endLine": 10,
+        "endChar": 136
+      },
+      "revId": "65263376f772a4fdaff5fd9253d5733bb0e367c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
