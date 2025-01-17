@@ -92,7 +92,15 @@ public class Enable16KbDeviceTest {
         // Verify that ext4 toggle is visible
         verifyTextOnScreen(EXT4_TITLE);
 
-        mDevice.wait(Until.findObject(By.text(EXT4_CONFIRMATION)), TIMEOUT).click();
+        UiObject2 confirmationObject =
+            mDevice.wait(Until.findObject(By.text(EXT4_CONFIRMATION)), TIMEOUT);
+        if (confirmationObject == null) {
+            // Workaround for (b/390535191). AOSP targets display the string in all caps.
+            confirmationObject =
+                mDevice.wait(Until.findObject(By.text(EXT4_CONFIRMATION.toUpperCase())), TIMEOUT);
+        }
+        assertTrue(confirmationObject);
+        confirmationObject.click();
     }
 
     @Test
