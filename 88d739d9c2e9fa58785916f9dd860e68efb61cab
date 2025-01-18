@@ -16,6 +16,24 @@
       "message": "With more than 1 file, consider creating a subfolder for these where you can add a dedicated OWNERS file; this is easier to manage and trace back owners when looking at a particular file",
       "revId": "88d739d9c2e9fa58785916f9dd860e68efb61cab",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "8ba5bd3d_da1f7f65",
+        "filename": "src/com/android/settings/development/OWNERS",
+        "patchSetId": 2
+      },
+      "lineNbr": 13,
+      "author": {
+        "id": 1647116
+      },
+      "writtenOn": "2025-01-18T00:02:46Z",
+      "side": 1,
+      "message": "As soon as this dev option launches, DesktopModePreferenceController will be removed, as not useful anymore. I am not sure I want to create a folder for a file that is going to disappear soon. WDYT?",
+      "parentUuid": "8188b428_af071276",
+      "revId": "88d739d9c2e9fa58785916f9dd860e68efb61cab",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
