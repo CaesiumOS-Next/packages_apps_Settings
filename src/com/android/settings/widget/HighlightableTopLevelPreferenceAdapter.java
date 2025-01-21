@@ -223,7 +223,12 @@ public class HighlightableTopLevelPreferenceAdapter extends RoundCornerPreferenc
 
         final int scrollY = view.getTop();
         if (scrollY > 0) {
-            mRecyclerView.nestedScrollBy(0, scrollY);
+            try {
+                mRecyclerView.nestedScrollBy(0, scrollY);
+            } catch (Exception e) {
+                mRecyclerView.stopNestedScroll();
+                Log.e(TAG, "Index out of bounds error: " + e.getMessage());
+            }
         }
     }
 
