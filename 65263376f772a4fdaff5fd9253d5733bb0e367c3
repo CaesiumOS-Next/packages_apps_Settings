@@ -22,6 +22,30 @@
       },
       "revId": "65263376f772a4fdaff5fd9253d5733bb0e367c3",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7ed6ef8f_5f675c32",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 10,
+      "author": {
+        "id": 1956258
+      },
+      "writtenOn": "2025-01-21T18:35:42Z",
+      "side": 1,
+      "message": "@cantol@google.com Do you know if there is place to keep the notification IDs posted by settings app in order?",
+      "parentUuid": "9a3dc841_2aab94c8",
+      "range": {
+        "startLine": 10,
+        "startChar": 60,
+        "endLine": 10,
+        "endChar": 136
+      },
+      "revId": "65263376f772a4fdaff5fd9253d5733bb0e367c3",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
