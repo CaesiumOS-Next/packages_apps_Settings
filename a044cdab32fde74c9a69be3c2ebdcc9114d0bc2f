@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "9f81d795_d856b0b5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1956258
+      },
+      "writtenOn": "2025-01-22T00:07:35Z",
+      "side": 1,
+      "message": "Can we also verify these on non-aosp targets in abtd?",
+      "revId": "a044cdab32fde74c9a69be3c2ebdcc9114d0bc2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
