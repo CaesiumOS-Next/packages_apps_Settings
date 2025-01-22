@@ -34,6 +34,24 @@
       "parentUuid": "9f81d795_d856b0b5",
       "revId": "a044cdab32fde74c9a69be3c2ebdcc9114d0bc2f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b6a13eac_33ef0072",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1988540
+      },
+      "writtenOn": "2025-01-22T06:44:13Z",
+      "side": 1,
+      "message": "Verified on non-AOSP Pixel 8 targets",
+      "parentUuid": "6a58d6c2_cc1b40a0",
+      "revId": "a044cdab32fde74c9a69be3c2ebdcc9114d0bc2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
