@@ -16,6 +16,24 @@
       "message": "Can we also verify these on non-aosp targets in abtd?",
       "revId": "a044cdab32fde74c9a69be3c2ebdcc9114d0bc2f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6a58d6c2_cc1b40a0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1988540
+      },
+      "writtenOn": "2025-01-22T00:10:36Z",
+      "side": 1,
+      "message": "(Un-resolving your comment to track)\nCreated ABTD builds for non-AOSP targets, will close comment once verified",
+      "parentUuid": "9f81d795_d856b0b5",
+      "revId": "a044cdab32fde74c9a69be3c2ebdcc9114d0bc2f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
