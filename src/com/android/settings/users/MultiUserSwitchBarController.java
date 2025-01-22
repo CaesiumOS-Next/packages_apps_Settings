@@ -29,11 +29,11 @@ import com.android.settings.widget.SwitchWidgetController;
 import com.android.settingslib.RestrictedLockUtils;
 import com.android.settingslib.RestrictedLockUtilsInternal;
 import com.android.settingslib.core.lifecycle.LifecycleObserver;
-import com.android.settingslib.core.lifecycle.events.OnStart;
-import com.android.settingslib.core.lifecycle.events.OnStop;
+import com.android.settingslib.core.lifecycle.events.OnResume;
+import com.android.settingslib.core.lifecycle.events.OnPause;
 
 public class MultiUserSwitchBarController implements SwitchWidgetController.OnSwitchChangeListener,
-        LifecycleObserver, OnStart, OnStop {
+        LifecycleObserver, OnResume, OnPause {
     private static final String TAG = "MultiUserSwitchBarCtrl";
 
     interface OnMultiUserSwitchChangedListener {
@@ -83,12 +83,12 @@ public class MultiUserSwitchBarController implements SwitchWidgetController.OnSw
     }
 
     @Override
-    public void onStart() {
+    public void onResume() {
         mSwitchBar.startListening();
     }
 
     @Override
-    public void onStop() {
+    public void onPause() {
         mSwitchBar.stopListening();
     }
 
