@@ -110,5 +110,10 @@ public class KeyboardSettings extends DashboardFragment {
     }
 
     public static final BaseSearchIndexProvider SEARCH_INDEX_DATA_PROVIDER =
-            new BaseSearchIndexProvider(R.xml.keyboard_settings);
+            new BaseSearchIndexProvider(R.xml.keyboard_settings) {
+               @Override
+               public List<AbstractPreferenceController> createPreferenceControllers(Context context) {
+                   return buildPreferenceControllers(context, null);
+               }
+            };
 }
