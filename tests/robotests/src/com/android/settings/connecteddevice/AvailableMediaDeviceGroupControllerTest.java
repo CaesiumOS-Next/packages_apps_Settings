@@ -64,6 +64,7 @@ import com.android.settings.testutils.shadow.ShadowAlertDialogCompat;
 import com.android.settings.testutils.shadow.ShadowAudioManager;
 import com.android.settings.testutils.shadow.ShadowBluetoothAdapter;
 import com.android.settings.testutils.shadow.ShadowBluetoothUtils;
+import com.android.settingslib.bluetooth.AudioRoutingHelper;
 import com.android.settingslib.bluetooth.BluetoothCallback;
 import com.android.settingslib.bluetooth.BluetoothEventManager;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
@@ -176,6 +177,8 @@ public class AvailableMediaDeviceGroupControllerTest {
         mAvailableMediaDeviceGroupController.setDialogHandler(mDialogHandler);
         mAvailableMediaDeviceGroupController.setFragmentManager(mFragManager);
         mAvailableMediaDeviceGroupController.mPreferenceGroup = mPreferenceGroup;
+        mAvailableMediaDeviceGroupController.audioRoutingHelper =
+                spy(new AudioRoutingHelper(mContext));
     }
 
     @Test
@@ -400,6 +403,27 @@ public class AvailableMediaDeviceGroupControllerTest {
                         BluetoothDevicePreference.SortType.TYPE_NO_SORT);
         mAvailableMediaDeviceGroupController.onDeviceClick(preference);
         verify(mCachedBluetoothDevice).setActive();
+    }
+
+    @Test
+    public void onDeviceClick_audioSharingOff_setActiveAndSetAudioRoute() {
+        mSetFlagsRule.enableFlags(
+                Flags.FLAG_SET_PREFERRED_AUDIO_ROUTE_FOR_BT_DEVICE_WHEN_WIRED_CONNECTED);
+        mSetFlagsRule.disableFlags(Flags.FLAG_ENABLE_LE_AUDIO_SHARING);
+        when(mCachedBluetoothDevice.getDevice()).thenReturn(mDevice);
+        when(mCachedBluetoothDevice.setActive()).thenReturn(true);
+        Pair<Drawable, String> pair = new Pair<>(mDrawable, TEST_DEVICE_NAME);
+        when(mCachedBluetoothDevice.getDrawableWithDescription()).thenReturn(pair);
+        BluetoothDevicePreference preference =
+                new BluetoothDevicePreference(
+                        mContext,
+                        mCachedBluetoothDevice,
+                        true,
+                        BluetoothDevicePreference.SortType.TYPE_NO_SORT);
+        mAvailableMediaDeviceGroupController.onDeviceClick(preference);
+        verify(mCachedBluetoothDevice).setActive();
+        verify(mAvailableMediaDeviceGroupController.audioRoutingHelper)
+                .setPreferredDeviceForMediaAudioRoute(mCachedBluetoothDevice);
     }
 
     @Test

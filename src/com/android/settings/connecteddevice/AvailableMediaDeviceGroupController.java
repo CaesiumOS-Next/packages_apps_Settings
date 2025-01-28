@@ -16,6 +16,7 @@
 package com.android.settings.connecteddevice;
 
 import static com.android.settingslib.Utils.isAudioModeOngoingCall;
+import static com.android.settingslib.flags.Flags.setPreferredAudioRouteForBtDeviceWhenWiredConnected;
 
 import android.app.settings.SettingsEnums;
 import android.bluetooth.BluetoothDevice;
@@ -48,6 +49,7 @@ import com.android.settings.connecteddevice.audiosharing.AudioSharingDialogHandl
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.overlay.FeatureFactory;
+import com.android.settingslib.bluetooth.AudioRoutingHelper;
 import com.android.settingslib.bluetooth.BluetoothCallback;
 import com.android.settingslib.bluetooth.BluetoothUtils;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
@@ -71,6 +73,7 @@ public class AvailableMediaDeviceGroupController extends BasePreferenceControlle
     private final Executor mExecutor;
     @VisibleForTesting @Nullable LocalBluetoothManager mBtManager;
     @VisibleForTesting @Nullable PreferenceGroup mPreferenceGroup;
+    @VisibleForTesting @Nullable AudioRoutingHelper mAudioRoutingHelper;
     @Nullable private LocalBluetoothLeBroadcast mBroadcast;
     @Nullable private LocalBluetoothLeBroadcastAssistant mAssistant;
     @Nullable private BluetoothDeviceUpdater mBluetoothDeviceUpdater;
@@ -189,6 +192,7 @@ public class AvailableMediaDeviceGroupController extends BasePreferenceControlle
                             ? null
                             : mBtManager.getProfileManager().getLeAudioBroadcastAssistantProfile();
         }
+        mAudioRoutingHelper = new AudioRoutingHelper(mContext);
     }
 
     @Override
@@ -283,7 +287,14 @@ public class AvailableMediaDeviceGroupController extends BasePreferenceControlle
             FeatureFactory.getFeatureFactory().getMetricsFeatureProvider()
                     .action(mContext, SettingsEnums.ACTION_MEDIA_DEVICE_CLICK);
         } else {
-            cachedDevice.setActive();
+            boolean result = cachedDevice.setActive();
+            if (setPreferredAudioRouteForBtDeviceWhenWiredConnected() && result) {
+                Log.d(
+                        TAG,
+                        "onDeviceClick: setPreferredDeviceForAudioRoute: "
+                                + cachedDevice.getAddress());
+                mAudioRoutingHelper.setPreferredDeviceForMediaAudioRoute(cachedDevice);
+            }
         }
     }
 
