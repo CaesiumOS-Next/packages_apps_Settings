@@ -17,6 +17,7 @@
 package com.android.settings.connecteddevice.audiosharing;
 
 import static com.android.settingslib.bluetooth.LocalBluetoothLeBroadcast.EXTRA_START_LE_AUDIO_SHARING;
+import static com.android.settingslib.flags.Flags.setPreferredAudioRouteForBtDeviceWhenWiredConnected;
 
 import android.app.settings.SettingsEnums;
 import android.bluetooth.BluetoothCsipSetCoordinator;
@@ -41,6 +42,7 @@ import com.android.settings.bluetooth.Utils;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.dashboard.DashboardFragment;
 import com.android.settings.overlay.FeatureFactory;
+import com.android.settingslib.bluetooth.AudioRoutingHelper;
 import com.android.settingslib.bluetooth.BluetoothUtils;
 import com.android.settingslib.bluetooth.CachedBluetoothDevice;
 import com.android.settingslib.bluetooth.CachedBluetoothDeviceManager;
@@ -68,6 +70,7 @@ public class AudioSharingDialogHandler {
     @Nullable private final AudioManager mAudioManager;
     private final MetricsFeatureProvider mMetricsFeatureProvider;
     private boolean mIsStoppingBroadcast = false;
+    @VisibleForTesting @Nullable AudioRoutingHelper mAudioRoutingHelper;
 
     @VisibleForTesting
     final BluetoothLeBroadcast.Callback mBroadcastCallback =
@@ -161,6 +164,7 @@ public class AudioSharingDialogHandler {
                         : null;
         mAudioManager = context.getSystemService(AudioManager.class);
         mMetricsFeatureProvider = FeatureFactory.getFeatureFactory().getMetricsFeatureProvider();
+        mAudioRoutingHelper = new AudioRoutingHelper(mContext);
     }
 
     /** Register callbacks for dialog handler */
@@ -224,7 +228,16 @@ public class AudioSharingDialogHandler {
                             mLocalBtManager, groupedDevices, /* filterByInSharing= */ true);
             AudioSharingStopDialogFragment.DialogEventListener listener =
                     () -> {
-                        cachedDevice.setActive();
+                        boolean result = cachedDevice.setActive();
+                        if (setPreferredAudioRouteForBtDeviceWhenWiredConnected() && result) {
+                            Log.d(
+                                    TAG,
+                                    "handleNonLeAudioDeviceConnected: isBroadcasting: "
+                                            + isBroadcasting
+                                            + ", setPreferredDeviceForAudioRoute: "
+                                            + cachedDevice.getAddress());
+                            mAudioRoutingHelper.setPreferredDeviceForMediaAudioRoute(cachedDevice);
+                        }
                         mIsStoppingBroadcast = true;
                         AudioSharingUtils.stopBroadcasting(mLocalBtManager);
                     };
@@ -247,7 +260,16 @@ public class AudioSharingDialogHandler {
                     });
         } else {
             if (userTriggered) {
-                cachedDevice.setActive();
+                boolean result = cachedDevice.setActive();
+                if (setPreferredAudioRouteForBtDeviceWhenWiredConnected() && result) {
+                    Log.d(
+                            TAG,
+                            "handleNonLeAudioDeviceConnected: isBroadcasting: "
+                                    + isBroadcasting
+                                    + ", setPreferredDeviceForAudioRoute: "
+                                    + cachedDevice.getAddress());
+                    mAudioRoutingHelper.setPreferredDeviceForMediaAudioRoute(cachedDevice);
+                }
             }
             // Do nothing for ineligible (non LE audio) remote device when no sharing session.
             Log.d(
@@ -393,7 +415,17 @@ public class AudioSharingDialogHandler {
                             @Override
                             public void onCancelClick() {
                                 if (userTriggered) {
-                                    cachedDevice.setActive();
+                                    boolean result = cachedDevice.setActive();
+                                    if (setPreferredAudioRouteForBtDeviceWhenWiredConnected()
+                                            && result) {
+                                        Log.d(
+                                                TAG,
+                                                "handleDeviceConnected: onCancelClick:"
+                                                        + " setPreferredDeviceForAudioRoute: "
+                                                        + cachedDevice.getAddress());
+                                        mAudioRoutingHelper.setPreferredDeviceForMediaAudioRoute(
+                                                cachedDevice);
+                                    }
                                 }
                             }
                         };
@@ -413,8 +445,15 @@ public class AudioSharingDialogHandler {
                             Log.d(TAG, "Show start dialog, device = " + deviceAddress);
                         });
             } else if (userTriggered) {
-                cachedDevice.setActive();
                 Log.d(TAG, "Set active device = " + deviceAddress);
+                boolean result = cachedDevice.setActive();
+                if (setPreferredAudioRouteForBtDeviceWhenWiredConnected() && result) {
+                    Log.d(
+                            TAG,
+                            "handleDeviceConnected: setPreferredDeviceForAudioRoute: "
+                                    + cachedDevice.getAddress());
+                    mAudioRoutingHelper.setPreferredDeviceForMediaAudioRoute(cachedDevice);
+                }
             } else {
                 Log.d(TAG, "Fail to handle LE audio device connected, device = " + deviceAddress);
             }
