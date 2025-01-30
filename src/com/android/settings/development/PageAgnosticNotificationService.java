@@ -36,11 +36,7 @@ public class PageAgnosticNotificationService extends Service {
             "com.android.settings.development.PageAgnosticNotificationService";
     public static final String INTENT_ACTION_DISMISSED =
             "com.android.settings.development.NOTIFICATION_DISMISSED";
-
-    // Updating the notification ID to avoid the notification being dismissed
-    // accidentally by other notifications. ID used is the bug id where this was
-    // reported.
-    private static final int NOTIFICATION_ID = 388678898;
+    private static final int NOTIFICATION_ID = 1;
 
     static final int DISABLE_UPDATES_SETTING = 1;
 
