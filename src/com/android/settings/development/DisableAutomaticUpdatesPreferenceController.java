@@ -70,7 +70,7 @@ public class DisableAutomaticUpdatesPreferenceController extends
     protected void onDeveloperOptionsSwitchDisabled() {
         super.onDeveloperOptionsSwitchDisabled();
         Settings.Global.putInt(mContext.getContentResolver(),
-                Settings.Global.OTA_DISABLE_AUTOMATIC_UPDATE, DISABLE_UPDATES_SETTING);
-        ((TwoStatePreference) mPreference).setChecked(false);
+                Settings.Global.OTA_DISABLE_AUTOMATIC_UPDATE, ENABLE_UPDATES_SETTING);
+        ((TwoStatePreference) mPreference).setChecked(true);
     }
 }

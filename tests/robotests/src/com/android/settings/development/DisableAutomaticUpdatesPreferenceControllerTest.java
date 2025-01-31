@@ -99,10 +99,10 @@ public class DisableAutomaticUpdatesPreferenceControllerTest {
     }
 
     @Test
-    public void onDeveloperOptionsDisabled_shouldDisablePreference() {
+    public void onDeveloperOptionsDisabled_shouldEnablePreference() {
         mController.onDeveloperOptionsDisabled();
 
-        verify(mPreference).setEnabled(false);
-        verify(mPreference).setChecked(false);
+        verify(mPreference).setEnabled(true);
+        verify(mPreference).setChecked(true);
     }
 }
