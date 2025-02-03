@@ -12995,7 +12995,7 @@
     <string name="smart_forwarding_missing_alert_dialog_text">OK</string>
 
     <!-- Title for toggle if user wants to enable 2G [CHAR LIMIT=40] -->
-    <string name="enable_2g_title">Allow 2G</string>
+    <string name="enable_2g_title">Only allow 3G and higher</string>
     <!-- Title for toggle if user wants to enable 2G [CHAR LIMIT=NONE] -->
     <string name="enable_2g_summary">2G is less secure, but may improve your connection in some locations. For emergency calls, 2G is always allowed.</string>
     <!-- Title for if toggle access is disabled by carrier [CHAR LIMIT=NONE] -->
