@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9497407e_f96ec992",
+        "filename": "src/com/android/settings/network/telephony/Enhanced4gBasePreferenceController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 120,
+      "author": {
+        "id": 1432429
+      },
+      "writtenOn": "2025-02-08T07:13:43Z",
+      "side": 1,
+      "message": "These both conditions could be bundled together.",
+      "range": {
+        "startLine": 110,
+        "startChar": 0,
+        "endLine": 120,
+        "endChar": 9
+      },
+      "revId": "db1f82aef4cecaec161ce743678b9f4e1829cb5f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
