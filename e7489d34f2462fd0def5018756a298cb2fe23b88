@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "29582318_a46818b2",
+        "filename": "src/com/android/settings/network/telephony/Enhanced4gBasePreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 112,
+      "author": {
+        "id": 1432429
+      },
+      "writtenOn": "2025-02-10T02:42:19Z",
+      "side": 1,
+      "message": "isConfigForIdentifiedCarrier means\n```\nbundle !\u003d null \u0026\u0026 bundle.getBoolean(KEY_CARRIER_CONFIG_APPLIED_BOOL);\n```\n\nThis has already checked null state and carrier config is applied or not.\n\nHence, My opinion is like below\n\n```\nif (!CarrierConfigManager.isConfigForIdentifiedCarrier(carrierConfig) \u0026\u0026 carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)) {\n     ....\n}\n```",
+      "range": {
+        "startLine": 111,
+        "startChar": 0,
+        "endLine": 112,
+        "endChar": 87
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "092fccae_89c521fd",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/network/telephony/Enhanced4gBasePreferenceController.java",
+              "range": {
+                "startLine": 110,
+                "startChar": 0,
+                "endLine": 112,
+                "endChar": 0
+              },
+              "replacement": "        if (carrierConfig.getBoolean(CarrierConfigManager.KEY_HIDE_ENHANCED_4G_LTE_BOOL)\n"
+            }
+          ]
+        }
+      ],
+      "revId": "e7489d34f2462fd0def5018756a298cb2fe23b88",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
