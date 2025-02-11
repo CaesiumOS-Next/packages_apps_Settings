@@ -272,6 +272,23 @@
       "message": "Hi Google team, please help to review the changes.",
       "revId": "dbbc25bfb37905478d35d5e543ee1d895a878df1",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "341d4f87_6dd54083",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1933051
+      },
+      "writtenOn": "2025-02-11T05:53:28Z",
+      "side": 1,
+      "message": "Android team will review this shortly.",
+      "revId": "dbbc25bfb37905478d35d5e543ee1d895a878df1",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
