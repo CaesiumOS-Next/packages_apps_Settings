@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "752d4518_068f058f",
+        "filename": "tests/Enable16KbTests/src/com/android/test/Enable16KbTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1988540
+      },
+      "writtenOn": "2025-02-11T22:43:47Z",
+      "side": 1,
+      "message": "We still dont know why this the app is not installed in some cases, right?",
+      "range": {
+        "startLine": 57,
+        "startChar": 14,
+        "endLine": 57,
+        "endChar": 52
+      },
+      "revId": "4a55472cf3e539d86d0dba17cef553495fcf163d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
