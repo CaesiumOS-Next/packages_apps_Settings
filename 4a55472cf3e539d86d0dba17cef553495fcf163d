@@ -70,6 +70,30 @@
       },
       "revId": "4a55472cf3e539d86d0dba17cef553495fcf163d",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e8da8088_774060aa",
+        "filename": "tests/Enable16KbTests/src/com/android/test/Enable16KbTest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 1956258
+      },
+      "writtenOn": "2025-02-11T22:52:36Z",
+      "side": 1,
+      "message": "Both cases should throw exception. There is no way by which test can pass if any of these happen.",
+      "parentUuid": "d8b3e572_eb36a7b0",
+      "range": {
+        "startLine": 57,
+        "startChar": 14,
+        "endLine": 57,
+        "endChar": 52
+      },
+      "revId": "4a55472cf3e539d86d0dba17cef553495fcf163d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
