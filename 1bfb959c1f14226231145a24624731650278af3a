@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "02f6a943_f35e43f9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1308560
+      },
+      "writtenOn": "2025-02-13T02:50:43Z",
+      "side": 1,
+      "message": "This is the android settings",
+      "revId": "1bfb959c1f14226231145a24624731650278af3a",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
