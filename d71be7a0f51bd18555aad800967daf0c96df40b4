@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3f03c858_d913069b",
+        "filename": "src/com/android/settings/wifi/details2/WifiDetailPreferenceController2.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 658,
+      "author": {
+        "id": 1367652
+      },
+      "writtenOn": "2025-02-17T22:58:49Z",
+      "side": 1,
+      "message": "This SSID prefernece is designed to `display a different SSID than the Title`.\n\nWifiEntry.shouldShowSsid() will return true if the Title is different to SSID. (e.g. PasspointWifiEntry)\n\nSo changing to getTitle here is not a suitable design.\n\nThanks!",
+      "range": {
+        "startLine": 658,
+        "startChar": 12,
+        "endLine": 658,
+        "endChar": 72
+      },
+      "revId": "d71be7a0f51bd18555aad800967daf0c96df40b4",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
