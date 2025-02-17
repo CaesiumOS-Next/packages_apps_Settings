@@ -16,6 +16,41 @@
       "message": "Please let Edgar check about this patch before submitting",
       "revId": "7cfb1e05a293e33189219cecb571a511ea28a396",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0234ef28_48809dd9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1854976
+      },
+      "writtenOn": "2025-02-17T07:19:40Z",
+      "side": 1,
+      "message": "help to update the related test cases too, thanks",
+      "revId": "7cfb1e05a293e33189219cecb571a511ea28a396",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "94ac3f0f_84c2e908",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1854976
+      },
+      "writtenOn": "2025-02-17T07:19:40Z",
+      "side": 1,
+      "message": "Acknowledged",
+      "parentUuid": "1a14bc97_73a95e4c",
+      "revId": "7cfb1e05a293e33189219cecb571a511ea28a396",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
