@@ -51,12 +51,7 @@ public class Enable16KbTest extends BaseHostJUnit4Test {
     @Test
     @AppModeFull
     public void enable16KbToggle() throws Exception {
-        // Wait for 2 mins device to be online
-        getDevice().waitForDeviceOnline(120000);
-        if (!isPackageInstalled(APP_PACKAGE)) {
-            //If test app has failed for some reason, retry installation
-            installTestApp();
-        }
+        assertTrue(isPackageInstalled(APP_PACKAGE));
 
         // Check if developer option is enabled otherwise exit
         getDevice().enableAdbRoot();
