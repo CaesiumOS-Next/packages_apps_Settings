@@ -68,6 +68,24 @@
       "message": "ping, is there anything we cn do to push this forward? We might need help to kick on the trhugger if there is a flaky test.",
       "revId": "7cfb1e05a293e33189219cecb571a511ea28a396",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "00c97f59_be6c23e3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1854976
+      },
+      "writtenOn": "2025-02-19T15:28:38Z",
+      "side": 1,
+      "message": "I think you have to update this too com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest.updateSeekBar_percentageMode_hasCorrectProperties",
+      "parentUuid": "cd01c1e8_85f30b63",
+      "revId": "7cfb1e05a293e33189219cecb571a511ea28a396",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
