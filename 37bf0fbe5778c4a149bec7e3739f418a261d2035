@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8466d5f_5d4af34b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1004424
+      },
+      "writtenOn": "2025-02-20T08:28:28Z",
+      "side": 1,
+      "message": "Trying to run the tests was a bit of a challenge, there were a lot of build errors in other files, however just dealing with them I now have the following result;\n\n ------------------------\ncom.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest (7 Tests)\n[1/7]  com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#addToScreen_addsToEnd: PASSED (5.302s)\n[2/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#updateSeekBar_routineMode_hasCorrectProperties: PASSED (88ms)\n[3/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#onPreferenceChange_withoutOnStopTrackingTouch_updatesTitleAndDescriptionOnly: PASSED (298ms)\n[4/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#onPreferenceChange_withOnStopTrackingTouch_updatesSettingsGlobal: PASSED (575ms)\n[5/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#updateSeekBar_noneMode_hasCorrectProperties: PASSED (51ms)\n[6/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#updateSeekBar_percentageMode_hasCorrectProperties: PASSED (44ms)\n[7/7] com.android.settings.fuelgauge.batterysaver.BatterySaverScheduleSeekBarControllerTest#onStopTrackingTouch_invalidValue_noUpdates: PASSED (49ms)\n\nSummary (Test executed with 1 devices.)",
+      "revId": "37bf0fbe5778c4a149bec7e3739f418a261d2035",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
