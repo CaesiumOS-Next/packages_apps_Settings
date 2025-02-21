@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "703d71a6_18276c39",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-02-21T01:55:34Z",
+      "side": 1,
+      "message": "hi Cipson, all members of the group are already in the OWNERs list. And I\u0027m not sure if the group in OWNERs file actually works.\n\nSo assigning to you to see if to remove or keep it.",
+      "revId": "4c867c693fa12301d15360a84c8cd4943bdcae8d",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
