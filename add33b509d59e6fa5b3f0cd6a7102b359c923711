@@ -16,6 +16,24 @@
       "message": "could you also add unit tests?",
       "revId": "add33b509d59e6fa5b3f0cd6a7102b359c923711",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a9a8712f_b41205a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1413437
+      },
+      "writtenOn": "2025-02-27T08:03:26Z",
+      "side": 1,
+      "message": "This is one minus optimization, So can you cancel the request to add new unit test cases? \n\nImportantly, now I have not the env which can successfully run the native settings spa_unit test APK. \n\nWhen I run below command, permission denial errors are prompted.\n\nadb shell am instrument -w -e class com.android.settings.spa.network.PrimarySimRepositoryTest com.android.settings.tests.spa_unit/androidx.test.runner.AndroidJUnitRunner",
+      "parentUuid": "3180aeef_027975ca",
+      "revId": "add33b509d59e6fa5b3f0cd6a7102b359c923711",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
