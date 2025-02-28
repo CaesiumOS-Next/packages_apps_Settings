@@ -219,14 +219,13 @@ abstract class DeviceListPreferenceFragment(restrictedKey: String?) :
             )
             return
         }
-        if (Flags.enableHideExclusivelyManagedBluetoothDevice()) {
-            if (cachedDevice.device.bondState == BluetoothDevice.BOND_BONDED
-                && BluetoothUtils.isExclusivelyManagedBluetoothDevice(
-                    prefContext, cachedDevice.device)) {
-                Log.d(TAG, "Trying to create preference for a exclusively managed device")
-                return
-            }
+        if (cachedDevice.device.bondState == BluetoothDevice.BOND_BONDED
+            && BluetoothUtils.isExclusivelyManagedBluetoothDevice(
+                prefContext, cachedDevice.device)) {
+            Log.d(TAG, "Trying to create preference for a exclusively managed device")
+            return
         }
+        
         // Only add device preference when it's not found in the map and there's no other state
         // message showing in the list
         val preference = devicePreferenceMap.computeIfAbsent(cachedDevice) {
