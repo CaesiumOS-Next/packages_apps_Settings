@@ -1,0 +1,74 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "7cc719d4_164355db",
+        "filename": "src/com/android/settings/network/telephony/Enable2gPreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 176,
+      "author": {
+        "id": 1697853
+      },
+      "writtenOn": "2025-03-03T22:43:27Z",
+      "side": 1,
+      "message": "Update to say: `if only 3G and higher`",
+      "fixSuggestions": [
+        {
+          "fixId": "ce30f5f9_a7930a51",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/network/telephony/Enable2gPreferenceController.java",
+              "range": {
+                "startLine": 176,
+                "startChar": 0,
+                "endLine": 177,
+                "endChar": 0
+              },
+              "replacement": "     * Return {@code true} if only 3G and higher is currently enabled.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "49497fc7ba12d6ed13be03b972ef35dbfa2c16d7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2c4d5fdb_9beceff7",
+        "filename": "src/com/android/settings/network/telephony/Enable2gPreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 1697853
+      },
+      "writtenOn": "2025-03-03T22:43:27Z",
+      "side": 1,
+      "message": "Could we actually use the following string: `If an enterprise admin has disabled 2g, we show the toggle as checked.`",
+      "fixSuggestions": [
+        {
+          "fixId": "43834bba_872f42c9",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/network/telephony/Enable2gPreferenceController.java",
+              "range": {
+                "startLine": 184,
+                "startChar": 0,
+                "endLine": 186,
+                "endChar": 0
+              },
+              "replacement": "        // If an enterprise admin has disabled 2g, we show the toggle as checked to avoid\n        // user confusion of seeing a unchecked toggle, but having 2g actually disabled.\n"
+            }
+          ]
+        }
+      ],
+      "revId": "49497fc7ba12d6ed13be03b972ef35dbfa2c16d7",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
