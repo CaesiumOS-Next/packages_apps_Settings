@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c6fdb015_574be0e9",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1407552
+      },
+      "writtenOn": "2025-03-05T02:26:00Z",
+      "side": 1,
+      "message": "Hi @eejiang@google.com\n\nCould you help to take a look this partner\u0027s CL? Thank you.",
+      "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
