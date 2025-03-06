@@ -33,6 +33,24 @@
       "message": "The implementation looks good. \n\nSmall question: Is it easier to just customize the timeout array values (in overlays), instead of adding a limit to the values?",
       "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "7498f478_0156ddff",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3259843
+      },
+      "writtenOn": "2025-03-06T08:36:10Z",
+      "side": 1,
+      "message": "Thanks for reviewing. Overlaying would require overlaying both the values array (screen_timeout_values) and the corresponding translations (screen_timeout_entries). This is something we want to avoid due to the number of translations",
+      "parentUuid": "13d655f1_9c443772",
+      "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
