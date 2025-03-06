@@ -51,6 +51,24 @@
       "parentUuid": "13d655f1_9c443772",
       "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c2da3d4d_a2321b83",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2025-03-06T09:47:17Z",
+      "side": 1,
+      "message": "Agree with David, it is possible to do but error prone if translations and languages change. Right now a move to an overlay would be in the size of almost 3000 lines of code.",
+      "parentUuid": "7498f478_0156ddff",
+      "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
