@@ -91,6 +91,29 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8ddbbd5f_6f90e8e2",
+        "filename": "res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-10T05:00:11Z",
+      "side": 1,
+      "message": "shouldn\u0027t this be a carrier config?",
+      "range": {
+        "startLine": 355,
+        "startChar": 19,
+        "endLine": 355,
+        "endChar": 49
+      },
+      "revId": "e0c7580745567fe0adf0cc55e8a50a2fce612620",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dae36bf3_fe11007e",
         "filename": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
         "patchSetId": 1
@@ -163,6 +186,30 @@
       "writtenOn": "2025-03-10T04:30:35Z",
       "side": 1,
       "message": "I understand. How about I come up with a change similar to aosp/2527300 in SystemUI as well?\nThe request here is to make the default state configurable by introducing an overlay config.\n\nChanging it to 0 here will change the default behavior which might not be an acceptable solution as per [this comment](https://android-review.googlesource.com/c/platform/frameworks/base/+/2527300/comments/1d1b4c63_8d2e5d96)",
+      "parentUuid": "dae36bf3_fe11007e",
+      "range": {
+        "startLine": 73,
+        "startChar": 34,
+        "endLine": 73,
+        "endChar": 64
+      },
+      "revId": "e0c7580745567fe0adf0cc55e8a50a2fce612620",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "744ddd2f_d594a54b",
+        "filename": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-10T05:00:11Z",
+      "side": 1,
+      "message": "+1.\n\nDefault value here is meaningless as it only controls the Settings UI, not the SysUI",
       "parentUuid": "dae36bf3_fe11007e",
       "range": {
         "startLine": 73,
