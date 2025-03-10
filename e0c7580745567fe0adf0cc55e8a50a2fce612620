@@ -114,6 +114,30 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8fd94b2b_3e1e3a27",
+        "filename": "res/values/config.xml",
+        "patchSetId": 1
+      },
+      "lineNbr": 355,
+      "author": {
+        "id": 1943370
+      },
+      "writtenOn": "2025-03-10T05:55:15Z",
+      "side": 1,
+      "message": "We already have a cerrier config(KEY_SHOW_OPERATOR_NAME_IN_STATUSBAR_BOOL) which would enable/disable the entry in Settings page. But this new config will help with the default state of the entry when carrier config is enabled.",
+      "parentUuid": "8ddbbd5f_6f90e8e2",
+      "range": {
+        "startLine": 355,
+        "startChar": 19,
+        "endLine": 355,
+        "endChar": 49
+      },
+      "revId": "e0c7580745567fe0adf0cc55e8a50a2fce612620",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "dae36bf3_fe11007e",
         "filename": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
         "patchSetId": 1
@@ -211,6 +235,30 @@
       "side": 1,
       "message": "+1.\n\nDefault value here is meaningless as it only controls the Settings UI, not the SysUI",
       "parentUuid": "dae36bf3_fe11007e",
+      "range": {
+        "startLine": 73,
+        "startChar": 34,
+        "endLine": 73,
+        "endChar": 64
+      },
+      "revId": "e0c7580745567fe0adf0cc55e8a50a2fce612620",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "5bf8d1e5_44584a7f",
+        "filename": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 73,
+      "author": {
+        "id": 1943370
+      },
+      "writtenOn": "2025-03-10T05:55:15Z",
+      "side": 1,
+      "message": "Noted.\n\nI will then come up with a change in SysUI as well and get back.\n\nThanks.",
+      "parentUuid": "744ddd2f_d594a54b",
       "range": {
         "startLine": 73,
         "startChar": 34,
