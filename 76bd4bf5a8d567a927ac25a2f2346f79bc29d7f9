@@ -16,6 +16,46 @@
       "message": "Done. Please help review.\n\nThanks.",
       "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "21a10572_bbf6ea44",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-11T05:41:21Z",
+      "side": 1,
+      "message": "if Evan is fine with the SysUI change, I\u0027m good with the Settings change",
+      "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "763a077c_8e53031f",
+        "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-11T05:41:21Z",
+      "side": 1,
+      "message": "add new tests for the default value.\n\nThese existing ones are for changes, not the default",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 27
+      },
+      "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
