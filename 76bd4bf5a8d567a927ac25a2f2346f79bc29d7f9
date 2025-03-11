@@ -56,6 +56,30 @@
       },
       "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a23011d_48c784d0",
+        "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 93,
+      "author": {
+        "id": 1943370
+      },
+      "writtenOn": "2025-03-11T17:50:09Z",
+      "side": 1,
+      "message": "Done",
+      "parentUuid": "763a077c_8e53031f",
+      "range": {
+        "startLine": 92,
+        "startChar": 0,
+        "endLine": 93,
+        "endChar": 27
+      },
+      "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
