@@ -16,6 +16,23 @@
       "message": "Dear Chris, can I get owner review? This is probably the last change done to the AOSP Settings.",
       "revId": "ccdc3c98fa36a37e5594436d44ca7c47a6795f4f",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "96c23962_69066d77",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1019013
+      },
+      "writtenOn": "2025-03-11T01:15:06Z",
+      "side": 1,
+      "message": "Dear Sunny Shao, would you mind give owner review here? Chris had gave me owner review in this file, but he looks busy for couple of weeks.",
+      "revId": "ccdc3c98fa36a37e5594436d44ca7c47a6795f4f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
