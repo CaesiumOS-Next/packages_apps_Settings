@@ -37,6 +37,47 @@
     {
       "unresolved": true,
       "key": {
+        "uuid": "8dd8c085_f5fc4d1e",
+        "filename": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 70,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-12T03:06:48Z",
+      "side": 1,
+      "message": "why protected?",
+      "range": {
+        "startLine": 70,
+        "startChar": 4,
+        "endLine": 70,
+        "endChar": 13
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "b4399bf8_c5277c0f",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/display/ShowOperatorNamePreferenceController.java",
+              "range": {
+                "startLine": 70,
+                "startChar": 0,
+                "endLine": 71,
+                "endChar": 0
+              },
+              "replacement": "    private int getShowOperatorNameDefault() {\n"
+            }
+          ]
+        }
+      ],
+      "revId": "76bd4bf5a8d567a927ac25a2f2346f79bc29d7f9",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
         "uuid": "763a077c_8e53031f",
         "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
         "patchSetId": 2
