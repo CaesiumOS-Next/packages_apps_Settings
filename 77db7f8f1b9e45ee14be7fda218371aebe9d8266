@@ -40,6 +40,30 @@
       ],
       "revId": "77db7f8f1b9e45ee14be7fda218371aebe9d8266",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "550758aa_acd45f17",
+        "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1943370
+      },
+      "writtenOn": "2025-03-18T09:18:37Z",
+      "side": 1,
+      "message": "Fix applied.",
+      "parentUuid": "e0f33a5c_7cf4a9d2",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 50
+      },
+      "revId": "77db7f8f1b9e45ee14be7fda218371aebe9d8266",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
