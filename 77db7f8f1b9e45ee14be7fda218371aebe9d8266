@@ -1,0 +1,45 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "e0f33a5c_7cf4a9d2",
+        "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+        "patchSetId": 6
+      },
+      "lineNbr": 66,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-18T08:47:09Z",
+      "side": 1,
+      "message": "mResources \u003d spy(mContext.getResources());\n        when(mContext.getResources()).thenReturn(mResources);",
+      "range": {
+        "startLine": 66,
+        "startChar": 8,
+        "endLine": 66,
+        "endChar": 50
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "ba8394f5_646c5b81",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+              "range": {
+                "startLine": 67,
+                "startChar": 0,
+                "endLine": 67,
+                "endChar": 0
+              },
+              "replacement": "        when(mContext.getResources()).thenReturn(mResources);\n"
+            }
+          ]
+        }
+      ],
+      "revId": "77db7f8f1b9e45ee14be7fda218371aebe9d8266",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
