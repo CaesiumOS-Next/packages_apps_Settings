@@ -69,6 +69,70 @@
       "parentUuid": "7498f478_0156ddff",
       "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "d5565b02_db6d5a5a",
+        "filename": "res/values/config.xml",
+        "patchSetId": 7
+      },
+      "lineNbr": 846,
+      "author": {
+        "id": 1015328
+      },
+      "writtenOn": "2025-03-18T14:22:15Z",
+      "side": 1,
+      "message": "please put this next to config_minimumScreenOffTimeout and name it similarly.",
+      "range": {
+        "startLine": 846,
+        "startChar": 19,
+        "endLine": 846,
+        "endChar": 44
+      },
+      "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c3f0d04_46d1a77e",
+        "filename": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+        "patchSetId": 7
+      },
+      "lineNbr": 343,
+      "author": {
+        "id": 1015328
+      },
+      "writtenOn": "2025-03-18T14:22:15Z",
+      "side": 1,
+      "message": "You need to verify that this value is positive and also verify that it is greater t han config_minimumScreenOffTimeout",
+      "range": {
+        "startLine": 343,
+        "startChar": 12,
+        "endLine": 343,
+        "endChar": 28
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "7744cf31_b973c146",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "src/com/android/settings/display/ScreenTimeoutSettings.java",
+              "range": {
+                "startLine": 343,
+                "startChar": 0,
+                "endLine": 345,
+                "endChar": 0
+              },
+              "replacement": "            configMaxTimeout \u003d context.getResources().getInteger(R.integer.config_max_screen_timeout);\n            if (configMaxTimeout \u003c\u003d 0) {\n                configMaxTimeout \u003d Long.MAX_VALUE;\n            }\n"
+            }
+          ]
+        }
+      ],
+      "revId": "1d8715447e0109188ffbdb2fdacea5137dbae2cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
