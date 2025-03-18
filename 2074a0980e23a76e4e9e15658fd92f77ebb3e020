@@ -1,0 +1,65 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "2f379012_e605e7c2",
+        "filename": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+        "patchSetId": 5
+      },
+      "lineNbr": 114,
+      "author": {
+        "id": 1753952
+      },
+      "writtenOn": "2025-03-18T04:06:03Z",
+      "side": 1,
+      "message": "verify(testPreference).setChecked(true)",
+      "range": {
+        "startLine": 114,
+        "startChar": 8,
+        "endLine": 114,
+        "endChar": 56
+      },
+      "fixSuggestions": [
+        {
+          "fixId": "3060fe5f_fe015222",
+          "description": "prompt_to_edit API",
+          "replacements": [
+            {
+              "path": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+              "range": {
+                "startLine": 25,
+                "startChar": 0,
+                "endLine": 25,
+                "endChar": 0
+              },
+              "replacement": "import static org.mockito.Mockito.verify;\n"
+            },
+            {
+              "path": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+              "range": {
+                "startLine": 114,
+                "startChar": 0,
+                "endLine": 115,
+                "endChar": 0
+              },
+              "replacement": "        verify(testPreference).setChecked(true);\n"
+            },
+            {
+              "path": "tests/robotests/src/com/android/settings/display/ShowOperatorNamePreferenceControllerTest.java",
+              "range": {
+                "startLine": 124,
+                "startChar": 0,
+                "endLine": 125,
+                "endChar": 0
+              },
+              "replacement": "        verify(testPreference).setChecked(false);\n"
+            }
+          ]
+        }
+      ],
+      "revId": "2074a0980e23a76e4e9e15658fd92f77ebb3e020",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
