@@ -88,6 +88,24 @@
       "parentUuid": "c00ac344_3672f036",
       "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c0cff7bb_1c3796a5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2025-03-21T09:23:13Z",
+      "side": 1,
+      "message": "Thanks for the help, I will abandon this since we cannot re-use the Change-Id here.",
+      "parentUuid": "575ce0db_432dec59",
+      "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
