@@ -34,6 +34,24 @@
       "parentUuid": "4ba523cb_30268962",
       "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1c65fe5c_a9becff8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1407552
+      },
+      "writtenOn": "2025-03-21T07:57:41Z",
+      "side": 1,
+      "message": "Hi Sony\u0027s partner,\n\nJust heads up. This code already has been submmitted into our internal branch.",
+      "parentUuid": "6f119e23_2e13c67f",
+      "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
