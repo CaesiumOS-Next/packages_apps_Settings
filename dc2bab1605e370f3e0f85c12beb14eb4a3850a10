@@ -70,6 +70,24 @@
       "parentUuid": "1c65fe5c_a9becff8",
       "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "575ce0db_432dec59",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 6
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1407552
+      },
+      "writtenOn": "2025-03-21T08:34:41Z",
+      "side": 1,
+      "message": "Hi @mattias.nilsson@sony.com,\n\nThis CL was submiited into our internal branch. For AOSP part, you can keep this CL or abandon it when you find this code change.",
+      "parentUuid": "c00ac344_3672f036",
+      "revId": "dc2bab1605e370f3e0f85c12beb14eb4a3850a10",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
