@@ -104,6 +104,24 @@
       "tag": "mailMessageId\u003d\u003cCAEjFcb0GkAENiRbgYk3g-vQdO4oJ3srJSEPxQt4G5SufhmGFVw@mail.gmail.com\u003e",
       "revId": "7aa330d5abb11c0c68ed0372703dd6c5ec1dad41",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4c18168e_0d138315",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1943370
+      },
+      "writtenOn": "2025-03-24T07:08:12Z",
+      "side": 1,
+      "message": "Could you please remove your -1 vote from this CL?\n\nThanks.",
+      "parentUuid": "41babc22_b473972c",
+      "revId": "7aa330d5abb11c0c68ed0372703dd6c5ec1dad41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
