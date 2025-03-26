@@ -78,7 +78,7 @@ public class CellularSecurityNotificationsPreferenceController extends
         // Checking for hardware support, i.e. IRadio AIDL version must be >= 2.2
         try {
             areNotificationsEnabled();
-        } catch (UnsupportedOperationException e) {
+        } catch (Exception e) {
             Log.i(LOG_TAG, "Cellular security notifications are unsupported: " + e.getMessage());
             return UNSUPPORTED_ON_DEVICE;
         }
