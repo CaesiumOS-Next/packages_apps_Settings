@@ -16,6 +16,29 @@
       "message": "As I\u0027m not the file owner, remove me from the reviewers.",
       "revId": "3c2db00c6bc457701189a9c479b2b7dfc152691c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "9defd7b4_ae9d7e23",
+        "filename": "src/com/android/settings/network/telephony/CellularSecurityNotificationsPreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1308560
+      },
+      "writtenOn": "2025-03-26T15:10:21Z",
+      "side": 1,
+      "message": "Please add the specific exceptions.\n\n(IllegalStateException | SecurityException | UnsupportedOperationException e)",
+      "range": {
+        "startLine": 81,
+        "startChar": 17,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "3c2db00c6bc457701189a9c479b2b7dfc152691c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
