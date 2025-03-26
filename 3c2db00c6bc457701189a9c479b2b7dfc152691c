@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fd77e959_db1d806a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1335437
+      },
+      "writtenOn": "2025-03-26T11:18:12Z",
+      "side": 1,
+      "message": "As I\u0027m not the file owner, remove me from the reviewers.",
+      "revId": "3c2db00c6bc457701189a9c479b2b7dfc152691c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
