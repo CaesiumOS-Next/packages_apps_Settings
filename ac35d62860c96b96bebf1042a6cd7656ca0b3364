@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "105bfd60_d794224c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 8
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1221112
+      },
+      "writtenOn": "2025-03-27T18:22:17Z",
+      "side": 1,
+      "message": "seems like auto submit is removed for some reason but anyway here is a rebased one",
+      "revId": "ac35d62860c96b96bebf1042a6cd7656ca0b3364",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
