@@ -63,6 +63,30 @@
       },
       "revId": "3c2db00c6bc457701189a9c479b2b7dfc152691c",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "3c8d2ab5_5b3eb6ca",
+        "filename": "src/com/android/settings/network/telephony/CellularSecurityNotificationsPreferenceController.java",
+        "patchSetId": 2
+      },
+      "lineNbr": 81,
+      "author": {
+        "id": 1308560
+      },
+      "writtenOn": "2025-03-27T00:11:46Z",
+      "side": 1,
+      "message": "According to the telephonymanager api\u0027s java doc, there are three @throws.\n\nhttps://cs.android.com/android/platform/superproject/main/+/main:frameworks/base/telephony/java/android/telephony/TelephonyManager.java;l\u003d19419?q\u003disCellularIdentifierDisclosureNotificationsEnabled\n\n```\n     * @throws IllegalStateException if the Telephony process is not currently available\n     * @throws SecurityException if the caller does not have the required privileges\n     * @throws UnsupportedOperationException if the modem does not support this feature.\n```",
+      "parentUuid": "4ad48304_a8be0c7f",
+      "range": {
+        "startLine": 81,
+        "startChar": 17,
+        "endLine": 81,
+        "endChar": 26
+      },
+      "revId": "3c2db00c6bc457701189a9c479b2b7dfc152691c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
