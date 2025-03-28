@@ -140,6 +140,24 @@
       "tag": "mailMessageId\u003d\u003cCAEjFcb3foy7LoipOmdJz9yB04Oyv_e120mmDOiT37Re+Kvp9rA@mail.gmail.com\u003e",
       "revId": "7aa330d5abb11c0c68ed0372703dd6c5ec1dad41",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3172474e_da5b6fd0",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 7
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3861988
+      },
+      "writtenOn": "2025-03-28T09:13:18Z",
+      "side": 1,
+      "message": "My device battery isn\u0027t charging past 1. I\u0027m not receiving and messages. Can you please remove child and family setting off my settings. Why aren\u0027t my third party apps working. I use chatting app, and nothing is working. My wifi connection shows great. What have you guys done to my media. I want all notifications. My jackd, grindr, google voice, and sniffies apps aren\u0027t functioning. Chrome is running excessive amounts of data. Why aren\u0027t my third party apps running. Please remove all privacy. I use Xfinity 172.20.20.20\n\nOn Sun, Mar 23, 2025, 9:03 PM Zhibin Liu (Gerrit) \u003cnoreply-gerritcodereview+_i0wCOUTDjp3brkopMK8TA\u003d\u003d@\u003e wrote: google.com",
+      "tag": "mailMessageId\u003d\u003cCAEjFcb0e9twmiNcYzOrD46rfJM3kkq+L\u003d3Fi7cuGYycvtY3YbA@mail.gmail.com\u003e",
+      "revId": "7aa330d5abb11c0c68ed0372703dd6c5ec1dad41",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
