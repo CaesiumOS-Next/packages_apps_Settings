@@ -224,6 +224,15 @@
         android:summary="%s"
         android:order="-10"/>
 
+    <!-- Other sounds -->
+    <PreferenceCategory
+        <!-- Call connected tones -->
+        <SwitchPreference
+          android:key="call_connected_tones"
+          android:title="@string/call_connected_tones_title" />
+
+    </PreferenceCategory>
+
     <Preference
         android:key="sound_work_settings"
         android:title="@string/sound_work_settings"
