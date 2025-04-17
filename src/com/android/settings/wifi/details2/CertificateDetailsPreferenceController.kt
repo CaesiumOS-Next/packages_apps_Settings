@@ -66,7 +66,7 @@ class CertificateDetailsPreferenceController(context: Context, preferenceKey: St
     fun CertificateDetails() {
         val context = LocalContext.current
 
-        val validationMethod = wifiEntry.certificateInfo!!.validationMethod
+        val validationMethod = wifiEntry.certificateInfo?.validationMethod
         val certificateDetailsSummary = when (validationMethod) {
             CERTIFICATE_VALIDATION_METHOD_USING_SYSTEM_CERTIFICATE ->
                 stringResource(R.string.wifi_certificate_summary_system)
