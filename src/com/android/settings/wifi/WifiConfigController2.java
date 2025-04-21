@@ -315,6 +315,7 @@ public class WifiConfigController2 implements TextWatcher,
                 mDhcpSettingsSpinner = mView.findViewById(R.id.dhcp_settings);
             }
             mView.findViewById(R.id.privacy_settings_fields).setVisibility(View.VISIBLE);
+            mView.findViewById(R.id.network_send_settings_fields).setVisibility(View.VISIBLE);
         }
         mHiddenSettingsSpinner.setOnItemSelectedListener(this);
         mHiddenWarningView = mView.findViewById(R.id.hidden_settings_warning);
