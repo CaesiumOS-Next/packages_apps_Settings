@@ -1365,7 +1365,11 @@ public class NetworkProviderSettings extends RestrictedSettingsFragment
                     if (mFullScreenEdit) {
                         launchConfigNewNetworkFragment(mConnectWifiEntry);
                     } else {
-                        showDialog(mConnectWifiEntry, WifiConfigUiBase2.MODE_CONNECT);
+                        try {
+                            showDialog(mConnectWifiEntry, WifiConfigUiBase2.MODE_CONNECT);
+                        } catch (IllegalStateException e) {
+                            Log.e(TAG, "showDialog error", e);
+                        }
                     }
                 }
             } else if (status == CONNECT_STATUS_FAILURE_UNKNOWN) {
