@@ -16,6 +16,24 @@
       "message": "This is a read-only branch. go/aosp-main-turndown-faq",
       "revId": "e317441d11a6c7c9ded17b2338153285c7ecae48",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a012b435_62d44c86",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3622924
+      },
+      "writtenOn": "2025-05-01T05:02:46Z",
+      "side": 1,
+      "message": "Thanks, I\u0027ve remade this CL using go/repo-init/main-without-vendor here: https://googleplex-android-review.git.corp.google.com/c/platform/packages/apps/Settings/+/33343275.",
+      "parentUuid": "d5b9db6d_4fe3c453",
+      "revId": "e317441d11a6c7c9ded17b2338153285c7ecae48",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
