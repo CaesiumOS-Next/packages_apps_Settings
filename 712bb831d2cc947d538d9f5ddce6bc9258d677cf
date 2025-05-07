@@ -16,6 +16,41 @@
       "message": "Hi Von, could you provide more information as to why you want to erver this change? Thanks!",
       "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a5c6861b_b6e343b1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1931020
+      },
+      "writtenOn": "2025-05-07T23:06:18Z",
+      "side": 1,
+      "message": "How do you guys get to create these implementions? I\u0027m showing as the owner.  I don\u0027t do anything in Gerrit. I\u0027m the device user. Von Johnson is me. I\u0027m just a simple device user.  How\u0027s my email associated.",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "1b2b63e1_9875422f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1931020
+      },
+      "writtenOn": "2025-05-07T23:06:18Z",
+      "side": 1,
+      "message": "I do not have a device network. I utilize xfinity wifi Hotspot. I\u0027m noticing none of my third party apps are functioning. I\u0027m not receiving any notifications within apps. Only Google play system, Chrome, and Google play store are running like he\u0027ll in the background. I use Google voice as my main means of communication. I\u0027ve messaged numerous individuals,  but not getting normal replies. I\u0027d like these apps to run consistently in my background. No dns, server, and ports must be restricted.  Please assist me. The connection isn\u0027t secure because it\u0027s xfinity wifi Hotspot,  but I\u0027m a adult and would like to make my own decisions concerning my device.  Please stop and release anything that would conflicting or causing restricts. Chrome, github, chromium, and Gerrit seems to be a lot of coding for 1 users.  Plus I see other Gerrit activities under other Google account. Awful. I want all my notifications. Javascript or something isn\u0027t correct",
+      "parentUuid": "bc9a63dd_c1991530",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
