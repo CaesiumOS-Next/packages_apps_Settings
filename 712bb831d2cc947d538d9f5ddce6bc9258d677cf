@@ -51,6 +51,24 @@
       "parentUuid": "bc9a63dd_c1991530",
       "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "051e1df7_88af2741",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1367652
+      },
+      "writtenOn": "2025-05-09T00:10:54Z",
+      "side": 1,
+      "message": "As far as I understand, this change does not modify the original function, but protects against Settigns crash when abnormal input occurs.\n\nIt looks like reverting this change will not help you resolve the issue mentioned above.\n\nPlease contact the appropriate customer service window to get the corresponding support.\n\nThanks!",
+      "parentUuid": "1b2b63e1_9875422f",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
