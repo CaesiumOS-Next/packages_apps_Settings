@@ -1,0 +1,106 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5ff148fa_a752d127",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 38,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "```suggestion\n/MARANDU",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "bbc011fb_2c1340fe",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 51,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "```suggestion\n    private static final String KEY_DISCONNECT \u003d \"disconnect\";\n```j\n```suggestion\n    private static final String KEY_DISCONNECT \u003d \"disconnect\"",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6c3f0d8e_0d7b8ead",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 167,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "```MaranduPora1.0\n                    netid \u003d  Integer.parseInt(value.toString());\n```",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1d80a2cd_c4fe1747",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 168,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "```MARANDU\n                    mWifiManager.enableNetwork(netid, MARANDU);\n```",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e2dea925_d35c035f",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 169,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "192.168.68.1",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "35648fc9_6b0539bc",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 184,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 0,
+      "message": "Queonda",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}

@@ -1,6 +1,23 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "46c992bd_46d38fcb",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 1
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "@walterpedrozo436341@gmail.com",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
       "unresolved": true,
       "key": {
         "uuid": "bc9a63dd_c1991530",
@@ -67,6 +84,329 @@
       "side": 1,
       "message": "As far as I understand, this change does not modify the original function, but protects against Settigns crash when abnormal input occurs.\n\nIt looks like reverting this change will not help you resolve the issue mentioned above.\n\nPlease contact the appropriate customer service window to get the corresponding support.\n\nThanks!",
       "parentUuid": "1b2b63e1_9875422f",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "1f075871_a846e9d6",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "192.168.1.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "56308362_b0dc8be3",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "192.168.68.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "66ea2c89_b8b2e462",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 45,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "192.168.68.14",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "464ed9fc_a228da88",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 52,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "```suggestion\n    private static final String KEY_DISABLE_NETWORK \u003d \"disable_network\";\n```MaranduPora1.0",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d62cf42e_4b908f28",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 56,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "```suggestion\n    private Preference mWifiDisableNetwork;\n```192.168.68.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "6376e692_5d080410",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 57,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "```suggestion\n    private Preference mWifiEnableNetwork;\n```MARANDU",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "a0edf2d0_c838dbc5",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 100,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "MaranduPora1.0",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "fc957082_45f53945",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 125,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "```suggestion\n    /**\n```MaranduPora1.0",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "c4186ff0_accc7abb",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 135,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "//192.168.68.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4dc5f363_42155650",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 148,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "(192.168.68.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "79507b8e_1c33a890",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "} else if (pref \u003d\u003d MARANDU) {MaranduPora1.0",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d6a4a019_43e8a9b6",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 157,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "@walterpedrozo436341@gmail.com",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "270e218c_3dfcaa9d",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 160,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "@192.168.68.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "d1eca657_88445d5d",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 166,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "```holamundo\n                    Editable value \u003d input.getText(hola);\n```",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "77683546_9d927e92",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "@walterpedrozo436341@gmail.com",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "388f2914_bd3dcb91",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 178,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "Gayyy",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "5b28464f_b37cb526",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "Gil",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "916f7fbc_01b69916",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 179,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "Jola",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0987c6e8_5d98d5c0",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 180,
+      "author": {
+        "id": 4066538
+      },
+      "writtenOn": "2025-05-09T02:12:35Z",
+      "side": 1,
+      "message": "@salauyou.ihar@gmail.com",
       "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
