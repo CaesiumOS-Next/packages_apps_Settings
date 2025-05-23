@@ -107,7 +107,7 @@ public class AdbIpAddressPreferenceController extends AbstractConnectivityPrefer
         if (Build.IS_ARC) {
             final String[] addrs =
                     SystemProperties.get("vendor.arc.net.ipv4.host_wifi_address").split(",");
-            // ADB over Wi-Fi uses the first available available network configuration.
+            // ADB over Wi-Fi uses the first available network configuration.
             if (addrs.length > 0) {
                 return addrs[0];
             }
