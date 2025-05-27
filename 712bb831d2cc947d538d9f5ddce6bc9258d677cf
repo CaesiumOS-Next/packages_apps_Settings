@@ -162,6 +162,23 @@
     {
       "unresolved": false,
       "key": {
+        "uuid": "a0acb21b_e2058ea4",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 3861988
+      },
+      "writtenOn": "2025-05-27T07:59:20Z",
+      "side": 1,
+      "message": "3:58 AM\nPlease stop moving my wifi ip address away. I want my apps to have capability to identify my device location. This is causing problems. Please open my ports and ga. None of my regular notifications are coming through. Please stop constraint to my wifi",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
         "uuid": "1f075871_a846e9d6",
         "filename": "src/com/android/settings/wifi/WifiAPITest.java",
         "patchSetId": 1
@@ -173,6 +190,24 @@
       "writtenOn": "2025-05-09T02:12:35Z",
       "side": 1,
       "message": "192.168.1.1",
+      "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0ec56747_11cd7f24",
+        "filename": "src/com/android/settings/wifi/WifiAPITest.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 39,
+      "author": {
+        "id": 3861988
+      },
+      "writtenOn": "2025-05-27T07:59:20Z",
+      "side": 1,
+      "message": "Please stop moving my wifi ip address away.  I want my apps to have capability to identify my device location.  This is causing problems.  Please open my ports and ga. None of my regular notifications are coming through.  Please stop constraint to my wifi",
+      "parentUuid": "1f075871_a846e9d6",
       "revId": "712bb831d2cc947d538d9f5ddce6bc9258d677cf",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     },
