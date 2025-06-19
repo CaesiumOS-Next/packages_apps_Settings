@@ -13,9 +13,9 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.android.settings.network.telephony;
 
+import android.app.Activity;
 import android.app.settings.SettingsEnums;
 import android.content.Context;
 import android.content.Intent;
@@ -313,6 +313,12 @@ public class NetworkSelectSettings extends DashboardFragment {
                         mSelectedPreference.setSummary(isSucceed
                                 ? R.string.network_connected
                                 : R.string.network_could_not_connect);
+
+                        if (isSucceed && mSubscriptionManager.isActiveSubscriptionId(mSubId)) {
+                            final OperatorInfo operator = mSelectedPreference.getOperatorInfo();
+                            MobileNetworkUtils.setCarrierName(getContext(),
+                                    operator.getOperatorAlphaLong(), mSubId);
+                        }
                     } else {
                         Log.e(TAG, "No preference to update!");
                     }
