@@ -23,6 +23,7 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.content.pm.ResolveInfo;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
@@ -88,6 +89,8 @@ public class MobileNetworkUtils {
     // The following constants are used to draw signal icon.
     public static final int NO_CELL_DATA_TYPE_ICON = 0;
     public static final Drawable EMPTY_DRAWABLE = new ColorDrawable(Color.TRANSPARENT);
+
+    private static final String SHARED_PREFERENCE_NAME ="selected_plmn_name";
 
     /**
      * Return true if current user limited by UserManager.DISALLOW_CONFIG_MOBILE_NETWORKS.
@@ -586,6 +589,11 @@ public class MobileNetworkUtils {
      * 2. Similar design which aligned with operator name displayed in status bar
      */
     public static CharSequence getCurrentCarrierNameForDisplay(Context context, int subId) {
+        String carrierName = getCarrierName(context, subId);
+        if (!TextUtils.isEmpty(carrierName)) {
+            return carrierName;
+        }
+
         final SubscriptionInfo subInfo = getSubscriptionInfo(context, subId);
         if (subInfo != null) {
             return subInfo.getCarrierName();
@@ -819,5 +827,19 @@ public class MobileNetworkUtils {
         } else {
             onSuccess.run();
         }
+    }
+
+    public static void setCarrierName(Context context, String operator, int subId) {
+        if (!TextUtils.isEmpty(operator)) {
+            SharedPreferences sp = context.getSharedPreferences(SHARED_PREFERENCE_NAME,
+                    Context.MODE_PRIVATE);
+            sp.edit().putString(String.valueOf(subId), operator).apply();
+        }
+    }
+
+    public static String getCarrierName(Context context, int subId) {
+        SharedPreferences sp = context.getSharedPreferences(SHARED_PREFERENCE_NAME,
+                Context.MODE_PRIVATE);
+        return sp.getString(String.valueOf(subId), "");
     }
 }
