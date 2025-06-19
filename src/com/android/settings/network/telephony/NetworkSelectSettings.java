@@ -13,7 +13,6 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
 package com.android.settings.network.telephony;
 
 import android.app.settings.SettingsEnums;
@@ -88,6 +87,7 @@ public class NetworkSelectSettings extends DashboardFragment {
     List<CellInfo> mCellInfoList = ImmutableList.of();
     private int mSubId = SubscriptionManager.INVALID_SUBSCRIPTION_ID;
     private TelephonyManager mTelephonyManager;
+    private SubscriptionManager mSubscriptionManager;
     private SatelliteManager mSatelliteManager;
     private CarrierConfigManager mCarrierConfigManager;
     private List<String> mForbiddenPlmns;
@@ -123,6 +123,7 @@ public class NetworkSelectSettings extends DashboardFragment {
         mTelephonyManager = getTelephonyManager(context, mSubId);
         mSatelliteManager = getSatelliteManager(context);
         mCarrierConfigManager = getCarrierConfigManager(context);
+        mSubscriptionManager = getContext().getSystemService(SubscriptionManager.class);
         PersistableBundle bundle = mCarrierConfigManager.getConfigForSubId(mSubId,
                 CarrierConfigManager.KEY_SHOW_4G_FOR_LTE_DATA_ICON_BOOL,
                 CarrierConfigManager.KEY_REMOVE_SATELLITE_PLMN_IN_MANUAL_NETWORK_SCAN_BOOL);
@@ -313,6 +314,12 @@ public class NetworkSelectSettings extends DashboardFragment {
                         mSelectedPreference.setSummary(isSucceed
                                 ? R.string.network_connected
                                 : R.string.network_could_not_connect);
+
+                        if (isSucceed && mSubscriptionManager.isActiveSubscriptionId(mSubId)) {
+                            final OperatorInfo operator = mSelectedPreference.getOperatorInfo();
+                            MobileNetworkUtils.setCarrierName(getContext(),
+                                    operator.getOperatorAlphaLong(), mSubId);
+                        }
                     } else {
                         Log.e(TAG, "No preference to update!");
                     }
