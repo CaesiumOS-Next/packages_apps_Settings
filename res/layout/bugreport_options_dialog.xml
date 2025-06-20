@@ -36,7 +36,7 @@
             android:paddingEnd="?android:attr/dialogPreferredPadding"
             android:text="@*android:string/bugreport_option_interactive_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="?android:attr/textColorAlertDialogListItem" />
+            android:textColor="?android:attr/textColorPrimary" />
 
         <TextView
             android:id="@+id/bugreport_option_interactive_summary"
@@ -63,7 +63,7 @@
             android:paddingEnd="?android:attr/dialogPreferredPadding"
             android:text="@*android:string/bugreport_option_full_title"
             android:textAppearance="?android:attr/textAppearanceMedium"
-            android:textColor="?android:attr/textColorAlertDialogListItem" />
+            android:textColor="?android:attr/textColorPrimary" />
 
         <TextView
             android:id="@+id/bugreport_option_full_summary"
