@@ -27,6 +27,7 @@ import android.telephony.UiccCardInfo
 import android.util.Log
 import com.android.settings.network.SimOnboardingActivity.Companion.CallbackType
 import com.android.settings.network.telephony.MobileDataRepository
+import com.android.settings.network.telephony.sortableSimSlotIndex
 import com.android.settings.network.telephony.UiccSlotRepository
 import com.android.settings.sim.SimActivationNotifier
 import com.android.settings.spa.network.setDefaultData
@@ -166,6 +167,8 @@ class SimOnboardingService {
             targetSubInfo =
                 availableSubInfoList.find { subInfo -> subInfo.subscriptionId == targetSubId }
             targetSubInfo?.let { userSelectedSubInfoList.add(it) }
+            userSelectedSubInfoList
+                    .sortWith(compareBy({ it.sortableSimSlotIndex }, { it.subscriptionId }))
             Log.d(TAG, "targetSubId: $targetSubId , targetSubInfo: $targetSubInfo")
             uiccCardInfoList = telephonyManager?.uiccCardsInfo!!
             Log.d(TAG, "uiccCardInfoList: $uiccCardInfoList")
@@ -239,6 +242,8 @@ class SimOnboardingService {
             userSelectedSubInfoList.addAll(
                 activeSubInfoList.filter { !userSelectedSubInfoList.contains(it) }
             )
+            userSelectedSubInfoList
+                    .sortWith(compareBy({ it.sortableSimSlotIndex }, { it.subscriptionId }))
             Log.d(TAG,
                 "addCurrentItemForSelectedSim: userSelectedSubInfoList: $userSelectedSubInfoList"
             )
@@ -248,6 +253,8 @@ class SimOnboardingService {
     fun addItemForSelectedSim(selectedSubInfo: SubscriptionInfo) {
         if (!userSelectedSubInfoList.contains(selectedSubInfo)) {
             userSelectedSubInfoList.add(selectedSubInfo)
+            userSelectedSubInfoList
+                    .sortWith(compareBy({ it.sortableSimSlotIndex }, { it.subscriptionId }))
         }
     }
 

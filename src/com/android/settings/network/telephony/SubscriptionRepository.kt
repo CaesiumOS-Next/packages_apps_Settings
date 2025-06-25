@@ -232,7 +232,7 @@ fun Context.subscriptionsChangedFlow(): Flow<Unit> =
     SubscriptionRepository(this).subscriptionsChangedFlow()
 
 /** Subscription with invalid sim slot index has lowest sort order. */
-private val SubscriptionInfo.sortableSimSlotIndex: Int
+val SubscriptionInfo.sortableSimSlotIndex: Int
     get() = if (simSlotIndex != SubscriptionManager.INVALID_SIM_SLOT_INDEX) {
         simSlotIndex
     } else {
