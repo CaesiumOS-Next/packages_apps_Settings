@@ -329,6 +329,19 @@ public class MobileNetworkRepository extends SubscriptionManager.OnSubscriptions
                 return;
             }
             mAvailableSubInfoEntityList = new ArrayList<>(availableSubInfoEntityList);
+	    TelephonyManager telephonyManager = mContext.getSystemService(TelephonyManager.class);
+	    List<SubscriptionInfo> availableInfoList =
+		    SubscriptionUtil.getSelectableSubscriptionInfoList(mContext);
+	    if(availableInfoList != null && availableSubInfoEntityList != null
+			&& (availableInfoList.size() < availableSubInfoEntityList.size())
+			&& availableInfoList.size() == telephonyManager.getActiveModemCount()) {
+		availableSubInfoEntityList = availableSubInfoEntityList.stream()
+			.filter(entity -> availableInfoList.stream()
+			        .anyMatch(info -> info.getSubscriptionId() == entity.getSubId()))
+			.collect(Collectors.toList());
+		mAvailableSubInfoEntityList = new ArrayList<>(AvailableSubInfoEntityList);
+		onSubscriptionChanged();
+	    }
         }
 
         Log.d(TAG, "onAvailableSubInfoChanged, availableSubInfoEntityList = "
