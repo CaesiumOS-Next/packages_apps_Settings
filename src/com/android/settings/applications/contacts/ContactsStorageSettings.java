@@ -81,6 +81,8 @@ public class ContactsStorageSettings extends DashboardFragment
     public void onDetach() {
         super.onDetach();
         mAuthenticatorHelper.stopListeningToAccountUpdates();
+
+
     }
 
     @UiThread
