@@ -51,6 +51,7 @@ import com.android.settings.network.SubscriptionInfoListViewModel
 import com.android.settings.network.telephony.DataSubscriptionRepository
 import com.android.settings.network.telephony.MobileDataRepository
 import com.android.settings.network.telephony.SimRepository
+import com.android.settings.network.telephony.SubscriptionRepository
 import com.android.settings.network.telephony.requireSubscriptionManager
 import com.android.settings.spa.network.PrimarySimRepository.PrimarySimInfo
 import com.android.settings.spa.search.SearchablePage
@@ -149,7 +150,7 @@ open class NetworkCellularGroupProvider : SettingsPageProvider, SearchablePage {
             }
 
             PrimarySimSectionImpl(
-                subscriptionViewModel.selectableSubscriptionInfoListFlow,
+                SubscriptionRepository(context).selectableSubscriptionInfoListFlow(),
                 callsSelectedId,
                 textsSelectedId,
                 mobileDataSelectedId,
