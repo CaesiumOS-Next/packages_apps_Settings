@@ -375,6 +375,7 @@ public class FingerprintSettings extends SubSettings {
                     case MSG_REFRESH_FINGERPRINT_TEMPLATES:
                         removeFingerprintPreference(msg.arg1);
                         updatePreferencesAfterFingerprintRemoved();
+                        retryFingerprint();
                         break;
                     case MSG_FINGER_AUTH_SUCCESS:
                         highlightFingerprintItem(msg.arg1);
@@ -847,6 +848,7 @@ public class FingerprintSettings extends SubSettings {
             // Make sure we reload the preference hierarchy since fingerprints may be added,
             // deleted or renamed.
             updatePreferences();
+            retryFingerprint();
             if (mRemovalSidecar != null) {
                 mRemovalSidecar.setListener(mRemovalListener);
             }
@@ -857,7 +859,6 @@ public class FingerprintSettings extends SubSettings {
 
         private void updatePreferences() {
             createPreferenceHierarchy();
-            retryFingerprint();
         }
 
         @Override
