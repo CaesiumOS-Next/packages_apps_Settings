@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ed8a4bf9_3fd5c17b",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4223164
+      },
+      "writtenOn": "2025-07-17T08:50:29Z",
+      "side": 1,
+      "message": "self-test case:\n1. Add a new fingerprint. exit and then re-enter the fingerprint list --- pass\n2. Delete one fingerprint. exit and then re-enter the fingerprint list --- pass\n3. rename one fingerprint. exit and then re-enter the fingerprint list --- pass\n4. Using the correct fingerprint for identification in the fingerprint list and then attempting to use an incorrect one. exit and then re-enter the fingerprint list --- pass",
+      "revId": "4ca144b468fd8c2969d76e309db3abb8cebcdd0f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
