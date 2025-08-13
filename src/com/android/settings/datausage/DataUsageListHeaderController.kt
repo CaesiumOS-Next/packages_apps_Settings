@@ -109,6 +109,12 @@ open class DataUsageListHeaderController(
     private fun updateCycleData() {
         cycleAdapter.updateCycleList(cycles.map { Range(it.startTime, it.endTime) })
         cycleSpinner.visibility = View.VISIBLE
+
+        if (cycleAdapter?.getCount() == 1) {
+            cycleSpinner.setEnabled(false)
+        } else {
+            cycleSpinner.setEnabled(true)
+        }
     }
 
     private fun setSelectedCycle(position: Int) {

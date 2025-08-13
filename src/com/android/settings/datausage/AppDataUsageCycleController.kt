@@ -93,6 +93,12 @@ class AppDataUsageCycleController(context: Context, preferenceKey: String) :
         preference.setHasCycles(true)
         cycleAdapter?.updateCycleList(usageDetailsDataList.map { it.range })
         preference.setOnItemSelectedListener(cycleListener)
+
+        if (cycleAdapter?.getCount() == 1) {
+            preference.setEnabled(false)
+        } else {
+            preference.setEnabled(true)
+        }
     }
 
     private val cycleListener = object : AdapterView.OnItemSelectedListener {
