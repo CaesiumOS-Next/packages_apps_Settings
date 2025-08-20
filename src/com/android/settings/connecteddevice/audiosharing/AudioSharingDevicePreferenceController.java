@@ -80,6 +80,8 @@ public class AudioSharingDevicePreferenceController extends BasePreferenceContro
     private static final String KEY = "audio_sharing_device_list";
     private static final String KEY_AUDIO_SHARING_SETTINGS =
             "connected_device_audio_sharing_settings";
+    private static final String TEMP_BOND_TYPE_TAG = "TEMP_BOND_TYPE";
+    private static final String PAIRING_FOR_SHARING = "pairing_for_le_audio_sharing";
 
     @Nullable private final LocalBluetoothManager mBtManager;
     @Nullable private final CachedBluetoothDeviceManager mDeviceManager;
@@ -460,10 +462,23 @@ public class AudioSharingDevicePreferenceController extends BasePreferenceContro
                     "Start handling onProfileConnectionStateChanged for "
                             + cachedDevice.getDevice().getAnonymizedAddress());
         }
+        if (isPairingForSharing(cachedDevice.getDevice())) {
+            Log.i(
+                    TAG,
+                    "Ignore onProfileConnectionStateChanged, pairing for sharing for "
+                            + cachedDevice.getDevice().getAnonymizedAddress());
+          return;
+        }
         // Check nullability to pass NullAway check
         if (mDialogHandler != null) {
             mDialogHandler.handleDeviceConnected(cachedDevice, /* userTriggered= */ false);
         }
+    }
+
+    private boolean isPairingForSharing(@Nullable BluetoothDevice bluetoothDevice) {
+        String metadataValue = BluetoothUtils.getFastPairCustomizedField(bluetoothDevice,
+                TEMP_BOND_TYPE_TAG);
+        return Objects.equals(metadataValue, PAIRING_FOR_SHARING);
     }
 
     private boolean isMediaDevice(CachedBluetoothDevice cachedDevice) {
