@@ -171,6 +171,10 @@ public class WifiTetherPreferenceController extends AbstractPreferenceController
                     public void onConnectedClientsChanged(List<WifiClient> clients) {
                         if (mPreference != null
                                 && mSoftApState == WifiManager.WIFI_AP_STATE_ENABLED) {
+                            if (clients.size() == 0) {
+                                updateConfigSummary(mWifiManager.getSoftApConfiguration());
+                                return;
+                            }
                             // Only show the number of clients when state is on
                             mPreference.setSummary(
                                     WifiUtils.getWifiTetherSummaryForConnectedDevices(mContext,
