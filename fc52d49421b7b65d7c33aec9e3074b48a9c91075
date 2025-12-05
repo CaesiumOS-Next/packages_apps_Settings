@@ -16,6 +16,23 @@
       "message": "Can you please review this change? It seems like the key for this category was forgotten.",
       "revId": "fc52d49421b7b65d7c33aec9e3074b48a9c91075",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "95f45160_5783de40",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1156808
+      },
+      "writtenOn": "2025-12-05T10:51:51Z",
+      "side": 1,
+      "message": "Anything else needed from my side?",
+      "revId": "fc52d49421b7b65d7c33aec9e3074b48a9c91075",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
