@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "ca6701ce_592fea6a",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4224999
+      },
+      "writtenOn": "2025-12-20T19:14:57Z",
+      "side": 1,
+      "message": "Hi, I have updated this Turkish translation to better align with system terminology. The change is up to date with the main branch. Could you please take a look when you have a moment? Thanks!",
+      "revId": "41397d41a8c24ea7dbdd7c79414e6043ff4116ac",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
