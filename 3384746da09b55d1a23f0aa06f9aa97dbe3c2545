@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "92e1d659_c76cfe7e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4600120
+      },
+      "writtenOn": "2026-01-24T10:20:27Z",
+      "side": 1,
+      "message": "Manually tested on Xiaomi Pad 5 (nabu), Confirmed that homepage icons are now correctly visible.\n\nThis patch has also been reviewed, verified, and merged on LineageOS (verified on codenames \u0027gta4xlveu\u0027 and \u0027xueying\u0027).\n\nReference: https://review.lineageos.org/c/LineageOS/android_packages_apps_Settings/+/469514",
+      "revId": "3384746da09b55d1a23f0aa06f9aa97dbe3c2545",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
