@@ -1789,12 +1789,14 @@ public class ManageApplications extends InstrumentedFragment
         private void updateIcon(ApplicationViewHolder holder, AppEntry entry) {
             final Drawable cachedIcon = AppUtils.getIconFromCache(entry);
             if (cachedIcon != null && entry.mounted) {
-                holder.setIcon(cachedIcon);
+                final Drawable safeIcon = Utils.getSafeIcon(cachedIcon);
+                holder.setIcon(safeIcon);
             } else {
                 ThreadUtils.postOnBackgroundThread(() -> {
                     final Drawable icon = AppUtils.getIcon(mContext, entry);
                     if (icon != null) {
-                        ThreadUtils.postOnMainThread(() -> holder.setIcon(icon));
+                        final Drawable safeIcon = Utils.getSafeIcon(icon);
+                        ThreadUtils.postOnMainThread(() -> holder.setIcon(safeIcon));
                     }
                 });
             }
