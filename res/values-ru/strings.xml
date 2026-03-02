@@ -5161,7 +5161,7 @@
     <string name="calls_sms_temp_unavailable" msgid="8602291749338757424">"Временно недоступно"</string>
     <string name="calls_sms_no_sim" msgid="2336377399761819718">"Нет SIM-карты"</string>
     <string name="network_and_internet_preferences_title" msgid="8635896466814033405">"Настройки подключения"</string>
-    <string name="keywords_internet" msgid="7674082764898690310">"сетевое подключение, Интернет, беспроводная сеть, передача данных, Wi-Fi, wifi, wi fi, сотовая сеть, мобильный Интернет, сотовый оператор, 4G, 3G, 2G, LTE"</string>
+    <string name="keywords_internet" msgid="7674082764898690310">"сетевое подключение, Интернет, беспроводная сеть, передача данных, Wi-Fi, wifi, wi fi, сотовая сеть, мобильный Интернет, сотовый оператор, 5G, 4G, 3G, 2G, LTE"</string>
     <string name="reset_your_internet_title" msgid="4856899004343241310">"Сбросить настройки подключения к Интернету?"</string>
     <string name="resetting_internet_text" msgid="6696779371800051806">"Подождите…"</string>
     <string name="fix_connectivity" msgid="2781433603228089501">"Исправить проблемы с подключением"</string>
