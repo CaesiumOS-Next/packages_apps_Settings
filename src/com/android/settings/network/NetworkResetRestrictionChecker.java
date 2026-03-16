@@ -47,6 +47,9 @@ public class NetworkResetRestrictionChecker {
     }
 
     boolean hasUserRestriction() {
+        if (UserManager.isHeadlessSystemUserMode() && mUserManager.isMainUser()) {
+            return hasUserBaseRestriction();
+        }
         return !mUserManager.isAdminUser()
                 || hasUserBaseRestriction();
     }
