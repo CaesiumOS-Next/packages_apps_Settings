@@ -27,10 +27,6 @@ import android.content.Context;
 import android.content.DialogInterface;
 import android.os.Bundle;
 import android.os.LocaleList;
-import android.view.LayoutInflater;
-import android.view.View;
-import android.view.ViewGroup;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,6 +39,8 @@ import com.android.settings.R;
 import com.android.settings.core.instrumentation.InstrumentedDialogFragment;
 import com.android.settings.overlay.FeatureFactory;
 import com.android.settingslib.core.instrumentation.MetricsFeatureProvider;
+
+import com.google.android.material.dialog.MaterialAlertDialogBuilder;
 
 import java.util.Locale;
 import java.util.Set;
@@ -82,14 +80,14 @@ public class RegionDialogFragment extends InstrumentedDialogFragment {
     @NonNull
     @Override
     public Dialog onCreateDialog(@Nullable Bundle savedInstanceState) {
-        // TODO(385834414): Migrate to use MaterialAlertDialogBuilder
         RegionDialogController controller = getRegionDialogController(getContext(), this);
         RegionDialogController.DialogContent dialogContent = controller.getDialogContent();
-        ViewGroup viewGroup = (ViewGroup) LayoutInflater.from(getContext()).inflate(
-                R.layout.locale_dialog, null);
-        setDialogTitle(viewGroup, dialogContent.mTitle);
-        setDialogMessage(viewGroup, dialogContent.mMessage);
-        AlertDialog.Builder builder = new AlertDialog.Builder(getContext()).setView(viewGroup);
+
+        MaterialAlertDialogBuilder builder = new MaterialAlertDialogBuilder(getContext())
+                .setIcon(R.drawable.ic_settings_globe)
+                .setTitle(dialogContent.mTitle)
+                .setMessage(dialogContent.mMessage);
+
         if (!dialogContent.mPositiveButton.isEmpty()) {
             builder.setPositiveButton(dialogContent.mPositiveButton, controller);
         }
@@ -97,22 +95,6 @@ public class RegionDialogFragment extends InstrumentedDialogFragment {
             builder.setNegativeButton(dialogContent.mNegativeButton, controller);
         }
         return builder.create();
-    }
-
-    private static void setDialogTitle(View root, String content) {
-        TextView titleView = root.findViewById(R.id.dialog_title);
-        if (titleView == null) {
-            return;
-        }
-        titleView.setText(content);
-    }
-
-    private static void setDialogMessage(View root, String content) {
-        TextView textView = root.findViewById(R.id.dialog_msg);
-        if (textView == null) {
-            return;
-        }
-        textView.setText(content);
     }
 
     @VisibleForTesting
