@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "da105d63_f4492823",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1977457
+      },
+      "writtenOn": "2026-04-01T05:44:00Z",
+      "side": 1,
+      "message": "May I ask you to review my patch to fix reachability handling in WifiDppQrCodeScannerFragment, please? The old process didn\u0027t find possibly connectable APs or wrongly find uncontactable APs especially if SAE or OWE transition disabled specified in a QRcode. The patch expects https://android-review.googlesource.com/c/platform/packages/modulesaa/Wifi/+/4014947 .",
+      "revId": "2116b92b62aca1aa404b2dbbde84dae6d68423a8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
