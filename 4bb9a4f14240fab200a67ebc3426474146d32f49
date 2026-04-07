@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "578cb523_074e90bf",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1762940
+      },
+      "writtenOn": "2026-04-07T23:26:19Z",
+      "side": 1,
+      "message": "Hi Stefan,\n\nSorry, I\u0027m unaware of which Google authors are still active in AOSP due to internal branches. I\u0027ve added you as a reviewer for this bugfix, since your last commit to publicly available Settings 16-qpr2 branch was most recent on 2025-10-07. Please note that this is also a bug in Android 17 Beta 3 (https://issuetracker.google.com/issues/499908921).\n\nThanks!\nPaul",
+      "revId": "4bb9a4f14240fab200a67ebc3426474146d32f49",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
