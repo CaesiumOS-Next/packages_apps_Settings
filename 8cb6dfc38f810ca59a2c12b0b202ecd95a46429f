@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "6b82411e_97b808a3",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1762940
+      },
+      "writtenOn": "2026-04-07T23:19:06Z",
+      "side": 1,
+      "message": "Hello,\n\nThis is a bug that affects both 16 QPR2 and 17 Beta 3. It causes an NPE when lauching credential settings page from a private profile. I\u0027ve made the function more clear and updated the tests to add the test cases. The tests also needed ViewPager for everything now; that\u0027s how the class was intended to be used.\n\nPlease take a look when you can. The related bug for 17 Beta 3 is https://issuetracker.google.com/issues/499908921.\n\nThanks!\nPaul",
+      "revId": "8cb6dfc38f810ca59a2c12b0b202ecd95a46429f",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
