@@ -56,6 +56,12 @@
         settings:restrictedSwitchSummary="@string/not_allowed_by_ent"
         settings:allowDividerAbove="true"/>
 
+    <com.android.settingslib.widget.LayoutPreference
+        android:key="wifi_search_bar"
+        android:layout="@layout/wifi_search_bar"
+        android:selectable="false"
+        settings:allowDividerBelow="true"/>
+
     <PreferenceCategory
         android:key="connected_access_point"
         android:layout="@layout/preference_category_no_label"/>

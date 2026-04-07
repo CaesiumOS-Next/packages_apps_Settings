@@ -258,6 +258,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
      * network once connected.
      */
     private boolean mClickedConnect;
+    private String mSearchQuery = "";
 
     public NetworkProviderSettings() {
         super(DISALLOW_CONFIG_WIFI);
@@ -392,6 +393,26 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         mWifiStatusMessagePreference = findPreference(PREF_KEY_WIFI_STATUS_MESSAGE);
 
         checkConnectivityRecovering();
+
+        com.android.settingslib.widget.LayoutPreference searchBarPref = findPreference("wifi_search_bar");
+        if (searchBarPref != null) {
+            android.widget.EditText editText = searchBarPref.findViewById(R.id.search_edit_text);
+            if (editText != null) {
+                editText.addTextChangedListener(new android.text.TextWatcher() {
+                    @Override
+                    public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
+
+                    @Override
+                    public void onTextChanged(CharSequence s, int start, int before, int count) {
+                        mSearchQuery = s.toString();
+                        updateWifiEntryPreferences();
+                    }
+
+                    @Override
+                    public void afterTextChanged(android.text.Editable s) {}
+                });
+            }
+        }
     }
 
     private void updateAirplaneModeMsgPreference(boolean visible) {
@@ -1015,6 +1036,9 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         cacheRemoveAllPrefs(mWifiEntryPreferenceCategory);
         List<WifiEntry> wifiEntries = mWifiPickerTracker.getWifiEntries();
         for (WifiEntry wifiEntry : wifiEntries) {
+            if (!TextUtils.isEmpty(mSearchQuery) && !wifiEntry.getTitle().toLowerCase().contains(mSearchQuery.toLowerCase())) {
+                continue;
+            }
             hasAvailableWifiEntries = true;
 
             String key = wifiEntry.getKey();
