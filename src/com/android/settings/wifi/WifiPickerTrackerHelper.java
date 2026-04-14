@@ -95,7 +95,7 @@ public class WifiPickerTrackerHelper implements LifecycleObserver {
     /** @OnLifecycleEvent(ON_DESTROY) */
     @OnLifecycleEvent(Lifecycle.Event.ON_DESTROY)
     public void onDestroy() {
-        mWorkerThread.quit();
+        mWorkerThread.quitSafely();
     }
 
     /** Return the WifiPickerTracker class */
