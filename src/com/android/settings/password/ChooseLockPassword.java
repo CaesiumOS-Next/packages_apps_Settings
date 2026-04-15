@@ -99,6 +99,7 @@ import com.android.settings.SettingsActivity;
 import com.android.settings.SetupWizardUtils;
 import com.android.settings.Utils;
 import com.android.settings.core.InstrumentedFragment;
+import com.android.settings.core.OnActivityResultListener;
 import com.android.settings.flags.Flags;
 import com.android.settings.notification.RedactionInterstitial;
 import com.android.settings.widget.ImeAwareTextInputEditText;
@@ -237,7 +238,7 @@ public class ChooseLockPassword extends SettingsActivity {
     }
 
     public static class ChooseLockPasswordFragment extends InstrumentedFragment
-            implements OnEditorActionListener, TextWatcher, SaveAndFinishWorker.Listener {
+            implements OnEditorActionListener, TextWatcher, SaveAndFinishWorker.Listener, OnActivityResultListener {
         private static final String KEY_FIRST_PASSWORD = "first_password";
         private static final String KEY_UI_STAGE = "ui_stage";
         private static final String KEY_CURRENT_CREDENTIAL = "current_credential";
