@@ -16,6 +16,23 @@
       "message": "Исправление поиска функции.",
       "revId": "f3c5fe47010ee5e95b02de491c3035815b49a2d5",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "739d77a8_8e5275d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4679132
+      },
+      "writtenOn": "2026-04-27T05:28:08Z",
+      "side": 1,
+      "message": "Hi, I\u0027m getting a presubmit error: \u0027Found unapproved/non-PR submitted together changes\u0027. This is a simple translation fix in strings.xml. Could someone please help clear this error or review the change?\"",
+      "revId": "f3c5fe47010ee5e95b02de491c3035815b49a2d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
