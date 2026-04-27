@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "e68db3a1_2ed58508",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4679132
+      },
+      "writtenOn": "2026-04-27T05:11:43Z",
+      "side": 1,
+      "message": "Исправление поиска функции.",
+      "revId": "f3c5fe47010ee5e95b02de491c3035815b49a2d5",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
