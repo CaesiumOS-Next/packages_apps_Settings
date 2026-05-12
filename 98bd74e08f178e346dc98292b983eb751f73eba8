@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "406d3c99_a3c69ae5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1060895
+      },
+      "writtenOn": "2026-05-12T13:10:48Z",
+      "side": 1,
+      "message": "There used to be automated tests for this. They should likely be updated too.\n\nhttps://android.googlesource.com/platform/packages/apps/Settings/+/refs/heads/main/tests/robotests/src/com/android/settings/bluetooth/BluetoothEnablerTest.java",
+      "revId": "98bd74e08f178e346dc98292b983eb751f73eba8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
