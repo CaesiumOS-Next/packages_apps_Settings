@@ -16,6 +16,24 @@
       "message": "There used to be automated tests for this. They should likely be updated too.\n\nhttps://android.googlesource.com/platform/packages/apps/Settings/+/refs/heads/main/tests/robotests/src/com/android/settings/bluetooth/BluetoothEnablerTest.java",
       "revId": "98bd74e08f178e346dc98292b983eb751f73eba8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "30403a19_27ecf675",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1067443
+      },
+      "writtenOn": "2026-05-12T18:12:47Z",
+      "side": 1,
+      "message": "updated the tests, thanks.",
+      "parentUuid": "406d3c99_a3c69ae5",
+      "revId": "98bd74e08f178e346dc98292b983eb751f73eba8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
