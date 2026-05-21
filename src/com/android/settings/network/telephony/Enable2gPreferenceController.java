@@ -195,7 +195,7 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
         }
         long currentlyAllowedNetworkTypes = mTelephonyManager.getAllowedNetworkTypesForReason(
                 mTelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G);
-        return (currentlyAllowedNetworkTypes & BITMASK_2G) == 0;
+        return (currentlyAllowedNetworkTypes & BITMASK_2G) != 0;
     }
 
     /**
@@ -232,11 +232,11 @@ public class Enable2gPreferenceController extends TelephonyTogglePreferenceContr
         }
         long newAllowedNetworkTypes = currentlyAllowedNetworkTypes;
         if (isChecked) {
-            newAllowedNetworkTypes = currentlyAllowedNetworkTypes & ~BITMASK_2G;
-            Log.i(LOG_TAG, "Disabling 2g. Allowed network types: " + newAllowedNetworkTypes);
-        } else {
             newAllowedNetworkTypes = currentlyAllowedNetworkTypes | BITMASK_2G;
             Log.i(LOG_TAG, "Enabling 2g. Allowed network types: " + newAllowedNetworkTypes);
+        } else {
+            newAllowedNetworkTypes = currentlyAllowedNetworkTypes & ~BITMASK_2G;
+            Log.i(LOG_TAG, "Disabling 2g. Allowed network types: " + newAllowedNetworkTypes);
         }
         mTelephonyManager.setAllowedNetworkTypesForReason(
                 mTelephonyManager.ALLOWED_NETWORK_TYPES_REASON_ENABLE_2G, newAllowedNetworkTypes);
