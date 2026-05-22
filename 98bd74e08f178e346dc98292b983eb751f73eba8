@@ -52,6 +52,24 @@
       "parentUuid": "406d3c99_a3c69ae5",
       "revId": "98bd74e08f178e346dc98292b983eb751f73eba8",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "0dfbf684_6a912088",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1067443
+      },
+      "writtenOn": "2026-05-22T19:09:58Z",
+      "side": 1,
+      "message": "Hi @ltrochtova@google.com, do you know whats is the correct process to get +2 here ?",
+      "parentUuid": "80cec87e_dfe345b3",
+      "revId": "98bd74e08f178e346dc98292b983eb751f73eba8",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
