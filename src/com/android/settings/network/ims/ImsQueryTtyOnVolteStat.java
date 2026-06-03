@@ -46,8 +46,8 @@ public class ImsQueryTtyOnVolteStat implements ImsQuery {
             final ImsMmTelManager imsMmTelManager =
                     ImsMmTelManager.createForSubscriptionId(mSubId);
             return imsMmTelManager.isTtyOverVolteEnabled();
-        } catch (IllegalArgumentException exception) {
-            Log.w(LOG_TAG, "fail to get VoLte Tty Stat. subId=" + mSubId, exception);
+        } catch (IllegalArgumentException | UnsupportedOperationException e) {
+            Log.w(LOG_TAG, "fail to get VoLte Tty Stat. subId=" + mSubId, e);
         }
         return false;
     }

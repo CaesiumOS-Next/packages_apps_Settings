@@ -114,6 +114,8 @@ constructor(
             return true
         } catch (exception: IllegalArgumentException) {
             Log.w(TAG, "[$subId] Unable to set VT status $isChecked", exception)
+        } catch (e: UnsupportedOperationException) {
+            Log.w(TAG, "[$subId] Unable to set VT status $isChecked", e)
         }
         return false
     }

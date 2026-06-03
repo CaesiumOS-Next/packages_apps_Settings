@@ -46,8 +46,8 @@ public class ImsQueryVtUserSetting implements ImsQuery {
             final ImsMmTelManager imsMmTelManager =
                     ImsMmTelManager.createForSubscriptionId(mSubId);
             return imsMmTelManager.isVtSettingEnabled();
-        } catch (IllegalArgumentException exception) {
-            Log.w(LOG_TAG, "fail to get VT settings. subId=" + mSubId, exception);
+        } catch (IllegalArgumentException | UnsupportedOperationException e) {
+            Log.w(LOG_TAG, "fail to get VT settings. subId=" + mSubId, e);
         }
         return false;
     }
