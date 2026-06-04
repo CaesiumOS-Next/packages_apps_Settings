@@ -16,6 +16,24 @@
       "message": "Please provide the CR+2 vote to submit this CL. This CL should be CPed into the android16-m1-tests-dev branch, once submitted here.",
       "revId": "b725441757f421c4d83a7f06ab04a7a5902a5350",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "99f29ad4_9ecf845c",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1501264
+      },
+      "writtenOn": "2026-06-04T19:09:05Z",
+      "side": 1,
+      "message": "CR+2 cannot be granted for this `main` branch anymore.",
+      "parentUuid": "2a15679f_b3536cde",
+      "revId": "b725441757f421c4d83a7f06ab04a7a5902a5350",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ]
 }
