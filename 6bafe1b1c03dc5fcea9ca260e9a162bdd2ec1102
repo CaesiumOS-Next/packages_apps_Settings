@@ -50,6 +50,23 @@
       "message": "Why aren\u0027t I able to receive calls and text messages in my Google voice accounts? I\u0027ve changed devices 3 times attempting to get away from your implementation,  and you guys are still here causing havoc in the background codes.",
       "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
       "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f8ae6ba7_60569ee1",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4896616
+      },
+      "writtenOn": "2026-06-06T22:28:08Z",
+      "side": 1,
+      "message": "Please allow my network to operate within my local network. Im not receiving any my messages. No apps working",
+      "revId": "6bafe1b1c03dc5fcea9ca260e9a162bdd2ec1102",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
     }
   ],
   "submitRequirementResults": [
