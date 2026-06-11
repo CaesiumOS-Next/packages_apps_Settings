@@ -347,14 +347,14 @@ public class WifiHotspotRepository {
         } else {
             if (speedType == SPEED_5GHZ) {
                 log("setSpeedType(), setBand(BAND_2GHZ_5GHZ)");
-                configBuilder.setBand(BAND_2GHZ_5GHZ);
+                configBuilder.setBand(BAND_5GHZ);
             } else if (mIsDualBand) {
                 log("setSpeedType(), setBands(BAND_2GHZ + BAND_2GHZ_5GHZ)");
                 int[] bands = {BAND_2GHZ, BAND_2GHZ_5GHZ};
-                configBuilder.setBands(bands);
+                configBuilder.setBands(BAND_5GHZ);
             } else {
                 log("setSpeedType(), setBand(BAND_2GHZ)");
-                configBuilder.setBand(BAND_2GHZ);
+                configBuilder.setBand(BAND_5GHZ);
             }
             // Set the security type back to WPA2/WPA3 if the password is at least 8 characters and
             // we're moving from 6GHz to something else.
