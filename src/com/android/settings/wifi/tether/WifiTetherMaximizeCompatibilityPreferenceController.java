@@ -137,7 +137,7 @@ public class WifiTetherMaximizeCompatibilityPreferenceController extends
             int[] bands = {
                     SoftApConfiguration.BAND_2GHZ,
                     SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ};
-            builder.setBands(bands);
+            builder.setBands(SoftApConfiguration.BAND_5GHZ);
             Log.d(TAG, "setBridgedModeOpportunisticShutdownEnabled:" + enabled);
             // Because the defined value by the Wi-Fi framework API is opposite to the UI.
             //   Compatibility on:  setBridgedModeOpportunisticShutdownEnabled(false)
@@ -149,7 +149,7 @@ public class WifiTetherMaximizeCompatibilityPreferenceController extends
                     ? SoftApConfiguration.BAND_2GHZ
                     : SoftApConfiguration.BAND_2GHZ | SoftApConfiguration.BAND_5GHZ;
             Log.d(TAG, "setBand:" + band);
-            builder.setBand(band);
+            builder.setBand(SoftApConfiguration.BAND_5GHZ);
         }
     }
 }
