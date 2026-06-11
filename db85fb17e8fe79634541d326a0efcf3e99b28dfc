@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f6d032e7_0a2841d8",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 4834467
+      },
+      "writtenOn": "2026-06-11T23:46:45Z",
+      "side": 1,
+      "message": "Adding two owners for feedback about the general idea about local ADB for on device use",
+      "revId": "db85fb17e8fe79634541d326a0efcf3e99b28dfc",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
