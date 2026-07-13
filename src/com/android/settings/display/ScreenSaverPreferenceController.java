@@ -35,6 +35,12 @@ public class ScreenSaverPreferenceController extends BasePreferenceController im
 
     @Override
     public int getAvailabilityStatus() {
+        if (com.android.settings.flags.Flags.catalystScreensaver()) {
+            if (com.android.settings.communal.CommunalPreferenceController.isAvailable(mContext)) {
+                return AVAILABLE;
+            }
+        }
+
         return Utils.areDreamsAvailableToCurrentUser(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 

@@ -35,8 +35,15 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import android.platform.test.annotations.RequiresFlagsEnabled;
+import android.platform.test.flag.junit.SetFlagsRule;
+import org.junit.Rule;
+
 @RunWith(AndroidJUnit4.class)
 public class ScreenSaverPreferenceControllerTest {
+    @Rule
+    public final SetFlagsRule mSetFlagsRule = new SetFlagsRule();
+
     @Mock
     private Context mContext;
     @Mock
@@ -115,5 +122,28 @@ public class ScreenSaverPreferenceControllerTest {
                 .thenReturn(true);
         when(mUserManager.isUserForeground()).thenReturn(false);
         assertFalse(mController.isAvailable());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(com.android.settings.flags.Flags.FLAG_CATALYST_SCREENSAVER)
+    public
+    void getAvailabilityStatus_catalystEnabled_communalUnavailableSecondaryUser_returnsAvailable() {
+        // Arrange
+        // Simulate a secondary user where Communal Hub mode refuses to run due to security
+        // boundaries.
+        when(mUserManager.isUserForeground()).thenReturn(false);
+
+        // But the device hardware itself supports dreams
+        when(mResources.getBoolean(com.android.internal.R.bool.config_dreamsSupported))
+                .thenReturn(true);
+        when(mResources.getBoolean(com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                .thenReturn(false);
+
+        // Act
+        int status = mController.getAvailabilityStatus();
+
+        // Assert
+        // We expect the menu logic to fall back to the standard Dream UI, not disappear.
+        assertTrue(status == com.android.settings.core.BasePreferenceController.AVAILABLE);
     }
 }
