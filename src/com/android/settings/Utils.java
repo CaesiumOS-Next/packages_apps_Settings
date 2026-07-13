@@ -1463,11 +1463,18 @@ public final class Utils extends com.android.settingslib.Utils {
      * Returns if dreams are available to the current user.
      */
     public static boolean areDreamsAvailableToCurrentUser(Context context) {
-        final boolean dreamsSupported = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported);
+        if (!context.getResources().getBoolean(
+                com.android.internal.R.bool.config_dreamsSupported)) {
+            return false;
+        }
+
+        if (com.android.settings.flags.Flags.catalystScreensaver()) {
+            return true;
+        }
+
         final boolean dreamsOnlyEnabledForDockUser = context.getResources().getBoolean(
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser);
-        return dreamsSupported && (!dreamsOnlyEnabledForDockUser || canCurrentUserDream(context));
+        return !dreamsOnlyEnabledForDockUser || canCurrentUserDream(context);
     }
 
 
