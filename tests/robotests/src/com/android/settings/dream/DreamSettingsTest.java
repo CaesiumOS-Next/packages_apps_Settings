@@ -19,6 +19,7 @@ package com.android.settings.dream;
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -29,6 +30,9 @@ import static org.mockito.Mockito.reset;
 import static org.mockito.Mockito.spy;
 import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
+
+import static com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser;
+import static com.android.internal.R.bool.config_dreamsSupported;
 
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -50,6 +54,16 @@ import com.android.settingslib.dream.DreamBackend;
 import com.android.settingslib.dream.DreamBackend.WhenToDream;
 import com.android.settingslib.widget.MainSwitchPreference;
 
+import android.content.res.Resources;
+import android.os.UserHandle;
+import android.os.UserManager;
+import android.platform.test.annotations.DisableFlags;
+import android.platform.test.annotations.EnableFlags;
+import android.platform.test.flag.junit.SetFlagsRule;
+
+import static com.android.settings.flags.Flags.FLAG_CATALYST_SCREENSAVER;
+
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -67,6 +81,9 @@ import java.util.List;
 @Config(shadows = ShadowFragment.class)
 @RunWith(RobolectricTestRunner.class)
 public class DreamSettingsTest {
+
+    @Rule
+    public final SetFlagsRule mSetFlagsRule = new SetFlagsRule();
 
     private static final List<String> KEYS = Arrays.asList(
             DreamSettings.WHILE_CHARGING_ONLY,
@@ -557,5 +574,38 @@ public class DreamSettingsTest {
         void addPreference(String key, Preference preference) {
             mPreferences.put(key, preference);
         }
+    }
+
+    @Test
+    @EnableFlags(FLAG_CATALYST_SCREENSAVER)
+    public void searchIndexProvider_isPageSearchEnabled_catalystEnabledAndSupported_returnsTrue() {
+        final Context mockContext = mock(Context.class);
+        final Resources mockResources = mock(Resources.class);
+        when(mockContext.getResources()).thenReturn(mockResources);
+        when(mockResources.getBoolean(config_dreamsSupported)).thenReturn(true);
+
+        DreamSettings.SearchIndexProvider provider =
+                (DreamSettings.SearchIndexProvider) DreamSettings.SEARCH_INDEX_DATA_PROVIDER;
+        assertThat(provider.isPageSearchEnabled(mockContext)).isTrue();
+    }
+
+    @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
+    public void searchIndexProvider_isPageSearchEnabled_catalystDisabled_usesUtils() {
+        final Context mockContext = mock(Context.class);
+        final UserManager mockUserManager = mock(UserManager.class);
+        final Resources mockResources = mock(Resources.class);
+        when(mockContext.getSystemService(UserManager.class)).thenReturn(mockUserManager);
+        when(mockContext.getResources()).thenReturn(mockResources);
+        when(mockResources.getBoolean(config_dreamsSupported)).thenReturn(true);
+        when(mockResources.getBoolean(config_dreamsOnlyEnabledForDockUser)).thenReturn(true);
+        // This makes Utils.areDreamsAvailableToCurrentUser return false
+        when(mockUserManager.isUserForeground()).thenReturn(false);
+        when(mockUserManager.getMainUser()).thenReturn(UserHandle.of(0));
+        when(mockContext.createContextAsUser(any(), anyInt())).thenReturn(mockContext);
+
+        DreamSettings.SearchIndexProvider provider =
+                (DreamSettings.SearchIndexProvider) DreamSettings.SEARCH_INDEX_DATA_PROVIDER;
+        assertThat(provider.isPageSearchEnabled(mockContext)).isFalse();
     }
 }
