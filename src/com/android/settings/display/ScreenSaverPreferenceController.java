@@ -20,6 +20,7 @@ import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.core.PreferenceControllerMixin;
 import com.android.settings.dream.DreamSettings;
+import com.android.settings.flags.Flags;
 
 public class ScreenSaverPreferenceController extends BasePreferenceController implements
         PreferenceControllerMixin {
@@ -35,6 +36,11 @@ public class ScreenSaverPreferenceController extends BasePreferenceController im
 
     @Override
     public int getAvailabilityStatus() {
+        if (Flags.catalystScreensaver()) {
+            return mContext.getResources().getBoolean(com.android.internal.R.bool.config_dreamsSupported)
+                    ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
+        }
+
         return Utils.areDreamsAvailableToCurrentUser(mContext) ? AVAILABLE : UNSUPPORTED_ON_DEVICE;
     }
 
