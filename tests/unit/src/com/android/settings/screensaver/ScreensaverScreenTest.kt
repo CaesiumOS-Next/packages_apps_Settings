@@ -19,9 +19,14 @@ package com.android.settings.screensaver
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.res.Resources
+import android.os.UserHandle
+import android.os.UserManager
+import android.platform.test.annotations.EnableFlags
 import android.provider.Settings.Secure.SCREENSAVER_COMPONENTS
 import android.provider.Settings.Secure.SCREENSAVER_ENABLED
 import com.android.internal.R.bool.config_dreamsDisabledByAmbientModeSuppressionConfig
+import com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser
+import com.android.internal.R.bool.config_dreamsSupported
 import com.android.settings.dream.ScreensaverScreen
 import com.android.settings.flags.Flags
 import com.android.settings.testutils2.SettingsCatalystTestCase
@@ -39,14 +44,25 @@ import org.mockito.kotlin.stub
 class ScreensaverScreenTest : SettingsCatalystTestCase() {
     private val mockResources = mock<Resources>()
     private val settingsStore = mock<KeyValueStore>()
+    private val mockUserManager = mock<UserManager>()
     private val context =
         object : ContextWrapper(appContext) {
             override fun getResources(): Resources = mockResources
+            override fun getSystemService(name: String): Any? {
+                if (Context.USER_SERVICE == name) return mockUserManager
+                return super.getSystemService(name)
+            }
+            override fun createContextAsUser(user: UserHandle, flags: Int): Context {
+                return this
+            }
         }
 
     private val dreamBackend: DreamBackend = mock(DreamBackend::class.java)
     private var dreamEnabled = false
     private var activeDreamName = DREAM_NAME
+
+    @get:Rule val mCheckFlagsRule: android.platform.test.flag.junit.CheckFlagsRule =
+        android.platform.test.flag.junit.DeviceFlagsValueProvider.createCheckFlagsRule()
 
     override val preferenceScreenCreator =
         ScreensaverScreen(context).also {
@@ -174,5 +190,23 @@ class ScreensaverScreenTest : SettingsCatalystTestCase() {
         const val SCREENSAVER_SUMMARY_OFF_BEDTIME = "screensaver_summary_off_bedtime"
         const val DREAM_NAME = "dream"
         const val DREAM_NAME_2 = "second dream"
+    }
+    @Test
+    @android.platform.test.annotations.RequiresFlagsEnabled(Flags.FLAG_CATALYST_SCREENSAVER)
+    fun isAvailable_communalUnavailableSecondaryUser_returnsTrue() {
+        mockUserManager.stub {
+            on { isUserForeground } doReturn false
+        }
+
+        mockResources.stub {
+            on { getBoolean(org.mockito.ArgumentMatchers.anyInt()) } doReturn true
+        }
+
+        // Act
+        val isAvailable = preferenceScreenCreator.isAvailable(context)
+
+
+        // Assert
+        assertThat(isAvailable).isTrue()
     }
 }
