@@ -19,6 +19,7 @@ package com.android.settings.dream;
 import static android.service.dreams.Flags.dreamsV2;
 
 import static com.android.settings.dream.DreamMainSwitchPreferenceController.MAIN_SWITCH_PREF_KEY;
+import static com.android.internal.R.bool.config_dreamsSupported;
 
 import android.app.settings.SettingsEnums;
 import android.content.BroadcastReceiver;
@@ -46,6 +47,7 @@ import com.android.settings.R;
 import com.android.settings.Utils;
 import com.android.settings.core.BasePreferenceController;
 import com.android.settings.dashboard.DashboardFragment;
+import com.android.settings.flags.Flags;
 import com.android.settings.search.BaseSearchIndexProvider;
 import com.android.settingslib.core.AbstractPreferenceController;
 import com.android.settingslib.dream.DreamBackend;
@@ -399,6 +401,9 @@ public class DreamSettings extends DashboardFragment implements OnCheckedChangeL
 
         @Override
         protected boolean isPageSearchEnabled(Context context) {
+            if (Flags.catalystScreensaver()) {
+                return context.getResources().getBoolean(config_dreamsSupported);
+            }
             return Utils.areDreamsAvailableToCurrentUser(context);
         }
     }
