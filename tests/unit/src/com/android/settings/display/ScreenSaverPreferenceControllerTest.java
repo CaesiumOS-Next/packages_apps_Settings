@@ -16,11 +16,14 @@
 
 package com.android.settings.display;
 
+import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.Mockito.when;
+import static com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser;
+import static com.android.internal.R.bool.config_dreamsSupported;
 
 import android.content.Context;
 import android.content.res.Resources;
@@ -30,13 +33,24 @@ import android.os.UserManager;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 
 import org.junit.Before;
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import android.platform.test.annotations.DisableFlags;
+import android.platform.test.annotations.EnableFlags;
+import android.platform.test.flag.junit.SetFlagsRule;
+import com.android.settings.core.BasePreferenceController;
+import static com.android.settings.flags.Flags.FLAG_CATALYST_SCREENSAVER;
+
 @RunWith(AndroidJUnit4.class)
 public class ScreenSaverPreferenceControllerTest {
+
+    @Rule
+    public final SetFlagsRule mSetFlagsRule = new SetFlagsRule();
+
     @Mock
     private Context mContext;
     @Mock
@@ -63,57 +77,80 @@ public class ScreenSaverPreferenceControllerTest {
     }
 
     @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
     public void isAvailable_dreamsEnabledForAllUsers_shouldBeTrueForMainUser() {
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
+                config_dreamsSupported)).thenReturn(true);
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(true);
         assertTrue(mController.isAvailable());
     }
 
     @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
     public void isAvailable_dreamsEnabledForAllUsers_shouldBeTrueForNonMainUser() {
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
+                config_dreamsSupported)).thenReturn(true);
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(false);
         assertTrue(mController.isAvailable());
     }
 
     @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
     public void isAvailable_dreamsDisabled_shouldBeFalseForMainUser() {
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(false);
+                config_dreamsSupported)).thenReturn(false);
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(true);
         assertFalse(mController.isAvailable());
     }
 
     @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
     public void isAvailable_dreamsOnlyEnabledForDockUser_shouldBeTrueForMainUser() {
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
+                config_dreamsSupported)).thenReturn(true);
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(true);
         when(mUserManager.isUserForeground()).thenReturn(true);
         assertTrue(mController.isAvailable());
     }
 
     @Test
+    @DisableFlags(FLAG_CATALYST_SCREENSAVER)
     public void isAvailable_dreamsOnlyEnabledForDockUser_shouldBeFalseForNonMainUser() {
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
+                config_dreamsSupported)).thenReturn(true);
         when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(true);
         when(mUserManager.isUserForeground()).thenReturn(false);
         assertFalse(mController.isAvailable());
+    }
+
+    @Test
+    @EnableFlags(FLAG_CATALYST_SCREENSAVER)
+    public void getAvailabilityStatus_communalUnavailableSecondaryUser_returnsAvailable() {
+        // Arrange
+        // Explicitly set up the restrictive condition (secondary user + dock restriction)
+        // to prove the Catalyst flag successfully overrides it.
+        when(mUserManager.isUserForeground()).thenReturn(false);
+        when(mResources.getBoolean(config_dreamsOnlyEnabledForDockUser)).thenReturn(true);
+        // But the device hardware itself supports dreams
+        when(mResources.getBoolean(config_dreamsSupported)).thenReturn(true);
+
+        // Act
+        int status = mController.getAvailabilityStatus();
+
+        // We expect the menu logic to fall back to the standard Dream UI, not disappear.
+        assertEquals(BasePreferenceController.AVAILABLE, status);
     }
 }
