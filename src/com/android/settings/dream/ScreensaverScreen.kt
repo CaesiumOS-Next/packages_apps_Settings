@@ -134,7 +134,12 @@ open class ScreensaverScreen(private val context: Context) :
     override val keywords: Int
         get() = R.string.keywords_screensaver
 
-    override fun isAvailable(context: Context) = Utils.areDreamsAvailableToCurrentUser(context)
+    override fun isAvailable(context: Context): Boolean {
+        if (Flags.catalystScreensaver()) {
+            return context.resources.getBoolean(com.android.internal.R.bool.config_dreamsSupported)
+        }
+        return Utils.areDreamsAvailableToCurrentUser(context)
+    }
 
     @VisibleForTesting
     fun setDreamBackend(backend: DreamBackend) {
