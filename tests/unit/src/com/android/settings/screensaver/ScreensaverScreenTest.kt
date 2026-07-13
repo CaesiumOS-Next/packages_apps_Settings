@@ -39,9 +39,17 @@ import org.mockito.kotlin.stub
 class ScreensaverScreenTest : SettingsCatalystTestCase() {
     private val mockResources = mock<Resources>()
     private val settingsStore = mock<KeyValueStore>()
+    private val mockUserManager = mock<android.os.UserManager>()
     private val context =
         object : ContextWrapper(appContext) {
             override fun getResources(): Resources = mockResources
+            override fun getSystemService(name: String): Any? {
+                if (Context.USER_SERVICE == name) return mockUserManager
+                return super.getSystemService(name)
+            }
+            override fun createContextAsUser(user: android.os.UserHandle, flags: Int): Context {
+                return this
+            }
         }
 
     private val dreamBackend: DreamBackend = mock(DreamBackend::class.java)
@@ -174,5 +182,18 @@ class ScreensaverScreenTest : SettingsCatalystTestCase() {
         const val SCREENSAVER_SUMMARY_OFF_BEDTIME = "screensaver_summary_off_bedtime"
         const val DREAM_NAME = "dream"
         const val DREAM_NAME_2 = "second dream"
+    }
+    @Test
+    fun isAvailable_communalUnavailableSecondaryUser_returnsTrue() {
+        mockUserManager.stub {
+            on { isUserForeground } doReturn false
+        }
+        
+        mockResources.stub {
+            on { getBoolean(com.android.internal.R.bool.config_dreamsSupported) } doReturn true
+            on { getBoolean(com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser) } doReturn false
+        }
+
+        assertThat(preferenceScreenCreator.isAvailable(context)).isTrue()
     }
 }
