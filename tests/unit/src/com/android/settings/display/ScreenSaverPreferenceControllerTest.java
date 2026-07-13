@@ -35,14 +35,22 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 
+import android.platform.test.annotations.RequiresFlagsEnabled;
+import com.android.settings.flags.Flags;
+
 @RunWith(AndroidJUnit4.class)
 public class ScreenSaverPreferenceControllerTest {
+
     @Mock
     private Context mContext;
     @Mock
     private Resources mResources;
     @Mock
     private UserManager mUserManager;
+    @Mock
+    private Context mMainUserContext;
+    @Mock
+    private UserManager mMainUserManager;
 
     private ScreenSaverPreferenceController mController;
 
@@ -57,7 +65,12 @@ public class ScreenSaverPreferenceControllerTest {
                 .thenReturn(Context.USER_SERVICE);
         when(mContext.getSystemService(UserManager.class)).thenReturn(mUserManager);
         when(mUserManager.getMainUser()).thenReturn(UserHandle.of(0));
-        when(mContext.createContextAsUser(any(), anyInt())).thenReturn(mContext);
+        when(mContext.createContextAsUser(any(), anyInt())).thenReturn(mMainUserContext);
+        when(mMainUserContext.getSystemServiceName(UserManager.class))
+                .thenReturn(Context.USER_SERVICE);
+        when(mMainUserContext.getSystemService(UserManager.class)).thenReturn(mMainUserManager);
+        // Default to the main user being the foreground user in tests (matches old mUserManager.isMainUser() behavior)
+        when(mMainUserManager.isUserForeground()).thenReturn(true);
 
         mController = new ScreenSaverPreferenceController(mContext, mPrefKey);
     }
@@ -70,6 +83,7 @@ public class ScreenSaverPreferenceControllerTest {
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(true);
+        when(mMainUserManager.isUserForeground()).thenReturn(true);
         assertTrue(mController.isAvailable());
     }
 
@@ -81,6 +95,7 @@ public class ScreenSaverPreferenceControllerTest {
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(false);
+        when(mMainUserManager.isUserForeground()).thenReturn(false);
         assertTrue(mController.isAvailable());
     }
 
@@ -92,6 +107,7 @@ public class ScreenSaverPreferenceControllerTest {
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(false);
         when(mUserManager.isUserForeground()).thenReturn(true);
+        when(mMainUserManager.isUserForeground()).thenReturn(true);
         assertFalse(mController.isAvailable());
     }
 
@@ -103,6 +119,7 @@ public class ScreenSaverPreferenceControllerTest {
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(true);
         when(mUserManager.isUserForeground()).thenReturn(true);
+        when(mMainUserManager.isUserForeground()).thenReturn(true);
         assertTrue(mController.isAvailable());
     }
 
@@ -114,6 +131,29 @@ public class ScreenSaverPreferenceControllerTest {
                 com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
                 .thenReturn(true);
         when(mUserManager.isUserForeground()).thenReturn(false);
+        when(mMainUserManager.isUserForeground()).thenReturn(false);
         assertFalse(mController.isAvailable());
+    }
+
+    @Test
+    @RequiresFlagsEnabled(Flags.FLAG_CATALYST_SCREENSAVER)
+    public void getAvailabilityStatus_catalystEnabled_communalUnavailableSecondaryUser_returnsAvailable() {
+        // Arrange
+        // Simulate a secondary user that is currently in the foreground.
+        when(mUserManager.isUserForeground()).thenReturn(true);
+        // The main user is NOT in the foreground, so Communal Hub is unavailable.
+        when(mMainUserManager.isUserForeground()).thenReturn(false);
+        // But the device hardware itself supports dreams
+        when(mResources.getBoolean(com.android.internal.R.bool.config_dreamsSupported))
+                .thenReturn(true);
+        when(mResources.getBoolean(com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
+                .thenReturn(false);
+
+        // Act
+        int status = mController.getAvailabilityStatus();
+
+        // Assert
+        // We expect the menu logic to fall back to the standard Dream UI, not disappear.
+        assertTrue(status == com.android.settings.core.BasePreferenceController.AVAILABLE);
     }
 }
