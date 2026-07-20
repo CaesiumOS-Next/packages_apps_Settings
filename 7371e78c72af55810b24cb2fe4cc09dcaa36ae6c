@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "56435218_e07610d2",
+        "filename": "src/com/android/settings/Utils.java",
+        "patchSetId": 41
+      },
+      "lineNbr": 1473,
+      "author": {
+        "id": 4576388
+      },
+      "writtenOn": "2026-07-20T16:28:57Z",
+      "side": 1,
+      "message": "This feature flag seems to be fully released. So this is like adding `if (true)` \n\nhttps://gantry.corp.google.com/changes/cf3h7oq000001?build_unique_id\u003dcom.android.settings.flags.catalyst_screensaver-platform",
+      "revId": "7371e78c72af55810b24cb2fe4cc09dcaa36ae6c",
+      "serverId": "85c56323-6fa9-3386-8a01-6480fb634889"
+    }
+  ]
+}
