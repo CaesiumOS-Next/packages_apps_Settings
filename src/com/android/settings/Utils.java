@@ -30,6 +30,7 @@ import static com.android.settings.password.ConfirmDeviceCredentialActivity.BIOM
 import static com.android.settings.password.ConfirmDeviceCredentialActivity.BIOMETRIC_PROMPT_HIDE_BACKGROUND;
 import static com.android.settings.password.ConfirmDeviceCredentialActivity.BIOMETRIC_PROMPT_NEGATIVE_BUTTON_TEXT;
 import static com.android.settings.password.ConfirmDeviceCredentialActivity.EXTRA_DATA;
+import static com.android.internal.R.bool.config_dreamsSupported;
 
 import android.app.ActionBar;
 import android.app.Activity;
@@ -1463,13 +1464,8 @@ public final class Utils extends com.android.settingslib.Utils {
      * Returns if dreams are available to the current user.
      */
     public static boolean areDreamsAvailableToCurrentUser(Context context) {
-        final boolean dreamsSupported = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported);
-        final boolean dreamsOnlyEnabledForDockUser = context.getResources().getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser);
-        return dreamsSupported && (!dreamsOnlyEnabledForDockUser || canCurrentUserDream(context));
+        return context.getResources().getBoolean(config_dreamsSupported);
     }
-
 
     /**
      * Removes fingerprint templates enrolled for a given user.

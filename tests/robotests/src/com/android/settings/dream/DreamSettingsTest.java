@@ -16,9 +16,12 @@
 
 package com.android.settings.dream;
 
+import static com.android.internal.R.bool.config_dreamsSupported;
+
 import static com.google.common.truth.Truth.assertThat;
 
 import static org.mockito.ArgumentMatchers.any;
+import static org.mockito.ArgumentMatchers.anyInt;
 import static org.mockito.ArgumentMatchers.anyLong;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.eq;
@@ -33,8 +36,14 @@ import static org.mockito.Mockito.when;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Resources;
 import android.os.Bundle;
 import android.os.Handler;
+import android.os.UserHandle;
+import android.os.UserManager;
+import android.platform.test.annotations.DisableFlags;
+import android.platform.test.annotations.EnableFlags;
+import android.platform.test.flag.junit.SetFlagsRule;
 import android.service.dreams.DreamService;
 import android.widget.CompoundButton;
 
@@ -50,6 +59,7 @@ import com.android.settingslib.dream.DreamBackend;
 import com.android.settingslib.dream.DreamBackend.WhenToDream;
 import com.android.settingslib.widget.MainSwitchPreference;
 
+import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
@@ -67,6 +77,9 @@ import java.util.List;
 @Config(shadows = ShadowFragment.class)
 @RunWith(RobolectricTestRunner.class)
 public class DreamSettingsTest {
+
+    @Rule
+    public final SetFlagsRule mSetFlagsRule = new SetFlagsRule();
 
     private static final List<String> KEYS = Arrays.asList(
             DreamSettings.WHILE_CHARGING_ONLY,
@@ -557,5 +570,29 @@ public class DreamSettingsTest {
         void addPreference(String key, Preference preference) {
             mPreferences.put(key, preference);
         }
+    }
+
+    @Test
+    public void searchIndexProvider_isPageSearchEnabled_dreamsSupported_returnsTrue() {
+        final Context mockContext = mock(Context.class);
+        final Resources mockResources = mock(Resources.class);
+        when(mockContext.getResources()).thenReturn(mockResources);
+        when(mockResources.getBoolean(config_dreamsSupported)).thenReturn(true);
+
+        DreamSettings.SearchIndexProvider provider =
+                (DreamSettings.SearchIndexProvider) DreamSettings.SEARCH_INDEX_DATA_PROVIDER;
+        assertThat(provider.isPageSearchEnabled(mockContext)).isTrue();
+    }
+
+    @Test
+    public void searchIndexProvider_isPageSearchEnabled_dreamsNotSupported_returnsFalse() {
+        final Context mockContext = mock(Context.class);
+        final Resources mockResources = mock(Resources.class);
+        when(mockContext.getResources()).thenReturn(mockResources);
+        when(mockResources.getBoolean(config_dreamsSupported)).thenReturn(false);
+
+        DreamSettings.SearchIndexProvider provider =
+                (DreamSettings.SearchIndexProvider) DreamSettings.SEARCH_INDEX_DATA_PROVIDER;
+        assertThat(provider.isPageSearchEnabled(mockContext)).isFalse();
     }
 }

@@ -16,6 +16,8 @@
 
 package com.android.settings.display;
 
+import static com.android.internal.R.bool.config_dreamsSupported;
+
 import static org.junit.Assert.assertFalse;
 import static org.junit.Assert.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
@@ -37,6 +39,7 @@ import org.mockito.MockitoAnnotations;
 
 @RunWith(AndroidJUnit4.class)
 public class ScreenSaverPreferenceControllerTest {
+
     @Mock
     private Context mContext;
     @Mock
@@ -63,57 +66,14 @@ public class ScreenSaverPreferenceControllerTest {
     }
 
     @Test
-    public void isAvailable_dreamsEnabledForAllUsers_shouldBeTrueForMainUser() {
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
-                .thenReturn(false);
-        when(mUserManager.isUserForeground()).thenReturn(true);
+    public void isAvailable_dreamsSupported_returnsTrue() {
+        when(mResources.getBoolean(config_dreamsSupported)).thenReturn(true);
         assertTrue(mController.isAvailable());
     }
 
     @Test
-    public void isAvailable_dreamsEnabledForAllUsers_shouldBeTrueForNonMainUser() {
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
-                .thenReturn(false);
-        when(mUserManager.isUserForeground()).thenReturn(false);
-        assertTrue(mController.isAvailable());
-    }
-
-    @Test
-    public void isAvailable_dreamsDisabled_shouldBeFalseForMainUser() {
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(false);
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
-                .thenReturn(false);
-        when(mUserManager.isUserForeground()).thenReturn(true);
-        assertFalse(mController.isAvailable());
-    }
-
-    @Test
-    public void isAvailable_dreamsOnlyEnabledForDockUser_shouldBeTrueForMainUser() {
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
-                .thenReturn(true);
-        when(mUserManager.isUserForeground()).thenReturn(true);
-        assertTrue(mController.isAvailable());
-    }
-
-    @Test
-    public void isAvailable_dreamsOnlyEnabledForDockUser_shouldBeFalseForNonMainUser() {
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsSupported)).thenReturn(true);
-        when(mResources.getBoolean(
-                com.android.internal.R.bool.config_dreamsOnlyEnabledForDockUser))
-                .thenReturn(true);
-        when(mUserManager.isUserForeground()).thenReturn(false);
+    public void isAvailable_dreamsDisabled_returnsFalse() {
+        when(mResources.getBoolean(config_dreamsSupported)).thenReturn(false);
         assertFalse(mController.isAvailable());
     }
 }

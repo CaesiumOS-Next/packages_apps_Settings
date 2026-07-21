@@ -81,7 +81,7 @@ open class DisplayScreen :
             }
             +Category("category_other", R.string.category_name_display_controls) order -150 += {
                 +PeakRefreshRateSwitchPreference()
-                if (Flags.catalystScreensaver()) +ScreensaverScreen.KEY
+                +ScreensaverScreen.KEY
             }
         }
 
