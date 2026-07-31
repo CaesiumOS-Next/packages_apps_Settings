@@ -50,7 +50,6 @@ java_test_host {
     ],
     libs: [
         "tradefed",
-        "compatibility-host-util",
         "compatibility-tradefed",
     ],
     device_common_data: [
