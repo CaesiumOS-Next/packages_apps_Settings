@@ -25,14 +25,14 @@
     <androidx.core.widget.NestedScrollView
         android:id="@+id/main_content_scrollable_container"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        app:layout_behavior="com.android.settings.widget.HomepageAppBarScrollingViewBehavior">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/homepage_container"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingBottom="100dp">
 
             <include
                 android:id="@+id/suggestion_container_two_pane"
@@ -59,8 +59,11 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        app:elevation="8dp"
         android:touchscreenBlocksFocus="false"
-        android:keyboardNavigationCluster="false">
+        android:keyboardNavigationCluster="false"
+        android:background="@android:color/transparent">
         <LinearLayout
             android:id="@+id/app_bar_container"
             android:layout_width="match_parent"
