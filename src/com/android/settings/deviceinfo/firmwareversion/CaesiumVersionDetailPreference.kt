@@ -62,7 +62,7 @@ class CaesiumVersionDetailPreference :
 
     override fun intent(context: Context): Intent? =
         Intent(Intent.ACTION_MAIN)
-            .setClassName("android", PlatLogoActivity::class.java.name)
+            .setClassName("com.android.egg", "com.android.egg.PaintActivity")
             .addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
 
     override val supportsWrite = false
