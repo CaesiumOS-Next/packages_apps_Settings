@@ -44,10 +44,10 @@ open class FirmwareVersionScreen : PreferenceScreenMixin, PreferenceSummaryProvi
         get() = R.string.firmware_version_purpose
 
     override val title: Int
-        get() = R.string.firmware_version
+        get() = R.string.firmware_info_title
 
     override fun getSummary(context: Context): CharSequence? =
-        Build.VERSION.RELEASE_OR_PREVIEW_DISPLAY
+        ""
 
     override val keywords: Int
         get() = R.string.keywords_android_version
