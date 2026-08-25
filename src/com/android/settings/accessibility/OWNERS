@@ -20,3 +20,6 @@ per-file *Vibrat* = file:platform/frameworks/base:/services/core/java/com/androi
 
 # Catalyst migration
 per-file *Screen.kt = file:platform/packages/apps/Settings:/OWNERS
+
+# Re-wire build approvers through set noparent barrier
+per-file Android.bp,Android.mk,CleanSpec.mk,BUILD,BUILD.bazel,*.bp,*.bzl,cargo_embargo.json = mdb/android-build-approvers
