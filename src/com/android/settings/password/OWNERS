@@ -13,3 +13,7 @@ spdonghao@google.com
 wenhuiy@google.com
 
 # Emergency approvers in case the above are not available
+
+# Re-wire build approvers through set noparent barrier
+per-file Android.bp,Android.mk,CleanSpec.mk,BUILD,BUILD.bazel,*.bp,*.bzl,cargo_embargo.json = mdb/android-build-approvers
+per-file **/*.go = mdb/android-build-approvers #{LAST_RESORT_SUGGESTION}
