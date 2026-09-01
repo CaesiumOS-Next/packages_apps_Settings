@@ -121,6 +121,13 @@ import com.android.wifitrackerlib.WifiEntry;
 import com.android.wifitrackerlib.WifiEntry.ConnectCallback;
 import com.android.wifitrackerlib.WifiPickerTracker;
 
+import com.google.android.setupcompat.partnerconfig.PartnerConfigHelper;
+import com.google.android.setupcompat.template.FooterBarMixin;
+import com.google.android.setupcompat.template.FooterButtonStyleUtils;
+import com.google.android.setupcompat.util.WizardManagerHelper;
+import com.google.android.setupdesign.GlifPreferenceLayout;
+import com.google.android.setupdesign.template.IconMixin;
+
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.List;
@@ -196,6 +203,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
 
     // Enable the Next button when a Wi-Fi network is connected.
     private boolean mEnableNextOnConnection;
+    private FooterBarMixin mFooterBarMixin;
 
     // This string extra specifies a network to open the connect dialog on, so the user can enter
     // network credentials.  This is used by quick settings for secured networks, among other
@@ -400,6 +408,38 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         super.onViewCreated(view, savedInstanceState);
         Activity activity = getActivity();
         if (activity == null) {
+            return;
+        }
+
+        if (view instanceof GlifPreferenceLayout layout) {
+            final Drawable icon = getContext().getDrawable(R.drawable.ic_network_setup);
+            final String title = getContext().getString(R.string.provider_internet_settings);
+            if (PartnerConfigHelper.isGlifExpressiveEnabled(getContext())) {
+                layout.setHeaderText(title);
+                layout.setIcon(icon);
+                final IconMixin iconMixin = layout.getMixin(IconMixin.class);
+                if (iconMixin != null) {
+                    iconMixin.setUpscaleIcon(true);
+                }
+                layout.setDividerInsets(Integer.MAX_VALUE, 0);
+                mFooterBarMixin = layout.getMixin(FooterBarMixin.class);
+                AccessibilitySetupWizardUtils.setPrimaryButton(getContext(), mFooterBarMixin,
+                        R.string.next_label, () -> {
+                            activity.setResult(Activity.RESULT_OK);
+                            activity.finish();
+                        });
+                AccessibilitySetupWizardUtils.setSecondaryButton(getContext(), mFooterBarMixin,
+                        R.string.skip_label, () -> {
+                            activity.setResult(Activity.RESULT_OK);
+                            activity.finish();
+                        });
+            } else {
+                AccessibilitySetupWizardUtils.updateGlifPreferenceLayout(getContext(), layout,
+                        title, "" /* description */, icon);
+                FooterButtonStyleUtils.applyPrimaryButtonPartnerResource(activity, getNextButton(),
+                        true);
+            }
+
             return;
         }
 
@@ -1434,7 +1474,12 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
      */
     @VisibleForTesting
     void changeNextButtonState(boolean enabled) {
-        if (mEnableNextOnConnection && hasNextButton()) {
+        if (!mEnableNextOnConnection) {
+            return;
+        }
+        if (mFooterBarMixin != null && mFooterBarMixin.getPrimaryButton() != null) {
+            mFooterBarMixin.getPrimaryButton().setEnabled(enabled);
+        } else if (hasNextButton()) {
             getNextButton().setEnabled(enabled);
         }
     }
