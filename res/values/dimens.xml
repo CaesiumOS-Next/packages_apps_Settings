@@ -607,4 +607,6 @@
     <dimen name="wifi_sharing_fragment_qrcode_margin_size">16dp</dimen>
     <dimen name="wifi_sharing_qrcode_fragment_size">192dp</dimen>
     <dimen name="wifi_sharing_qrcode_fragment_margin_size">16dp</dimen>
+
+    <dimen name="setup_compat_footer_button_radius">@dimen/sud_glif_expressive_footer_button_radius</dimen>
 </resources>
