@@ -131,5 +131,9 @@
     <color name="security_green">@color/m3_ref_palette_green20</color>
     <color name="security_yellow">@color/m3_ref_palette_yellow20</color>
     <color name="security_red">@color/m3_ref_palette_red20</color>
+
+    <color name="setup_compat_footer_primary_button_bg_color">@*android:color/system_primary_dark</color>
+    <color name="setup_compat_footer_primary_button_text_color">@*android:color/system_on_primary_dark</color>
+
 </resources>
 
