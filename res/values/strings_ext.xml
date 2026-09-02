@@ -2,4 +2,59 @@
 <resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
     <string name="cs_version">CaesiumOS version</string>
     <string name="firmware_info_title">Firmware information</string>
+
+<string name="search_region">Search region</string>
+<string name="clear_search_query_description">Clears search query</string>
+
+<string name="battery_schedule_title">Schedule and reminders</string>
+<string name="battery_saver_schedule_category"></string>
+<string name="battery_saver_schedule_switch_summary">Battery Saver turns on when battery falls to a level you set</string>
+<string name="battery_saver_schedule_switch_title">Turn on based on battery level</string>
+<string name="battery_saver_reminder_category"></string>
+<string name="basic_battery_saver_summary">Limits visual effects and background activity. Turns on Dark theme, if not already on.</string>
+<string name="basic_battery_saver_title">Standard Battery Saver</string>
+<string name="extreme_battery_saver_summary">Includes all changes listed above. Also pauses non-essential apps and their notifications.</string>
+<string name="extreme_battery_saver_title">Extreme Battery Saver</string>
+<string name="battery_schedule_summary">Manage when Battery Saver turns on</string>
+<string name="battery_saver_reminder_switch_summary">Get reminders when battery is low</string>
+<string name="battery_saver_reminder_switch_title">Battery Saver reminders</string>
+<string name="adaptive_battery_illustration_purpose"></string>
+<string name="adaptive_battery_management_enabled_purpose"></string>
+<string name="adaptive_battery_switch_title">Use Adaptive Battery</string>
+<string name="adaptive_battery_entry_purpose"></string>
+<string name="adaptive_battery_top_intro_purpose"></string>
+<string name="battery_saver_group_purpose"></string>
+<string name="battery_saver_schedule_category_purpose"></string>
+<string name="adaptive_battery_category_purpose"></string>
+<string name="basic_battery_saver_purpose"></string>
+<string name="extreme_battery_saver_purpose"></string>
+<string name="low_power_mode_reminder_enabled_purpose"></string>
+<string name="battery_saver_schedule_purpose"></string>
+<string name="battery_saver_reminder_entry_purpose"></string>
+
+<string name="double_tap_screen_to_sleep_title">Double tap to turn off screen</string>
+<string name="double_tap_screen_to_sleep_summary">Double tap an empty space on the lock screen to turn off the screen.</string>
+<string name="keywords_double_tap_screen_to_sleep"></string>
+
+<string name="platform_revision">SoC</string>
+<string name="total_ram">Total memory</string>
+<string name="radio_info_title">Radio information</string>
+<string name="status_sleep_time">Sleep time</string>
+
+<string name="software_update_entry_title">Software updates</string>
+<string name="software_update_banner_checking">Checking for updates</string>
+<string name="system_update_entry_title">System update</string>
+<string name="play_application_detail_indication_summary">ae</string>
+<string name="play_application_update_entry_title">Play!</string>
+<string name="software_update_can_be_updated_header">Your phone can be updated</string>
+<string name="software_update_up_to_date_header">Your phone is up to date</string>
+<string name="software_update_settings_v2_purpose"></string>
+<string name="software_update_up_to_specific_date_summary">Updated to</string>
+<string name="software_update_banner_up_to_date">Your phone is up to date</string>
+<string name="software_update_banner_update_available">An update is available for your phone</string>
+<string name="software_update_pending_update_summary">Update pending</string>
+
+<string name="wifi_qr_code_animation_control">WiFi QR code animation control</string>
+<string name="longpress_to_clipboard">Long-press to copy to clipboard</string>
+<string name="copied_to_clipboard">Copied to clipboard</string>
 </resources>
