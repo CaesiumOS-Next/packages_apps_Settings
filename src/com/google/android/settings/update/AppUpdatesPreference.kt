@@ -25,5 +25,16 @@ fun AppUpdatesPreference() {
 }
 
 private fun onAppUpdateClick(context: Context) {
-    context.startActivity(Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/apps")))
+    try {
+        val intent = Intent(Intent.ACTION_MAIN).apply {
+            addCategory(Intent.CATEGORY_APP_MARKET)
+            addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
+        }
+        context.startActivity(intent)
+    } catch (e: ActivityNotFoundException) {
+        // Fallback: If no dedicated market app/app store has been configured or installed, open a trusted APK distribution site, such as APKMirror.
+        // Support for changing the preferred APK distribution site may be added later on.
+        val webIntent = Intent(Intent.ACTION_VIEW, Uri.parse("https://apkmirror.com"))
+        context.startActivity(webIntent)
+    }
 }

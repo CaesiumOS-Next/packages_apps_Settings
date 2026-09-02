@@ -30,11 +30,7 @@
             android:key="app_updates"
             android:title="@string/play_application_update_entry_title"
             android:summary="@string/play_application_detail_indication_summary"
-            android:icon="@drawable/software_update_apps">
-            <intent
-                android:action="android.intent.action.VIEW"
-                android:data="https://play.google.com/apps" />
-        </Preference>
+            android:icon="@drawable/software_update_apps" />
 
     </com.android.settingslib.widget.UntitledPreferenceCategory>
 </PreferenceScreen>
