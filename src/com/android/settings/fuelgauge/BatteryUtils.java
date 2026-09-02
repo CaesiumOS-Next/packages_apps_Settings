@@ -579,6 +579,7 @@ public class BatteryUtils {
     }
 
     /** Whether the package is installed from Google Play Store or not */
+    /** Slated for removal due to being Google Play Store-specific */
     public static boolean isAppInstalledFromGooglePlayStore(Context context, String packageName) {
         if (TextUtils.isEmpty(packageName)) {
             return false;
