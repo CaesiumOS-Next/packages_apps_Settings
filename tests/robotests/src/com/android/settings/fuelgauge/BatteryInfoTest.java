@@ -284,6 +284,62 @@ public class BatteryInfoTest {
         assertThat(info.chargeLabel.toString()).contains(STATUS_CHARGING_FUTURE_BYPASS);
     }
 
+    @Test
+    public void testGetBatteryInfo_dischargingWithProviderEstimate_usesProviderEstimate() {
+        doReturn(mDisChargingBatteryBroadcast).when(mContext).registerReceiver(any(), any());
+        doReturn(true).when(mFeatureFactory.powerUsageFeatureProvider)
+                .isEnhancedBatteryPredictionEnabled(mContext);
+        final Estimate providerEstimate = new Estimate(
+                Duration.ofHours(2).toMillis(),
+                /* isBasedOnUsage= */ true,
+                /* averageDischargeTime= */ 1000);
+        doReturn(providerEstimate).when(mFeatureFactory.powerUsageFeatureProvider)
+                .getEnhancedBatteryPrediction(mContext);
+
+        BatteryInfo info = BatteryInfo.getBatteryInfo(
+                mContext, mBatteryUsageStats, false /* shortString */);
+
+        assertThat(info.remainingTimeUs).isEqualTo(Duration.ofHours(2).toMillis() * 1000);
+        Estimate cachedEstimate = Estimate.getCachedEstimateIfAvailable(mContext);
+        assertThat(cachedEstimate).isNotNull();
+        assertThat(cachedEstimate.getEstimateMillis()).isEqualTo(Duration.ofHours(2).toMillis());
+    }
+
+    @Test
+    public void testGetBatteryInfo_dischargingProviderReturnsNull_fallsBackToCachedEstimate() {
+        doReturn(mDisChargingBatteryBroadcast).when(mContext).registerReceiver(any(), any());
+        doReturn(true).when(mFeatureFactory.powerUsageFeatureProvider)
+                .isEnhancedBatteryPredictionEnabled(mContext);
+        doReturn(null).when(mFeatureFactory.powerUsageFeatureProvider)
+                .getEnhancedBatteryPrediction(mContext);
+
+        final Estimate cachedEstimate = new Estimate(
+                Duration.ofHours(3).toMillis(),
+                /* isBasedOnUsage= */ true,
+                /* averageDischargeTime= */ 1000);
+        Estimate.storeCachedEstimate(mContext, cachedEstimate);
+
+        BatteryInfo info = BatteryInfo.getBatteryInfo(
+                mContext, mBatteryUsageStats, false /* shortString */);
+
+        assertThat(info.remainingTimeUs).isEqualTo(Duration.ofHours(3).toMillis() * 1000);
+    }
+
+    @Test
+    public void
+            testGetBatteryInfo_dischargingNoProviderNoCache_remainTimeZeroAndNoRemainLabel() {
+        doReturn(mDisChargingBatteryBroadcast).when(mContext).registerReceiver(any(), any());
+        doReturn(false).when(mFeatureFactory.powerUsageFeatureProvider)
+                .isEnhancedBatteryPredictionEnabled(mContext);
+        doReturn(REMAINING_TIME_NULL).when(mBatteryUsageStats).getBatteryTimeRemainingMs();
+
+        BatteryInfo info = BatteryInfo.getBatteryInfo(
+                mContext, mBatteryUsageStats, false /* shortString */);
+
+        assertThat(info.remainingTimeUs).isEqualTo(0);
+        assertThat(info.remainingLabel).isNull();
+    }
+
     // Make our battery stats return a sequence of battery events.
     private void mockBatteryStatsHistory() {
         // Mock out new data every time iterateBatteryStatsHistory is called.
