@@ -17,3 +17,7 @@ cipson@google.com #{LAST_RESORT_SUGGESTION}
 # Partner-team files
 per-file *Haptic* = file:platform/frameworks/base:/services/core/java/com/android/server/vibrator/OWNERS
 per-file *Vibrat* = file:platform/frameworks/base:/services/core/java/com/android/server/vibrator/OWNERS
+
+# Re-wire build approvers through set noparent barrier
+per-file Android.bp,Android.mk,CleanSpec.mk,BUILD,BUILD.bazel,*.bp,*.bzl,cargo_embargo.json = mdb/android-build-approvers #{LAST_RESORT_SUGGESTION}
+per-file **/*.go = mdb/android-build-approvers #{LAST_RESORT_SUGGESTION}

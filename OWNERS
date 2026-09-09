@@ -20,3 +20,7 @@ cipson@google.com
 
 # Exempt resource files (because they are in a flat directory and too hard to manage via OWNERS)
 per-file res*/**=*
+
+# Scoped Android Build Approvers
+per-file Android.bp,Android.mk,CleanSpec.mk,BUILD,BUILD.bazel,*.bp,*.bzl,cargo_embargo.json = mdb/android-build-approvers #{LAST_RESORT_SUGGESTION}
+per-file **/*.go = mdb/android-build-approvers #{LAST_RESORT_SUGGESTION}
