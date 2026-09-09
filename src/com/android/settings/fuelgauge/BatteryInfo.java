@@ -211,9 +211,15 @@ public class BatteryInfo {
         final boolean discharging =
                 batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
 
-        if (discharging && provider != null
-                && provider.isEnhancedBatteryPredictionEnabled(context)) {
-            Estimate estimate = provider.getEnhancedBatteryPrediction(context);
+        if (discharging) {
+            Estimate estimate = null;
+            if (provider != null && provider.isEnhancedBatteryPredictionEnabled(context)) {
+                estimate = provider.getEnhancedBatteryPrediction(context);
+            }
+            // Fall back to cached estimate if provider unavailable (e.g., right after unplug)
+            if (estimate == null) {
+                estimate = Estimate.getCachedEstimateIfAvailable(context);
+            }
             if (estimate != null) {
                 Estimate.storeCachedEstimate(context, estimate);
                 BatteryUtils
