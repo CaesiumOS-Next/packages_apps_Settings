@@ -26,11 +26,13 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 import android.content.ComponentName;
+import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
 import android.hardware.usb.UsbManager;
 import android.hardware.usb.UsbPort;
 import android.hardware.usb.UsbPortStatus;
+import android.provider.Settings.Global;
 
 import androidx.preference.Preference;
 import androidx.test.core.app.ApplicationProvider;
@@ -57,6 +59,8 @@ public class TopLevelBatteryPreferenceControllerTest {
     private BatterySettingsFeatureProvider mBatterySettingsFeatureProvider;
 
     @Mock
+    private ContentResolver mContentResolver;
+    @Mock
     private UsbPort mUsbPort;
     @Mock
     private UsbManager mUsbManager;
@@ -67,7 +71,8 @@ public class TopLevelBatteryPreferenceControllerTest {
     public void setUp() {
         MockitoAnnotations.initMocks(this);
         mContext = spy(ApplicationProvider.getApplicationContext());
-        mController = new TopLevelBatteryPreferenceController(mContext, "test_key");
+        when(mContext.getContentResolver()).thenReturn(mContentResolver);
+        mController = spy(new TopLevelBatteryPreferenceController(mContext, "test_key"));
         when(mContext.getSystemService(UsbManager.class)).thenReturn(mUsbManager);
     }
 
@@ -150,5 +155,30 @@ public class TopLevelBatteryPreferenceControllerTest {
         mController.mIsBatteryPresent = false;
         assertThat(mController.getSummary())
                 .isEqualTo(mContext.getString(R.string.battery_missing_message));
+    }
+
+    @Test
+    public void onStart_registerContentObserver() {
+        mController.onStart();
+
+        verify(mContentResolver).registerContentObserver(
+                Global.getUriFor(Global.BATTERY_ESTIMATES_LAST_UPDATE_TIME),
+                false,
+                mController.mSettingsObserver);
+    }
+
+    @Test
+    public void onStop_unregisterContentObserver() {
+        mController.onStop();
+
+        verify(mContentResolver).unregisterContentObserver(
+                mController.mSettingsObserver);
+    }
+
+    @Test
+    public void settingsObserver_onChange_loadsBatteryInfo() {
+        mController.mSettingsObserver.onChange(false, null);
+
+        verify(mController).loadBatteryInfoAsynchronously();
     }
 }
