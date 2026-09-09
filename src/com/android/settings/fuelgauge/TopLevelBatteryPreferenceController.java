@@ -18,6 +18,11 @@ package com.android.settings.fuelgauge;
 
 import android.content.ComponentName;
 import android.content.Context;
+import android.database.ContentObserver;
+import android.net.Uri;
+import android.os.Handler;
+import android.os.Looper;
+import android.provider.Settings.Global;
 import android.util.Log;
 
 import androidx.annotation.VisibleForTesting;
@@ -45,6 +50,15 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
 
     private final BatteryBroadcastReceiver mBatteryBroadcastReceiver;
 
+    @VisibleForTesting
+    final ContentObserver mSettingsObserver = new ContentObserver(
+            new Handler(Looper.getMainLooper())) {
+        @Override
+        public void onChange(boolean selfChange, Uri uri) {
+            loadBatteryInfoAsynchronously();
+        }
+    };
+
     private BatteryInfo mBatteryInfo;
     private BatteryStatusFeatureProvider mBatteryStatusFeatureProvider;
     private String mBatteryStatusLabel;
@@ -57,17 +71,22 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
             if (type == BatteryBroadcastReceiver.BatteryUpdateType.BATTERY_NOT_PRESENT) {
                 mIsBatteryPresent = false;
             }
-            BatteryInfo.getBatteryInfo(mContext, info -> {
-                Log.d(TAG, "getBatteryInfo: " + info);
-                mBatteryInfo = info;
-                updateState(mPreference);
-                // Update the preference summary text to the latest state.
-                setSummaryAsync(info);
-            }, true /* shortString */);
+            loadBatteryInfoAsynchronously();
         });
 
         mBatteryStatusFeatureProvider = FeatureFactory.getFactory(context)
                 .getBatteryStatusFeatureProvider(context);
+    }
+
+    @VisibleForTesting
+    protected void loadBatteryInfoAsynchronously() {
+        BatteryInfo.getBatteryInfo(mContext, info -> {
+            Log.d(TAG, "getBatteryInfo: " + info);
+            mBatteryInfo = info;
+            updateState(mPreference);
+            // Update the preference summary text to the latest state.
+            setSummaryAsync(info);
+        }, true /* shortString */);
     }
 
     @Override
@@ -85,11 +104,16 @@ public class TopLevelBatteryPreferenceController extends BasePreferenceControlle
     @Override
     public void onStart() {
         mBatteryBroadcastReceiver.register();
+        mContext.getContentResolver().registerContentObserver(
+                Global.getUriFor(Global.BATTERY_ESTIMATES_LAST_UPDATE_TIME),
+                false,
+                mSettingsObserver);
     }
 
     @Override
     public void onStop() {
         mBatteryBroadcastReceiver.unRegister();
+        mContext.getContentResolver().unregisterContentObserver(mSettingsObserver);
     }
 
     @Override
