@@ -1,5 +1,6 @@
 package com.google.android.settings.update
 
+import android.content.ActivityNotFoundException
 import android.content.Context
 import android.content.Intent
 import android.net.Uri
