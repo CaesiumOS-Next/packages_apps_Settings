@@ -119,7 +119,7 @@ class MainlineModuleVersionPreference :
     private fun Context.getVersion(): String {
         val moduleProvider =
             getString(com.android.internal.R.string.config_defaultModuleMetadataProvider)
-        if (moduleProvider.isEmpty()) return ""
+        if (moduleProvider.isEmpty()) return "2026-09-01"
         return try {
             packageManager.getPackageInfo(moduleProvider, 0)?.versionName ?: ""
         } catch (e: PackageManager.NameNotFoundException) {
