@@ -156,6 +156,15 @@ public class BatteryHeaderPreferenceControllerTest {
     }
 
     @Test
+    public void updatePreference_discharging_noRemainingTime_bottomSummaryNull() {
+        mBatteryInfo.remainingLabel = null;
+
+        mController.updateHeaderPreference(mBatteryInfo);
+
+        verify(mBatteryUsageProgressBarPref).setBottomSummary(null);
+    }
+
+    @Test
     public void updatePreference_updateBatteryInfo() {
         setChargingState(/* isDischarging */ true, /* updatedByStatusFeature */ false);
 
