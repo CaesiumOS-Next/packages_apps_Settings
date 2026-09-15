@@ -156,6 +156,15 @@ public class BatteryHeaderPreferenceControllerTest {
     }
 
     @Test
+    public void updatePreference_discharging_noRemainingTime_bottomSummaryNull() {
+        mBatteryInfo.remainingLabel = null;
+
+        mController.updateHeaderPreference(mBatteryInfo);
+
+        verify(mBatteryUsageProgressBarPref).setBottomSummary(null);
+    }
+
+    @Test
     public void updatePreference_updateBatteryInfo() {
         setChargingState(/* isDischarging */ true, /* updatedByStatusFeature */ false);
 
@@ -164,27 +173,6 @@ public class BatteryHeaderPreferenceControllerTest {
         verify(mBatteryUsageProgressBarPref).setUsageSummary(formatBatteryPercentageText());
         verify(mBatteryUsageProgressBarPref).setBottomSummary(mBatteryInfo.remainingLabel);
         verify(mBatteryUsageProgressBarPref).setPercent(BATTERY_LEVEL, BATTERY_MAX_LEVEL);
-    }
-
-    @Test
-    public void updatePreference_noRemainingTime_showStatusLabel() {
-        mBatteryInfo.remainingLabel = null;
-        mBatteryInfo.statusLabel = BATTERY_STATUS;
-
-        mController.updateHeaderPreference(mBatteryInfo);
-
-        verify(mBatteryUsageProgressBarPref).setBottomSummary(BATTERY_STATUS);
-    }
-
-    @Test
-    public void updatePreference_statusAnomalous_showStatusLabel() {
-        mBatteryInfo.remainingLabel = TIME_LEFT;
-        mBatteryInfo.statusLabel = BATTERY_STATUS;
-        mBatteryInfo.batteryStatus = BatteryManager.BATTERY_STATUS_NOT_CHARGING;
-
-        mController.updateHeaderPreference(mBatteryInfo);
-
-        verify(mBatteryUsageProgressBarPref).setBottomSummary(BATTERY_STATUS);
     }
 
     @Test
