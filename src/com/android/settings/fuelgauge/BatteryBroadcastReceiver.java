@@ -79,6 +79,8 @@ public class BatteryBroadcastReceiver extends BroadcastReceiver {
     int mChargingStatus;
     @VisibleForTesting
     int mBatteryHealth;
+    @VisibleForTesting
+    int mPluggedStatus = -1;
     private OnBatteryChangedListener mBatteryListener;
     private Context mContext;
 
@@ -125,6 +127,7 @@ public class BatteryBroadcastReceiver extends BroadcastReceiver {
                     BatteryManager.EXTRA_CHARGING_STATUS, BatteryManager.CHARGING_POLICY_DEFAULT);
             final int batteryHealth = intent.getIntExtra(
                     BatteryManager.EXTRA_HEALTH, BatteryManager.BATTERY_HEALTH_UNKNOWN);
+            final int pluggedStatus = intent.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1);
             Log.d(
                     TAG,
                     "Battery changed: level: "
@@ -140,6 +143,8 @@ public class BatteryBroadcastReceiver extends BroadcastReceiver {
                 mBatteryListener.onBatteryChanged(BatteryUpdateType.BATTERY_NOT_PRESENT);
             } else if (forceUpdate) {
                 mBatteryListener.onBatteryChanged(BatteryUpdateType.MANUAL);
+            } else if (pluggedStatus != mPluggedStatus) {
+                mBatteryListener.onBatteryChanged(BatteryUpdateType.BATTERY_STATUS);
             } else if (chargingStatus != mChargingStatus) {
                 mBatteryListener.onBatteryChanged(BatteryUpdateType.CHARGING_STATUS);
             } else if (batteryHealth != mBatteryHealth) {
@@ -153,6 +158,7 @@ public class BatteryBroadcastReceiver extends BroadcastReceiver {
             mBatteryStatus = batteryStatus;
             mChargingStatus = chargingStatus;
             mBatteryHealth = batteryHealth;
+            mPluggedStatus = pluggedStatus;
         } else if (PowerManager.ACTION_POWER_SAVE_MODE_CHANGED.equals(action)) {
             mBatteryListener.onBatteryChanged(BatteryUpdateType.BATTERY_SAVER);
         } else if (BatteryUtils.BYPASS_DOCK_DEFENDER_ACTION.equals(action)
