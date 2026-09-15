@@ -42,6 +42,10 @@ import com.android.settingslib.fuelgauge.EstimateKt;
 import com.android.settingslib.utils.PowerUtil;
 import com.android.settingslib.utils.StringUtil;
 
+import android.provider.Settings;
+import java.time.Duration;
+import java.time.Instant;
+
 public class BatteryInfo {
     private static final String TAG = "BatteryInfo";
 
@@ -211,22 +215,42 @@ public class BatteryInfo {
         final boolean discharging =
                 batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
 
-        if (discharging && provider != null
-                && provider.isEnhancedBatteryPredictionEnabled(context)) {
-            Estimate estimate = provider.getEnhancedBatteryPrediction(context);
-            if (estimate != null) {
-                Estimate.storeCachedEstimate(context, estimate);
-                BatteryUtils
-                        .logRuntime(LOG_TAG, "time for enhanced BatteryInfo", startTime);
-                return BatteryInfo.getBatteryInfo(context, batteryBroadcast, batteryUsageStats,
-                        estimate, elapsedRealtimeUs, shortString);
+        Estimate estimate = null;
+        if (!discharging) {
+            // Invalidate cached discharge estimate when plugged in so stale discharge estimates
+            // are not reused if the device is unplugged shortly after.
+            if (Settings.Global.getLong(context.getContentResolver(),
+                    Settings.Global.TIME_REMAINING_ESTIMATE_MILLIS, -1L) != -1L) {
+                Settings.Global.putLong(context.getContentResolver(),
+                        Settings.Global.TIME_REMAINING_ESTIMATE_MILLIS, -1L);
+            }
+        } else {
+            // 1. Check fresh cached estimate via Estimate.kt (< 10s)
+            if (Duration.between(Estimate.getLastCacheUpdateTime(context), Instant.now())
+                    .compareTo(Duration.ofSeconds(10)) < 0) {
+                estimate = Estimate.getCachedEstimateIfAvailable(context);
+                if (estimate != null && estimate.getEstimateMillis() <= 0) {
+                    estimate = null;
+                }
+            } else if (provider != null && provider.isEnhancedBatteryPredictionEnabled(context)) {
+                estimate = provider.getEnhancedBatteryPrediction(context);
+                if (estimate != null && estimate.getEstimateMillis() > 0) {
+                    Estimate.storeCachedEstimate(context, estimate);
+                }
+            }
+            // 2. Cache miss: query BatteryUsageStats
+            if (estimate == null || estimate.getEstimateMillis() <= 0) {
+                long prediction = discharging ? batteryUsageStats.getBatteryTimeRemainingMs() : 0;
+                estimate = new Estimate(
+                        prediction,
+                        false /* isBasedOnUsage */,
+                        EstimateKt.AVERAGE_TIME_TO_DISCHARGE_UNKNOWN);
+                if (discharging && prediction > 0) {
+                    // Store valid estimate in cache and trigger ContentObserver on the other panel!
+                    Estimate.storeCachedEstimate(context, estimate);
+                }
             }
         }
-        final long prediction = discharging ? batteryUsageStats.getBatteryTimeRemainingMs() : 0;
-        final Estimate estimate = new Estimate(
-                prediction,
-                false, /* isBasedOnUsage */
-                EstimateKt.AVERAGE_TIME_TO_DISCHARGE_UNKNOWN);
         BatteryUtils.logRuntime(LOG_TAG, "time for regular BatteryInfo", startTime);
         return BatteryInfo.getBatteryInfo(context, batteryBroadcast, batteryUsageStats,
                 estimate, elapsedRealtimeUs, shortString);
@@ -290,7 +314,7 @@ public class BatteryInfo {
             info.remainingLabel = null;
             int chargingLimitedResId = R.string.power_charging_limited;
             info.chargeLabel = context.getString(chargingLimitedResId, info.batteryPercentString);
-        } else if ((chargeTimeMs > 0 && status != BatteryManager.BATTERY_STATUS_FULL
+        } else if ((chargeTimeMs > 0 && status == BatteryManager.BATTERY_STATUS_CHARGING
                 && dockDefenderMode == BatteryUtils.DockDefenderMode.DISABLED)
                 || dockDefenderMode == BatteryUtils.DockDefenderMode.TEMPORARILY_BYPASSED) {
             // Battery is charging to full
