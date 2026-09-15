@@ -54,8 +54,10 @@ class HearingDevicesFooterPreference(
         footerPreference.isSelectable = false
 
         val aboutTts = context.getString(introductionTitle)
-        val summaryTts = context.getString(getSummaryResId(true))
-        footerPreference.contentDescription = "$aboutTts\n$summaryTts"
+        val summaryResId = getSummaryResId(true)
+        val summaryTts = if (summaryResId != 0) context.getString(summaryResId) else ""
+        footerPreference.contentDescription =
+            if (summaryTts.isEmpty()) aboutTts else "$aboutTts\n$summaryTts"
     }
 
     override fun tags(context: Context) = arrayOf(UI_ONLY_PREFERENCE)
@@ -63,8 +65,15 @@ class HearingDevicesFooterPreference(
     override fun getTitle(context: Context): CharSequence? {
         // We use html tag inside footer string, so it is better to load from html to have better
         // html tag support.
+        // getSummaryResId() returns 0 when neither the ASHA nor the HAP client profile is
+        // supported (see the else branch below). The catalyst preference binder calls getTitle()
+        // during binding without consulting isAvailable(), so on a device where both
+        // bluetooth.profile.{asha.central,hap.client}.enabled are unset this reaches here with a
+        // 0 resId; getString(0) then throws Resources$NotFoundException and crashes Settings.
+        val summaryResId = getSummaryResId(false)
+        if (summaryResId == 0) return null
         return Html.fromHtml(
-            context.getString(getSummaryResId(false)),
+            context.getString(summaryResId),
             Html.FROM_HTML_MODE_COMPACT,
             /* imageGetter= */ null,
             /* tagHandler= */ null,
