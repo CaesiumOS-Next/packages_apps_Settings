@@ -487,6 +487,16 @@ public class BatteryUtilsTest {
     }
 
     @Test
+    public void getEnhancedEstimate_negativeCachedEstimate_returnsNull() {
+        Estimate estimate = new Estimate(-1, false, -1);
+        Estimate.storeCachedEstimate(mContext, estimate);
+
+        estimate = mBatteryUtils.getEnhancedEstimate();
+
+        assertThat(estimate).isNull();
+    }
+
+    @Test
     public void testIsBatteryDefenderOn_isDefenderAndIsCharging_returnTrue() {
         mBatteryInfo.isBatteryDefender = true;
         mBatteryInfo.discharging = false;
