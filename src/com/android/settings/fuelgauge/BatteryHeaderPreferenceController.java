@@ -110,33 +110,40 @@ public class BatteryHeaderPreferenceController extends BasePreferenceController
     }
 
     private CharSequence generateLabel(BatteryInfo info) {
+        if (info == null) {
+            return null;
+        }
         if (Utils.containsIncompatibleChargers(mContext, TAG)) {
             return mContext.getString(R.string.battery_info_status_not_charging);
         } else if (BatteryUtils.isBatteryDefenderOn(info)) {
             return null;
-        } else if (info.remainingLabel == null
-                || info.batteryStatus == BatteryManager.BATTERY_STATUS_NOT_CHARGING) {
-            // Present status only if no remaining time or status anomalous
+        } else if (!info.discharging) {
+            // Plugged in
+            if (info.statusLabel != null && info.remainingLabel != null) {
+                return mContext.getString(
+                        R.string.battery_state_and_duration, info.statusLabel, info.remainingLabel);
+            }
             return info.statusLabel;
-        } else if (info.statusLabel != null && !info.discharging) {
-            // Charging state
-            return mContext.getString(
-                    R.string.battery_state_and_duration, info.statusLabel, info.remainingLabel);
-        } else if (mPowerManager.isPowerSaveMode()) {
-            // Power save mode is on
-            final String powerSaverOn = mContext.getString(
-                    R.string.battery_tip_early_heads_up_done_title);
-            return mContext.getString(
-                    R.string.battery_state_and_duration, powerSaverOn, info.remainingLabel);
-        } else if (mBatteryTip != null
-                && mBatteryTip.getType() == BatteryTip.TipType.LOW_BATTERY) {
-            // Low battery state
-            final String lowBattery = mContext.getString(R.string.low_battery_summary);
-            return mContext.getString(
-                    R.string.battery_state_and_duration, lowBattery, info.remainingLabel);
+        } else if (info.remainingLabel != null) {
+            // Discharging
+            if (mPowerManager.isPowerSaveMode()) {
+                // Power save mode is on
+                final String powerSaverOn = mContext.getString(
+                        R.string.battery_tip_early_heads_up_done_title);
+                return mContext.getString(
+                        R.string.battery_state_and_duration, powerSaverOn, info.remainingLabel);
+            } else if (mBatteryTip != null
+                    && mBatteryTip.getType() == BatteryTip.TipType.LOW_BATTERY) {
+                // Low battery state
+                final String lowBattery = mContext.getString(R.string.low_battery_summary);
+                return mContext.getString(
+                        R.string.battery_state_and_duration, lowBattery, info.remainingLabel);
+            } else {
+                // Discharging state
+                return info.remainingLabel;
+            }
         } else {
-            // Discharging state
-            return info.remainingLabel;
+            return null;
         }
     }
 
