@@ -425,18 +425,40 @@ public class BatteryUtils {
         final long elapsedRealtimeUs = PowerUtil.convertMsToUs(
                 SystemClock.elapsedRealtime());
 
-        BatteryInfo batteryInfo;
-        Estimate estimate = getEnhancedEstimate();
+        // Begin Android XR
+        final boolean discharging =
+                batteryBroadcast.getIntExtra(BatteryManager.EXTRA_PLUGGED, -1) == 0;
 
-        // couldn't get estimate from cache or provider, use fallback
-        if (estimate == null) {
+        BatteryInfo batteryInfo;
+        Estimate estimate = null;
+        if (!discharging) {
+            if (Settings.Global.getLong(mContext.getContentResolver(),
+                    Settings.Global.TIME_REMAINING_ESTIMATE_MILLIS, -1L) != -1L) {
+                Settings.Global.putLong(mContext.getContentResolver(),
+                        Settings.Global.TIME_REMAINING_ESTIMATE_MILLIS, -1L);
+            }
+        } else {
+            estimate = getEnhancedEstimate();
+        }
+        // couldn't get valid estimate from cache or provider, use fallback
+        if (estimate == null || estimate.getEstimateMillis() <= 0) {
+            long remainingMs = discharging ? batteryUsageStats.getBatteryTimeRemainingMs() : 0;
             estimate = new Estimate(
-                    batteryUsageStats.getBatteryTimeRemainingMs(),
+                    remainingMs,
                     false /* isBasedOnUsage */,
                     EstimateKt.AVERAGE_TIME_TO_DISCHARGE_UNKNOWN);
+            if (remainingMs > 0) {
+                // Store valid estimate in cache and trigger ContentObserver on the other panel!
+                Estimate.storeCachedEstimate(mContext, estimate);
+            }
         }
+        // End Android XR
 
-        BatteryUtils.logRuntime(tag, "BatteryInfoLoader post query", startTime);
+        BatteryUtils.logRuntime(tag,
+                String.format("time for BatteryInfo (discharging=%s, estimateMs=%d)",
+                        discharging,
+                        estimate != null ? estimate.getEstimateMillis() : -1),
+                startTime);
         batteryInfo = BatteryInfo.getBatteryInfo(mContext, batteryBroadcast,
                 batteryUsageStats, estimate, elapsedRealtimeUs, false /* shortString */);
         BatteryUtils.logRuntime(tag, "BatteryInfoLoader.loadInBackground", startTime);
@@ -456,10 +478,13 @@ public class BatteryUtils {
         if (Duration.between(Estimate.getLastCacheUpdateTime(mContext), Instant.now())
                 .compareTo(Duration.ofSeconds(10)) < 0) {
             estimate = Estimate.getCachedEstimateIfAvailable(mContext);
+            if (estimate != null && estimate.getEstimateMillis() <= 0) {
+                estimate = null;
+            }
         } else if (mPowerUsageFeatureProvider != null &&
                 mPowerUsageFeatureProvider.isEnhancedBatteryPredictionEnabled(mContext)) {
             estimate = mPowerUsageFeatureProvider.getEnhancedBatteryPrediction(mContext);
-            if (estimate != null) {
+            if (estimate != null && estimate.getEstimateMillis() > 0) {
                 Estimate.storeCachedEstimate(mContext, estimate);
             }
         }
