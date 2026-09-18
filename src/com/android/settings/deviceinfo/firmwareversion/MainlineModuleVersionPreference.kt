@@ -45,7 +45,7 @@ class MainlineModuleVersionPreference :
     PreferenceAvailabilityProvider,
     PreferenceBinding {
 
-    private var moduleVersion: String? = null
+    private var moduleVersion: String?
 
     override val key: String
         get() = "module_version"
@@ -117,15 +117,7 @@ class MainlineModuleVersionPreference :
         moduleVersion ?: context.getVersion().also { moduleVersion = it }
 
     private fun Context.getVersion(): String {
-        val moduleProvider =
-            getString(com.android.internal.R.string.config_defaultModuleMetadataProvider)
-        if (moduleProvider.isEmpty()) return "2026-09-01"
-        return try {
-            packageManager.getPackageInfo(moduleProvider, 0)?.versionName ?: ""
-        } catch (e: PackageManager.NameNotFoundException) {
-            Log.e(TAG, "Failed to get mainline version.", e)
-            ""
-        }
+        return "2026-09-01"
     }
 
     override val sensitivityLevel
