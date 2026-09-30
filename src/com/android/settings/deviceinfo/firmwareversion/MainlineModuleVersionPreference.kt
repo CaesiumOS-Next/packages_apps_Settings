@@ -45,8 +45,6 @@ class MainlineModuleVersionPreference :
     PreferenceAvailabilityProvider,
     PreferenceBinding {
 
-    private var moduleVersion: String?
-
     override val key: String
         get() = "module_version"
 
@@ -64,9 +62,8 @@ class MainlineModuleVersionPreference :
 
     override fun getSummary(context: Context): CharSequence? {
         val version = getModuleVersion(context)
-        if (version.isEmpty()) return null
-
         val locale = context.getLocale()
+
         fun parseDate(pattern: String): Date? {
             val simpleDateFormat = SimpleDateFormat(pattern, locale)
             simpleDateFormat.timeZone = TimeZone.getDefault()
@@ -104,21 +101,15 @@ class MainlineModuleVersionPreference :
 
     override fun getAvailabilityStability() = PreconditionStability.STABLE_UNTIL_APK_UPDATE
 
-    override fun isAvailable(context: Context) = getModuleVersion(context).isNotEmpty()
+    override fun isAvailable(context: Context) = true
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
-        // This seems unnecessary, just follow existing behavior to pass test
         if (preference.intent == null) preference.setSummary(R.string.summary_placeholder)
         preference.isCopyingEnabled = true
     }
 
-    private fun getModuleVersion(context: Context): String =
-        moduleVersion ?: context.getVersion().also { moduleVersion = it }
-
-    private fun Context.getVersion(): String {
-        return "2026-09-01"
-    }
+    private fun getModuleVersion(context: Context): String = "2026-09-01"
 
     override val sensitivityLevel
         get() = SensitivityLevel.NO_SENSITIVITY
