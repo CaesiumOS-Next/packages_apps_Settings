@@ -23,7 +23,7 @@
             android:key="key_play_system_update_preference"
             android:title="@string/module_version"
             android:summary="@string/summary_placeholder"
-            android:icon="@drawable/software_update_play_prism"
+            android:icon="@drawable/software_update_mainline_icon"
             settings:controller="com.android.settings.deviceinfo.firmwareversion.MainlineModuleVersionPreferenceController" />
 
         <Preference
