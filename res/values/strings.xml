@@ -14128,6 +14128,10 @@
     <string name="lockscreen_double_line_clock_summary">Clock size changes according to lock screen content</string>
     <!-- Lockscreen dynamic clock toggle [CHAR LIMIT=60] -->
     <string name="lockscreen_double_line_clock_setting_toggle">Dynamic clock</string>
+    <!-- Lockscreen disable AppFunctions toggle [CHAR LIMIT=60] -->
+    <string name="lockscreen_disable_app_functions_setting_toggle">Disable AppFunctions on lock screen</string>
+    <!-- Lockscreen disable AppFunctions summary [CHAR LIMIT=NONE] -->
+    <string name="lockscreen_disable_app_functions_summary">Block all AppFunction calls while the device is locked</string>
     <!-- Lock screen shortcuts preference [CHAR LIMIT=60] -->
     <string name="lockscreen_quick_affordances_title">Shortcuts</string>
     <!-- Summary for the lock screen button preference [CHAR LIMIT=60] -->
