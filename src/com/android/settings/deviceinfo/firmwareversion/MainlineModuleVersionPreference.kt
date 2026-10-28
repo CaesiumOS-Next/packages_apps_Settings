@@ -105,11 +105,10 @@ class MainlineModuleVersionPreference :
 
     override fun bind(preference: Preference, metadata: PreferenceMetadata) {
         super.bind(preference, metadata)
-        if (preference.intent == null) preference.setSummary(R.string.summary_placeholder)
         preference.isCopyingEnabled = true
     }
 
-    private fun getModuleVersion(context: Context): String = "2026-09-01"
+    private fun getModuleVersion(context: Context): String = "2026-10-01"
 
     override val sensitivityLevel
         get() = SensitivityLevel.NO_SENSITIVITY
