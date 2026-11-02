@@ -26,7 +26,6 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.android.settings.SettingsActivity;
-import com.android.settings.dashboard.profileselector.ProfileSelectLinuxTerminalFragment;
 import com.android.settingslib.development.DevelopmentSettingsEnabler;
 
 public class DeveloperOptionsActivityLifecycle implements Application.ActivityLifecycleCallbacks {
@@ -44,8 +43,7 @@ public class DeveloperOptionsActivityLifecycle implements Application.ActivityLi
                         return;
                     }
 
-                    boolean skipAdminCheck = f instanceof ProfileSelectLinuxTerminalFragment;
-                    if (DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(activity, skipAdminCheck)) {
+                    if (DevelopmentSettingsEnabler.isDevelopmentSettingsEnabled(activity)) {
                         return;
                     }
 
