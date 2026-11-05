@@ -108,7 +108,7 @@ class MainlineModuleVersionPreference :
         preference.isCopyingEnabled = true
     }
 
-    private fun getModuleVersion(context: Context): String = "2026-10-01"
+    private fun getModuleVersion(context: Context): String = "2026-11-01"
 
     override val sensitivityLevel
         get() = SensitivityLevel.NO_SENSITIVITY

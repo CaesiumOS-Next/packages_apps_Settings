@@ -72,17 +72,7 @@ public class MainlineModuleVersionPreferenceController extends BasePreferenceCon
     }
 
     private void initModules() {
-        final String moduleProvider = mContext.getString(
-                com.android.internal.R.string.config_defaultModuleMetadataProvider);
-        if (!TextUtils.isEmpty(moduleProvider)) {
-            try {
-                mModuleVersion =
-                        mPackageManager.getPackageInfo(moduleProvider, 0 /* flags */).versionName;
-            } catch (PackageManager.NameNotFoundException e) {
-                Log.e(TAG, "Failed to get mainline version.", e);
-                mModuleVersion = null;
-            }
-        }
+        mModuleVersion = "2026-11-01";
     }
 
     @Override
