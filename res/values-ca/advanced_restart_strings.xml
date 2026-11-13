@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Reinici avançat</string>
+    <string name="power_menu_advanced_restart_summary">Quan està desbloquejat, inclou opcions en el menú d\'encesa per a reiniciar al recovery o bootloader</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Khởi động lại nâng cao</string>
+    <string name="power_menu_advanced_restart_summary">Khi mở khóa, bao gồm các tùy chọn trong trình đơn nguồn để khởi động lại vào chế độ phục hồi hoặc trình nạp khởi động</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Reinicialização avançada</string>
+    <string name="power_menu_advanced_restart_summary">Quando desbloqueado, incluir opções de reinicialização avançada no menu de energia</string>
+</resources>

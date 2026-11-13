@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Reinício avançado</string>
+    <string name="power_menu_advanced_restart_summary">Quando desbloqueado, incluir opções no menu ligar/desligar para reiniciar em modo de recuperação ou bootloader</string>
+</resources>

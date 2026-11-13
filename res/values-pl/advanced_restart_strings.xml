@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Opcje ponownego uruchamiania</string>
+    <string name="power_menu_advanced_restart_summary">Gdy odblokowany dodaj w menu zasilania opcje ponownego uruchomienia w trybie recovery lub bootloadera</string>
+</resources>

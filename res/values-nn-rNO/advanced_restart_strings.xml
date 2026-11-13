@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Avansert omstart</string>
+    <string name="power_menu_advanced_restart_summary">Vis val i av/på-menyen for å starta på nytt i gjenoppretting eller oppstartslastar når eininga er låst opp</string>
+</resources>

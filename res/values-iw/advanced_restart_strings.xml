@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">אתחול מתקדם</string>
+    <string name="power_menu_advanced_restart_summary">כאשר לא נעול, הוספת אפשרויות של הפעלה מחדש למצב התאוששות (Recovery) או מנהל האתחול (Bootloader)</string>
+</resources>

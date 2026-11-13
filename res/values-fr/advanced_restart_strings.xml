@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Redémarrage avancé</string>
+    <string name="power_menu_advanced_restart_summary">Inclure les options de redémarrage en modes \"récupération\" et \"chargeur de démarrage\" dans le menu marche/arrêt lorsque l\'appareil est déverrouillé</string>
+</resources>

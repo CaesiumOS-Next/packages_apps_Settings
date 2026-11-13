@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Rазширено рестартиране</string>
+    <string name="power_menu_advanced_restart_summary">При отключен телефон, включете в опциите на менюто за захранване, възможност да рестартирате в режим на възстановяване или буутлоудър</string>
+</resources>

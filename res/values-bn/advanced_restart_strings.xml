@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">অ্যাডভান্সড রিস্টার্ট</string>
+    <string name="power_menu_advanced_restart_summary">ডিভাইস আনলক করা থাকলে, রিকভারি অথবা বুটলোডারে যাওয়ার অপশন দেখাও</string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Ailgychwyn arbennig</string>
+    <string name="power_menu_advanced_restart_summary">Pan wedi datgloi, cynnwys opsiynau yn y ddewislen pŵer i ailgychwyn y system neu ailgychwyn i\'r modd adfer</string>
+</resources>

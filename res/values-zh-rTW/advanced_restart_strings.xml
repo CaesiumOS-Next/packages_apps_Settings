@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">進階重新啟動</string>
+    <string name="power_menu_advanced_restart_summary">解鎖後，在電源選單加入重新啟動進入 recovery 或 bootloader 的選項</string>
+</resources>

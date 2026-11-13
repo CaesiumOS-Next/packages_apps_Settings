@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Варианты перезапуска</string>
+    <string name="power_menu_advanced_restart_summary">Когда устройство разблокировано, в меню кнопки питания доступны опции перезагрузки в Recovery и загрузчик</string>
+</resources>

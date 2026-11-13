@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Reinicio avanzado</string>
+    <string name="power_menu_advanced_restart_summary">Incluir opciones en el menú de encendido para reiniciar en modo de recuperación o gestor de arranque con dispositivo desbloqueado </string>
+</resources>

@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Rindezje e përparuar</string>
+    <string name="power_menu_advanced_restart_summary">Kur telefoni është i zhbllokuar, përfshi në menunë e energjisë opsione për t\'u rindezur në Recovery ose Bootloader</string>
+</resources>

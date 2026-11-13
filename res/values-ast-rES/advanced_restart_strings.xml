@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">Reaniciu avanzáu</string>
+    <string name="power_menu_advanced_restart_summary">Al desbloquiar, inclúi les opciones pa reaniciar al mou de recuperación o al cargador d\'arrinque nel menú d\'apagáu</string>
+</resources>

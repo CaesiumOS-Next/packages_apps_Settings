@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">გადატვირთვის ასარჩევი</string>
+    <string name="power_menu_advanced_restart_summary">ეკრანი როცა არაა ჩაკეტილი, ჩართვის მენიუში დაემატება აღმდგენ გარსში ან ჩამტვირთავში გადასვლის შესაძლებლობა</string>
+</resources>

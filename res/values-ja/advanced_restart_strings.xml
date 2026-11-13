@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="power_menu_advanced_restart_title">高度な再起動</string>
+    <string name="power_menu_advanced_restart_summary">ロック解除時に、リカバリーやブートローダーへ再起動するオプションを電源メニューに含めます</string>
+</resources>
