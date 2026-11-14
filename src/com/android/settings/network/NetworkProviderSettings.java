@@ -35,6 +35,7 @@ import android.content.ContentResolver;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.drawable.Drawable;
 import android.location.LocationManager;
 import android.net.EthernetManager;
 import android.net.NetworkTemplate;
@@ -77,6 +78,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.android.settings.AirplaneModeEnabler;
 import com.android.settings.R;
 import com.android.settings.Utils;
+import com.android.settings.accessibility.AccessibilitySetupWizardUtils;
 import com.android.settings.core.SubSettingLauncher;
 import com.android.settings.dashboard.RestrictedDashboardFragment;
 import com.android.settings.datausage.DataUsagePreference;
@@ -412,7 +414,7 @@ public class NetworkProviderSettings extends RestrictedDashboardFragment
         }
 
         if (view instanceof GlifPreferenceLayout layout) {
-            final Drawable icon = getContext().getDrawable(R.drawable.ic_network_setup);
+            final Drawable icon = getContext().getDrawable(R.drawable.ic_settings_wireless);
             final String title = getContext().getString(R.string.provider_internet_settings);
             if (PartnerConfigHelper.isGlifExpressiveEnabled(getContext())) {
                 layout.setHeaderText(title);
