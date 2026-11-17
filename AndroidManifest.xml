@@ -3514,6 +3514,22 @@
         </activity>
 
         <activity
+            android:name="Settings$AdbWirelessDebuggingActivity"
+            android:label="@string/enable_adb_wireless"
+            android:exported="true">
+            <intent-filter android:priority="1">
+                <action android:name="com.android.settings.ADB_WIRELESS_DEBUGGING_SETTINGS" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+            <meta-data android:name="com.android.settings.FRAGMENT_CLASS"
+                       android:value="com.android.settings.development.AdbWirelessDebuggingFragment" />
+            <meta-data android:name="com.android.settings.HIGHLIGHT_MENU_KEY"
+                       android:value="@string/menu_key_system"/>
+            <meta-data android:name="com.android.settings.PRIMARY_PROFILE_CONTROLLED"
+                       android:value="true" />
+        </activity>
+
+        <activity
             android:name="Settings$PrintSettingsActivity"
             android:label="@string/print_settings"
             android:exported="true"
